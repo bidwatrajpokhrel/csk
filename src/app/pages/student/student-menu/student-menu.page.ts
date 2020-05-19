@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterEvent } from '@angular/router';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-student-menu',
@@ -49,7 +50,10 @@ export class StudentMenuPage implements OnInit {
   selectedPath = '';
 
 
-  constructor(private router: Router) {
+  constructor(
+    private router: Router,
+    private loginService: LoginService
+    ) {
     this.router.events.subscribe((event: RouterEvent) => {
       if (event && event.url){
         this.selectedPath = event.url;
@@ -57,7 +61,10 @@ export class StudentMenuPage implements OnInit {
     });
   }
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  logout(){
+    this.loginService.studentLogout();
   }
 
 }
