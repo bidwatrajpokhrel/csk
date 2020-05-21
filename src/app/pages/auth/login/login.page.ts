@@ -4,7 +4,6 @@ import { LoginService } from 'src/app/services/login.service';
 import { StorageService } from 'src/app/services/storage.service';
 import { AlertService } from 'src/app/services/alert.service';
 import { ToastService } from 'src/app/services/toast.service';
-import { userInfo } from 'os';
 
 @Component({
   selector: 'app-login',

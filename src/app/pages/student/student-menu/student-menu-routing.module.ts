@@ -9,9 +9,10 @@ const routes: Routes = [
     component: StudentMenuPage,
     children: [
       {
-      path: 'clubs',
-      loadChildren: () => import('../clubs/clubs.module').then( m => m.ClubsPageModule)
+        path: 'clubs',
+        loadChildren: () => import('../student-club/student-club.module').then( m => m.StudentClubPageModule)
       },
+    
     ],
   },
 ];
