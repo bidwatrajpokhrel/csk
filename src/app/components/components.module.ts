@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { ClubTilesComponent } from './club-tiles/club-tiles.component';
+import { ClubWithEventsComponent } from './club-with-events/club-with-events.component'
 
 @NgModule({
     imports:[
@@ -12,7 +13,7 @@ import { ClubTilesComponent } from './club-tiles/club-tiles.component';
         FormsModule,
         IonicModule,
     ],
-    declarations: [ClubTilesComponent],
-    exports: [ClubTilesComponent],
+    declarations: [ClubTilesComponent, ClubWithEventsComponent],
+    exports: [ClubTilesComponent, ClubWithEventsComponent],
 })
 export class ComponentsModule {}

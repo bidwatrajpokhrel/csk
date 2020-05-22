@@ -64,7 +64,7 @@ export class StudentMenuPage implements OnInit {
   ngOnInit() {}
 
   logout(){
-    this.loginService.studentLogout();
+    this.loginService.logout();
   }
 
 }

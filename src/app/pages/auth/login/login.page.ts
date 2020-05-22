@@ -34,7 +34,7 @@ export class LoginPage implements OnInit {
       console.log(res); //TODO: delete this line 
       if (res.message == "success"){
         this.toastService.presentToast("Logged in as Admin");
-        this.storageService.store("adminData", res);
+        this.storageService.store("userData", res);
         this.router.navigate(["/admin-menu"]);
       }
     }, error =>{
@@ -48,7 +48,7 @@ export class LoginPage implements OnInit {
       console.log(res); //TODO: delete this line 
       if (res.message == "success"){
         this.toastService.presentToast("Logged in as Student")
-        this.storageService.store("studentData", res);
+        this.storageService.store("userData", res);
         this.router.navigate(["/student-menu"]);
 
       }

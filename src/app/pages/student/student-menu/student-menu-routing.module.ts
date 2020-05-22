@@ -12,7 +12,10 @@ const routes: Routes = [
         path: 'clubs',
         loadChildren: () => import('../student-club/student-club.module').then( m => m.StudentClubPageModule)
       },
-    
+      {
+        path: 'clubs/detail',
+        loadChildren: () => import('../student-club-detail/student-club-detail.module').then( m => m.StudentClubDetailPageModule)
+      }
     ],
   },
 ];

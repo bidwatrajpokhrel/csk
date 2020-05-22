@@ -23,19 +23,11 @@ export class LoginService {
     return this.httpService.post('/auth/student-login', postData);
   }
 
-  adminLogout(){
+  logout(){
     //this.storageService.clear();
-    this.storageService.removeItem('adminData').then(res =>{
+    this.storageService.removeItem('userData').then(res =>{
       this.router.navigate(['']);
     });
   }
-
-  studentLogout(){
-    //this.storageService.clear();
-    this.storageService.removeItem('studentData').then(res =>{
-      this.router.navigate(['']);
-    });
-  }
-
   
 }

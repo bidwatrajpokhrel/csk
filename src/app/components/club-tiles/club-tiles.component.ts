@@ -28,6 +28,18 @@ export class ClubTilesComponent implements OnInit {
       console.log( this.clubs);
     } );
   }
-
+  
+  viewClub(club){
+    this.storageService.get("userData").then(res => {      
+      console.log(club.id) //TODO DELETE THIS LINE
+      this.storageService.store( "clubId", club.id);
+      if (res.type == 'admin'){}
+      else if (res.type == 'student'){
+        this.router.navigate( ['/student-menu/clubs/detail'] )
+      }
+      else{}
+    })
+    
+  }
 
 }

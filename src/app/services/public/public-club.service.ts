@@ -15,4 +15,18 @@ export class PublicClubService {
     return this.httpService.get('/public/clubs');
   }
 
+  getAClub(id: string):Observable<any>{
+    return this.httpService.get(`/public/clubs/${id}`);
+  }
+
+  getAClubWithEvents(id: string):Observable<any>{
+    return this.httpService.get(`/public/club-with-events/${id}`);
+  }
+
+  getAllClubsWithEvents():Observable<any>{
+    return this.httpService.get('/public/club-with-events');
+  }
+
+  
+
 }

@@ -64,6 +64,6 @@ export class AdminMenuPage implements OnInit {
   ngOnInit() {}
 
   logout(){
-    this.loginService.adminLogout();
+    this.loginService.logout();
   }
 }

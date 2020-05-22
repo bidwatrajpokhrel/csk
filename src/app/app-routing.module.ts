@@ -23,6 +23,11 @@ const routes: Routes = [
     path: 'student-menu',
     loadChildren: () => import('./pages/student/student-menu/student-menu.module').then( m => m.StudentMenuPageModule)
   },
+  // {
+  //   path: 'student-club-detail',
+  //   loadChildren: () => import('./pages/student/student-club-detail/student-club-detail.module').then( m => m.StudentClubDetailPageModule)
+  // },
+
 ];
 
 @NgModule({
