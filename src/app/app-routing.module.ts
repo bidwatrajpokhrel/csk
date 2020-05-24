@@ -24,6 +24,15 @@ const routes: Routes = [
     loadChildren: () => import('./pages/student/student-menu/student-menu.module').then( m => m.StudentMenuPageModule)
   },
   // {
+  //   path: 'student-event',
+  //   loadChildren: () => import('./pages/student/student-event/student-event.module').then( m => m.StudentEventPageModule)
+  // },
+  // {
+  //   path: 'student-event-detail',
+  //   loadChildren: () => import('./pages/student/student-event-detail/student-event-detail.module').then( m => m.StudentEventDetailPageModule)
+  // },
+
+  // {
   //   path: 'student-club-detail',
   //   loadChildren: () => import('./pages/student/student-club-detail/student-club-detail.module').then( m => m.StudentClubDetailPageModule)
   // },

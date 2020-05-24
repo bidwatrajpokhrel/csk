@@ -1,0 +1,14 @@
+<div class="horizontal-cards">
+
+  <ion-card *ngFor="let event of events" color="light" button="true" (click)="viewEvent(event)">    
+    <img src = "assets/clubs.png"> 
+    <ion-card-header>
+      <ion-card-title>{{event.name}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-subtitle>
+      <ion-label>Seats Remaining: {{event.event_no_of_seats}}</ion-label><br>
+      <ion-label>Event Date: {{event.event_from}}</ion-label>
+    </ion-card-subtitle>
+  </ion-card>
+
+</div>

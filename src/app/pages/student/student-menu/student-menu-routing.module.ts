@@ -15,7 +15,15 @@ const routes: Routes = [
       {
         path: 'clubs/detail',
         loadChildren: () => import('../student-club-detail/student-club-detail.module').then( m => m.StudentClubDetailPageModule)
-      }
+      },
+      {
+        path: 'events',
+        loadChildren: () => import('../student-event/student-event.module').then( m => m.StudentEventPageModule)
+      },
+      {
+        path: 'events/detail',
+        loadChildren: () => import('../student-event-detail/student-event-detail.module').then( m => m.StudentEventDetailPageModule)
+      },
     ],
   },
 ];

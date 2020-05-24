@@ -1,0 +1,18 @@
+<p>event about</p>
+<ion-card *ngIf="eventDetail" color="light" button="true">    
+  <ion-card-header>
+    <ion-card-title>{{eventDetail.name}}</ion-card-title>
+  </ion-card-header>
+  <ion-card-subtitle>
+    <ion-label>Seats Remaining: {{eventDetail.event_no_ofseats}}</ion-label><br>
+    <ion-label>Event Date: {{eventDetail.event_from}}</ion-label>
+  </ion-card-subtitle>
+</ion-card>
+
+<p>other details can be retrived in a similar fashion</p>
+
+<ion-card *ngIf="eventDetail" button="true" (click)="viewClub(eventDetail.club)">
+  <ion-label>
+   Club: {{eventDetail.club.name}}
+  </ion-label>
+</ion-card>

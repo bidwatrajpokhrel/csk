@@ -16,9 +16,9 @@ export class StudentMenuPage implements OnInit {
       icon: 'people'
     },
     {
-      title: 'Lecture Schedule',
-      url: '/folder/Lecture Schedule',
-      icon: 'book'
+      title: 'Events',
+      url: '/student-menu/events',
+      icon: 'alarm'
     },
     {
       title: 'Guest Lectures',
