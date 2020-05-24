@@ -16,9 +16,7 @@ export class ClubTilesComponent implements OnInit {
     private publiclubService: PublicClubService,
     private router: Router,
     private authService: LoginService
-  ) {
-    
-  }
+  ) {  }
 
   clubs: any;
 
