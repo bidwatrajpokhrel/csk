@@ -3,15 +3,28 @@
   <ion-col size="9">
     <ion-row no-padding>
       <ion-col size="12">
-        <h3> {{events.name}} </h3>
+        <h3> {{events.description}} </h3>
       </ion-col>
       <ion-col size="12">
-        <p text-lowercase color="medium">{{events.information}}</p>
+        <p text-lowercase color="medium">Event Starts: {{events.event_to}}</p>
+      </ion-col>
+      <ion-col size="12">
+        <p text-lowercase color="medium">Event Ends: {{events.event_from}}</p>
+      </ion-col>
+      <ion-col size="12">
+        <p text-lowercase color="medium">No. of Seats Remaining: {{events.event_no_of_seats}}</p>
+      </ion-col>
+      <ion-col>
+        <ion-card *ngIf="events" button="true" (click)="viewClub(events.club)">
+          <ion-label>
+           Organized by: {{events.club.name}}
+          </ion-label>
+        </ion-card>
       </ion-col>
       </ion-row>
     </ion-col>
     <ion-col size="3" text-right>
-      <ion-button  fill="solid" (click)="clickInterested(events)" class="button" >Interested</ion-button>
+      <ion-button  fill="solid" (click)="clickInterested()" class="button" >Interested</ion-button>
     </ion-col>
   </ion-row>
 </ion-item>

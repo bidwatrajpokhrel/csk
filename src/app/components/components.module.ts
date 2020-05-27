@@ -5,7 +5,9 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { ClubTilesComponent } from './club-tiles/club-tiles.component';
-import { ClubWithEventsComponent } from './club-with-events/club-with-events.component'
+import { ClubWithEventsComponent } from './club-with-events/club-with-events.component';
+import { AccordionListComponent } from './accordion-list/accordion-list.component';
+
 
 @NgModule({
     imports:[
@@ -13,7 +15,15 @@ import { ClubWithEventsComponent } from './club-with-events/club-with-events.com
         FormsModule,
         IonicModule,
     ],
-    declarations: [ClubTilesComponent, ClubWithEventsComponent],
-    exports: [ClubTilesComponent, ClubWithEventsComponent],
+    declarations: [
+        ClubTilesComponent,
+        ClubWithEventsComponent,
+        AccordionListComponent
+    ],
+    exports: [
+        ClubTilesComponent,
+        ClubWithEventsComponent,
+        AccordionListComponent
+    ],
 })
 export class ComponentsModule {}

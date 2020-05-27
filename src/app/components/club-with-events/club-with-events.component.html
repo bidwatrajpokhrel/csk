@@ -1,4 +1,25 @@
-<p>
-  {{test}}
-</p>
+<div *ngIf="clubDetail">
+  <ion-card>
+    Name: {{clubDetail.name}} <br>
+    Desription: {{clubDetail.description}}<br>
+    President: {{clubDetail.president.name}}<br>
+    Vice President: {{clubDetail.vice_president.name}} <br> 
+  </ion-card>
 
+  <ion-list>
+    <ion-item *ngFor="let event of clubDetail.events" color="light" button="true" (click)="viewEvent()">
+      <ion-label>
+        {{event.name}}
+      </ion-label>
+      <ion-label>
+        {{event.event_from}}
+      </ion-label>
+      <ion-label>
+        {{event.event_to}}
+      </ion-label>
+      <ion-label>
+        {{event.event_no_of_seats}}
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</div>

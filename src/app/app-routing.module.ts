@@ -23,17 +23,18 @@ const routes: Routes = [
     path: 'student-menu',
     loadChildren: () => import('./pages/student/student-menu/student-menu.module').then( m => m.StudentMenuPageModule)
   },
-  {
-    path: 'sources-of-support',
-    loadChildren: () => import('./pages/student/sources-of-support/sources-of-support.module').then( m => m.SourcesOfSupportPageModule)
-  },
-  {
-    path: 'lecture-schedule',
-    loadChildren: () => import('./pages/student/lecture-schedule/lecture-schedule.module').then( m => m.LectureSchedulePageModule)
-  },  {
-    path: 'events',
-    loadChildren: () => import('./pages/student/events/events.module').then( m => m.EventsPageModule)
-  },
+  // {
+  //   path: 'sources-of-support',
+  //   loadChildren: () => import('./pages/student/sources-of-support/sources-of-support.module').then( m => m.SourcesOfSupportPageModule)
+  // },
+  // {
+  //   path: 'lecture-schedule',
+  //   loadChildren: () => import('./pages/student/lecture-schedule/lecture-schedule.module').then( m => m.LectureSchedulePageModule)
+  // },
+  // {
+  //   path: 'events',
+  //   loadChildren: () => import('./pages/student/events/events.module').then( m => m.EventsPageModule)
+  // },
 
 
   // {

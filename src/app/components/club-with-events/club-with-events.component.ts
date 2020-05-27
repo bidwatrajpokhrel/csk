@@ -18,22 +18,36 @@ export class ClubWithEventsComponent implements OnInit {
     private authService: LoginService
   ) { }
 
-  clubDetail: any;
-  test: string;
+  
+  clubId: any;
+  clubDetail: any = null;
 
   ngOnInit() {
     this.storageService.get("clubId").then(club_id =>{
-      console.log(club_id);
-      this.publiclubService.getAClubWithEvents(club_id).subscribe(data => {
-        this.clubDetail = data.data[0];
-        console.log(this.clubDetail);
-        this.test = JSON.stringify(this.clubDetail);
-      });      
+      this.clubId = club_id;
+      this.fetchClub(club_id);          
     });
+  }
+
+  fetchClub(clubId: string){
+    this.publiclubService.getAClubWithEvents(clubId).subscribe(data => {
+      this.clubDetail = data.data[0];
+      console.log(this.clubDetail);
+    });  
   }
 
   ngOnDestroy(){
     this.storageService.removeItem("clubId");
+  }
+
+  viewEvent(){
+    this.storageService.get("userData").then(res => {      
+      if (res.type == 'admin'){}
+      else if (res.type == 'student'){
+        this.router.navigate( ['/student-menu/events'] )
+      }
+      else{}
+    })
   }
 
 }

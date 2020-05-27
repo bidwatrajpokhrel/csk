@@ -22,25 +22,25 @@
   </ion-label>
 </ion-item>
 
-<div *ngIf="item.children && item.open">
-  <ion-list *ngFor="let child of item.children; let j = index;" lines="none " class="child-list">
-    <ion-item tappable (click)="toggleItem(i,j)" *ngIf="child.children" [ngClass]="{'child-active': child.open, 'child': !child.open}">
+<div *ngIf="item && item.open">
+  <ion-list lines="none " class="child-list">
+    <!-- <ion-item tappable (click)="toggleItem(i,j)" *ngIf="child.children" [ngClass]="{'child-active': child.open, 'child': !child.open}">
       <ion-icon slot= "start" name="add" *ngIf="!child.open"></ion-icon>
       <ion-icon slot= "start" name="close" *ngIf="child.open"></ion-icon>
-      <ion-label>
-        {{child.name}}
-      </ion-label>
-      </ion-item>
+      <ion-label> -->
+        {{item.description}}
+      <!-- </ion-label>
+      </ion-item> -->
 
-      <app-accordion-list [events]="child" *ngIf="!child.children"> </app-accordion-list>
+      <app-accordion-list [events]="item"> </app-accordion-list>
 
-      <ion-list *ngIf="child.children && child.open" class="events-list" lines="none">
+      <!-- <ion-list *ngIf="child.children && child.open" class="events-list" lines="none">
         <app-accordion-list [events]="events" *ngFor="let events of child.children"></app-accordion-list>
-      </ion-list>
+      </ion-list> -->
   </ion-list>
 </div>
 
-<p *ngIf="item.children.length == 0 && item.open " text="center"> Sorry, no events here</p>
+<!-- <p *ngIf="item.children.length == 0 && item.open " text="center"> Sorry, no events here</p> -->
 </ion-list>
 
 </ion-content>

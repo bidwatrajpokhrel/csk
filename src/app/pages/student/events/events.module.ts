@@ -7,7 +7,8 @@ import { IonicModule } from '@ionic/angular';
 import { EventsPageRoutingModule } from './events-routing.module';
 
 import { EventsPage } from './events.page';
-import {SharedListModule} from '../shared-list/shared-list.module';
+import { ComponentsModule } from 'src/app/components/components.module';
+
 
 
 @NgModule({
@@ -16,7 +17,7 @@ import {SharedListModule} from '../shared-list/shared-list.module';
     FormsModule,
     IonicModule,
     EventsPageRoutingModule,
-    SharedListModule
+    ComponentsModule
   ],
   
   declarations: [EventsPage]
