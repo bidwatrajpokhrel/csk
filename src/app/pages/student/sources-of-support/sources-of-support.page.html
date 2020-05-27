@@ -1,0 +1,42 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="white">
+    <ion-title> Sources Of Support
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<super-tabs>
+  <super-tabs-toolbar slot="top" color="primary">
+    <super-tab-button>
+      <ion-icon name="book" color="Light"></ion-icon>
+      <ion-label> Extra Books</ion-label>
+    </super-tab-button>
+    <super-tab-button>
+      <ion-icon name="laptop" color="Light"></ion-icon>
+      <ion-label> Proquest</ion-label>
+    </super-tab-button>
+    <super-tab-button>
+      <ion-icon name="information-circle-outline" color="black" ></ion-icon>
+      <ion-label> University Support Materials</ion-label>
+    </super-tab-button>
+  </super-tabs-toolbar>
+
+<super-tabs-container>
+  <super-tab>
+    <ion-content>
+      <ion-nav [root]="sosDetail"> </ion-nav>
+    </ion-content>
+  </super-tab>
+  <super-tab>
+    <ion-content>
+      <ion-nav [root]="sosDetail"> </ion-nav>
+    </ion-content>
+  </super-tab>
+  <super-tab>
+    <ion-content>
+      <ion-nav [root]="sosDetail"> </ion-nav>
+    </ion-content>
+  </super-tab>
+</super-tabs-container>
+
+</super-tabs>

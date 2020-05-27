@@ -10,6 +10,8 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 
+import { SuperTabsModule} from '@ionic-super-tabs/angular';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -18,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
     IonicModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
+    SuperTabsModule.forRoot()
   ],
   providers: [
     StatusBar,

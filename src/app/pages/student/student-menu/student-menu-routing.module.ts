@@ -15,7 +15,20 @@ const routes: Routes = [
       {
         path: 'clubs/detail',
         loadChildren: () => import('../student-club-detail/student-club-detail.module').then( m => m.StudentClubDetailPageModule)
+      },
+      {
+        path: 'sources-of-support',
+        loadChildren: () => import('../sources-of-support/sources-of-support.module').then( m => m.SourcesOfSupportPageModule)
+      },
+      {
+        path: 'lecture-schedule',
+        loadChildren: () => import('../lecture-schedule/lecture-schedule.module').then( m => m.LectureSchedulePageModule)
+      },
+      {
+        path: 'events',
+        loadChildren: () => import('../events/events.module').then( m => m.EventsPageModule)
       }
+
     ],
   },
 ];

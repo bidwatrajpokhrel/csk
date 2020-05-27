@@ -10,14 +10,15 @@ import { LoginService } from 'src/app/services/login.service';
 export class StudentMenuPage implements OnInit {
   
   studentPages = [
+    
     {
-      title: 'Clubs',
-      url: '/student-menu/clubs',
+      title: 'Sources of Support',
+      url: '/student-menu/sources-of-support',
       icon: 'people'
     },
     {
       title: 'Lecture Schedule',
-      url: '/folder/Lecture Schedule',
+      url: '/student-menu/lecture-schedule',
       icon: 'book'
     },
     {
@@ -26,8 +27,13 @@ export class StudentMenuPage implements OnInit {
       icon: 'man'
     },
     {
-      title: 'My Clubs and Events',
-      url: '/folder/My Clubs and Events',
+      title: 'Clubs',
+      url: '/student-menu/clubs',
+      icon: 'add'
+    },
+    {
+      title: 'Events',
+      url: '/student-menu/events',
       icon: 'calendar'
     },
     {

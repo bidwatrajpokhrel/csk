@@ -1,0 +1,35 @@
+{
+    "items": [
+        {
+            "name": "Socio-Cultural Club",
+            "children": [
+                {
+                    "name": "Happy Holi",
+                    "information": "This event is holi and you will get this this this that that that blah blah"
+                },
+                {
+                    "name": "Happy Yomari Punhi",
+                    "information": "This event is yomari punhi and you will get this this this that that that blah blah"
+                }
+            ]
+        },
+        {
+            "name": "IT Club",
+            "children": [
+                {
+                    "name": "Hackathon",
+                    "children": [
+                        {
+                            "name": "Inter-College Hackathon",
+                            "information": "This event is Inter-College and you will get this this this that that that blah blah"
+                        },
+                        {
+                            "name": "Intra-College Hackathon",
+                            "information": "This event is Intra-College and you will get this this this that that that blah blah"  
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
