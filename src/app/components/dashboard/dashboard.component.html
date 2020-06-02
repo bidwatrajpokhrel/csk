@@ -1,0 +1,225 @@
+<!-- <ion-split-pane >
+  <ion-menu side="right">
+  <ion-header>
+  <ion-navbar color="custome">
+    <ion-title text-center>Profile</ion-title>
+  </ion-navbar>
+</ion-header>
+</ion-menu>
+<ion-content>
+  <ion-card>
+<ion-avatar item-start>
+
+</ion-avatar>
+
+<ion-card-content>
+  <ion-card-title text-center>
+    Aastha Pandey
+  </ion-card-title>
+  <p text-center>
+    Student
+  </p>
+</ion-card-content>
+
+
+  </ion-card>
+</ion-content>
+</ion-split-pane> -->
+
+<!-- <div class="split left">
+
+  <div class="centered">
+    <!-- <img src="assets/images/profile-icon.jpg" alt="Avatar woman"> -->
+    <!-- <h2>Jane Flex</h2>
+    <p>Some text.</p>
+  </div>
+</div>
+
+<div class="split right">
+  <img src="assets/images/profileBack.png" alt="Avatar woman">
+
+  <div class="centered">
+    <img src="assets/images/profile-icon.jpg" alt="Avatar man">
+    <ion-header>
+      <ion-navbar>
+        <ion-title text-center>Aastha Pandey</ion-title>
+      </ion-navbar>
+    </ion-header>
+<br>
+<br>
+
+
+  <ion-label> University Id: </ion-label>
+  <br>
+  <br>
+
+  <ion-label> College Id:</ion-label>
+  <br>
+  <br>
+
+  <ion-label>Course:</ion-label>
+  <br>
+  <br>
+
+  <ion-label>Level:</ion-label>
+  <br>
+  <br>
+
+ -->
+
+
+  <!-- </div>
+</div> --> 
+
+<div class="split left">
+ 
+  <ion-header id="header" color= "primary" >
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+     
+      <ion-title>Notice</ion-title>
+    </ion-toolbar>
+  </ion-header>
+<ion-content fullscreen>
+<ion-item-divider color="white">
+  a a a 
+</ion-item-divider>
+
+<ion-item-divider color="white">
+  a a a 
+</ion-item-divider>
+
+<ion-item-divider color="white">
+  a a a 
+</ion-item-divider>
+
+<ion-item-divider color="white">
+  a a a 
+</ion-item-divider>
+
+</ion-content>
+
+</div> 
+
+
+<div class="split right">
+
+<ion-header id="header" color="primary">
+<ion-toolbar color="primary">
+  <ion-buttons slot="start">
+    <ion-back-button></ion-back-button>
+  </ion-buttons>
+  <ion-buttons slot="end">
+    <ion-button >
+      <ion-icon name="create"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+  <ion-title>Your Profile</ion-title>
+</ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+<ion-grid>
+  <ion-col style="display:flex; justify-content: center;">
+    <ion-row>
+      <ion-avatar class="prof">
+        <img src="https://i.imgur.com/A1eXmEF.png">
+      </ion-avatar>
+    </ion-row>
+  </ion-col>
+</ion-grid>
+
+<ion-item-divider color="primary">
+  <ion-grid >
+    <ion-row>
+      <ion-col size="5" class="namelbl">
+        <div>Name:</div>
+      </ion-col>
+      <ion-col size="1" class="namefield">
+      
+      </ion-col>
+    </ion-row>
+
+    
+    <ion-row>
+      <ion-col size="5" class="phonelbl">
+        <div>University ID:</div>
+      </ion-col>
+      <ion-col size="1" class="phonefield">
+       
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="5" class="namelbl">
+        <div>College ID:</div>
+      </ion-col>
+      <ion-col size="1" class="namefield">
+      
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="5" class="namelbl">
+        <div>Course:</div>
+      </ion-col>
+      <ion-col size="1" class="namefield">
+        
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="5" class="namelbl">
+        <div>Level:</div>
+      </ion-col>
+      <ion-col size="1" class="namefield">
+       
+      </ion-col>
+    </ion-row>
+
+    
+
+  </ion-grid>
+</ion-item-divider><br>
+
+
+<ion-label class="lblReview">Extras:</ion-label>
+
+
+<div scrollY="true" id="scrollable">
+  <ion-content>
+    <ion-card (click)="viewDetail(space)">
+      <img src="https://i.imgur.com/0pEZhHd.jpg">
+      <ion-card-content>
+        <ion-card-title>Clubs</ion-card-title>
+        <ion-icon name="pin"></ion-icon><br>
+        <strong>No. of Clubs:</strong>&ensp;
+
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
+
+</div>
+
+<div scrollY="true" id="scrollable">
+  <ion-content>
+    <ion-card (click)="viewDetail(space)">
+      <img src="https://i.imgur.com/0pEZhHd.jpg">
+      <ion-card-content>
+        <ion-card-title>Result</ion-card-title>
+        <ion-icon name="pin"></ion-icon><br>
+        <!-- <strong>No. of Clubs:</strong>&ensp;4<br> -->
+
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
+
+</div>
+
+
+</ion-content>
+
+
+</div>

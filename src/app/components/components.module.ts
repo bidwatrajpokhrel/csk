@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { ClubTilesComponent } from './club-tiles/club-tiles.component';
 import { ClubWithEventsComponent } from './club-with-events/club-with-events.component';
 import { AccordionListComponent } from './accordion-list/accordion-list.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 @NgModule({
@@ -18,12 +19,14 @@ import { AccordionListComponent } from './accordion-list/accordion-list.componen
     declarations: [
         ClubTilesComponent,
         ClubWithEventsComponent,
-        AccordionListComponent
+        AccordionListComponent,
+        DashboardComponent
     ],
     exports: [
         ClubTilesComponent,
         ClubWithEventsComponent,
-        AccordionListComponent
+        AccordionListComponent,
+        DashboardComponent
     ],
 })
 export class ComponentsModule {}

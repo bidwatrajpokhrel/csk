@@ -1,0 +1,206 @@
+body {
+    font-family: Arial;
+    color: white;
+  }
+  
+  .split {
+    height: 100%;
+    width: 25%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow: hidden;
+    // padding-top: 20px;
+    // margin-top: 20px;
+}
+  
+  .left {
+    left:335px;
+
+    width: 45%;
+    height: 100%;
+    background-color: red;
+    border-style: solid;
+    border-color: #00c4cc;
+  }
+  
+  .right {
+    right: 20px;
+    background-color: white;
+    height: 100%;
+    border-style: solid;
+    border-color: #00c4cc;
+
+  }
+  
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    // text-align: center;
+  }
+  
+  .centered img {
+    width: 150px;
+    border-radius: 50%;
+  }
+
+
+.centered ion-label{
+  font-style: italic;
+  font-size: larger;
+  text-align: start;
+}
+
+
+
+
+.profilerating{
+  margin-top: 10%;
+  margin-left: 25%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+
+.namelbl{
+  font-size: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font: bold;
+  text-align: center;
+  margin: auto;
+}
+
+.emaillbl{
+  font-size: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font: bold;
+  text-align: center;
+  margin: auto;
+}
+
+.phonelbl{
+  font-size: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font: bold;
+  text-align: center;
+  margin: auto;
+}
+
+.namefield{
+  font-size: 18px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-align: center;
+  margin: auto;
+}
+
+.emailfield{
+  font-size: 18px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-align: center;
+  margin: auto;
+}
+
+.phonefield{
+  font-size: 18px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-align: center;
+  margin: auto;
+}
+
+.address{
+  margin-top: 10%;
+  font-size: 21px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.prev{
+  margin-top: 10%;
+  font-size: 21px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.viewadditionalbtn{
+  // margin-top: 40%;
+  // margin-left: 15%;
+  // transform: translate(-113%);
+  font-size: 23px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.lblReview{
+  margin-left:2%;
+  font-size:25px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.avatar{
+  margin-top:5%;
+  margin-left:1%;
+  height: 60px;
+  width: 60px;
+  margin-bottom: 10%;
+}
+
+.prof{
+  display: block;
+  border-radius: 120px;
+  border: 1px solid #fff;
+  width: 100px;
+  height:100px;
+  margin: 30px auto 0;
+}
+
+.heading{
+  margin-top: 1%;
+  margin-left:5%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.paragraph{
+  margin-top: 1%;
+  margin-left:5%;
+  font-size:15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+
+
+//scrollable div
+
+div[scrollx=true], div[scrolly=true] {
+  position: relative;
+  overflow: scroll;
+}
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+
+div[scrollx=true] {
+  overflow-x: auto;
+}
+
+div[scrolly=true] {
+  overflow-y: auto;
+}
+
+#scrollable {
+  height: 70%;
+}
+
+

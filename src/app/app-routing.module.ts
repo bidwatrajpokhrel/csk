@@ -23,6 +23,7 @@ const routes: Routes = [
     path: 'student-menu',
     loadChildren: () => import('./pages/student/student-menu/student-menu.module').then( m => m.StudentMenuPageModule)
   },
+
   // {
   //   path: 'sources-of-support',
   //   loadChildren: () => import('./pages/student/sources-of-support/sources-of-support.module').then( m => m.SourcesOfSupportPageModule)

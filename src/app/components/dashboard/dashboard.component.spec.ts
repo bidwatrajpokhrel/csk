@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { AccordionListComponent } from './accordion-list.component';
+import { DashboardComponent } from './dashboard.component';
 
-describe('AccordionListComponent', () => {
-  let component: AccordionListComponent;
-  let fixture: ComponentFixture<AccordionListComponent>;
+describe('DashboardComponent', () => {
+  let component: DashboardComponent;
+  let fixture: ComponentFixture<DashboardComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AccordionListComponent ],
+      declarations: [ DashboardComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(AccordionListComponent);
+    fixture = TestBed.createComponent(DashboardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));
