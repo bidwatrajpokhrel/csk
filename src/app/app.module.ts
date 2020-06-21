@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 
 import { SuperTabsModule} from '@ionic-super-tabs/angular';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,7 +21,8 @@ import { SuperTabsModule} from '@ionic-super-tabs/angular';
     IonicModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
-    SuperTabsModule.forRoot()
+    SuperTabsModule.forRoot(),
+    BrowserAnimationsModule
   ],
   providers: [
     StatusBar,

@@ -11,40 +11,138 @@ export class AdminMenuPage implements OnInit {
 
   adminPages = [
     {
-      title: 'Clubs',
-      url: '/adminmenu/clubs',
-      icon: 'people'
+      title: 'Admission Info',
+      url: '/admin-menu/admission-info-table',
+      icon: 'person-add'
     },
     {
-      title: 'Lecture Schedule',
-      url: '/folder/Lecture Schedule',
-      icon: 'book'
+      title: 'Assessment',
+      url: '/admin-menu/assessment',
+      icon: 'reader'
     },
     {
-      title: 'Guest Lectures',
-      url: '/folder/Guest Lectures',
-      icon: 'man'
+      title: 'Library Books',
+      url: '/admin-menu/books-in-library',
+      icon: 'library'
     },
     {
-      title: 'My Clubs and Events',
-      url: '/folder/My Clubs and Events',
+      title: 'Student-Book Library',
+      url: '/admin-menu/student-library-books',
       icon: 'calendar'
     },
     {
-      title: 'Fees and Offers',
-      url: '/folder/Fees and Offers',
-      icon: 'cash'
+      title: 'Canteen Menu',
+      url: '/admin-menu/canteen-menu',
+      icon: 'fast-food'
     },
     {
-      title: 'Places to Explore Nearby',
-      url: '/folder/Places to Explore Nearby',
+      title: 'Clubs',
+      url: '/admin-menu/clubs',
+      icon: 'people'
+    },
+    {
+      title: 'Club Membership',
+      url: '/admin-menu/club-membership',
+      icon: 'people-circle'
+    }
+    ,
+    {
+      title: 'Department',
+      url: '/admin-menu/department',
+      icon: 'person-circle'
+    }
+    ,
+    {
+      title: 'Extra Curricular Activity',
+      url: '/admin-menu/eca',
       icon: 'walk'
-    },
+    }
+    ,
     {
-      title: 'Canteen Services',
-      url: '/folder/Canteen Services',
+      title: 'Employee',
+      url: '/admin-menu/employee-details',
+      icon: 'add'
+    }
+    ,
+    {
+      title: 'Events',
+      url: '/admin-menu/events',
+      icon: 'bicycle'
+    }
+    ,
+    {
+      title: 'Events Booking',
+      url: '/admin-menu/events-booking',
+      icon: 'bicycle-add'
+    }
+    ,
+    {
+      title: 'Faculty',
+      url: '/admin-menu/faculty',
+      icon: 'podium'
+    }
+    ,
+    {
+      title: 'Guest Lectures',
+      url: '/admin-menu/guest-lectures',
+      icon: 'laptop'
+    }
+    ,
+    {
+      title: 'Library Services',
+      url: '/admin-menu/library-services',
+      icon: 'library'
+    }
+    ,
+    {
+      title: 'Course Major',
+      url: '/admin-menu/major',
       icon: 'restaurant'
     }
+    ,
+    {
+      title: 'Nearby Activities',
+      url: '/admin-menu/nearby-activities',
+      icon: 'restaurant'
+    }
+    ,
+    {
+      title: 'Nearby Banks',
+      url: '/admin-menu/nearby-banks',
+      icon: 'business'
+    }
+    ,
+    {
+      title: 'Notice',
+      url: '/admin-menu/notice',
+      icon: 'alert-circle'
+    }
+    ,
+    {
+      title: 'Restaurants Nearby',
+      url: '/admin-menu/restaurants-nearby',
+      icon: 'restaurant'
+    }
+    ,
+    {
+      title: 'Result',
+      url: '/admin-menu/result',
+      icon: 'checkmark-done-circle'
+    }
+    ,
+    {
+      title: 'Student',
+      url: '/admin-menu/student',
+      icon: 'happy'
+    }
+    ,
+    {
+      title: 'Unit',
+      url: '/admin-menu/unit',
+      icon: 'restaurant'
+    }
+    
+
   ];
 
   selectedPath = '';

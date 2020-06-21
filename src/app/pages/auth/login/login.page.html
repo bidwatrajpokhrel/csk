@@ -1,48 +1,83 @@
-  <ion-content>
-    <ion-item>
-      <ion-label position="floating">Username</ion-label>
-      <ion-input name="Username" [(ngModel)]="postData.identification"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Password</ion-label>
-      <ion-input type="password" name="password" [(ngModel)]="postData.password"></ion-input>
-    </ion-item>
 
-    <ion-list>
-      <ion-radio-group [(ngModel)]="userType">
-        <ion-list-header>
-          <ion-label>Are you a:</ion-label>
-        </ion-list-header>  
-        <ion-row>
-          <ion-col>
-            <ion-item>
-              <ion-label>Student</ion-label>
-              <ion-radio slot="start" value="student" checked></ion-radio>
-            </ion-item>
-          </ion-col>
-          <ion-col>
-            <ion-item>
-              <ion-label>Admin</ion-label>
-              <ion-radio slot="start" value="admin"></ion-radio>
-            </ion-item>
-          </ion-col>
-        </ion-row>
-      </ion-radio-group>
-    </ion-list>
+<div class="split right">
+  <img src="assets/images/profileBack.png" alt="Avatar woman">
 
-    <ion-button expand="block" (click)="login()">Sign In</ion-button>
+  <div class="centered">
+<!--     
+    <ion-header [translucent]="true" >
+      <ion-toolbar color="dark">
+        <ion-title>
+          LOGIN
+        </ion-title> -->
+
+    
+       <ion-card>
+        
+
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating">Username</ion-label>
+        <ion-input name="Username" [(ngModel)]="postData.identification"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password" name="password" [(ngModel)]="postData.password"></ion-input>
+      </ion-item>
+    
+      <ion-list>
+        <ion-radio-group [(ngModel)]="userType">
+          <ion-list-header>
+            <ion-label>Are you a:</ion-label>
+          </ion-list-header>  
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                <ion-label>Student</ion-label>
+                <ion-radio slot="start" value="student" checked></ion-radio>
+              </ion-item>
+            </ion-col>
+            <ion-col>
+              <ion-item>
+                <ion-label>Admin</ion-label>
+                <ion-radio slot="start" value="admin"></ion-radio>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-radio-group>
+      </ion-list>
+    
+      <ion-button expand="block" color="primary" (click)="login()">Sign In</ion-button>
+    
+    
+      <ion-item>
+        <ion-label id="no-account">Don't have an account?</ion-label>
+      </ion-item>
+      <ion-button class="white" expand="full" fill="outline" color="light" [routerLink]="['/register']">
+        <ion-text color="primary">Create a new account</ion-text>
+      </ion-button>
+    
+      <ion-button [routerLink]="['/guest-menu']"> 
+        Log in as a guest
+      </ion-button>
+    
+    </ion-card-content>
+  </ion-card> 
+    
+ 
+
+  </div>
+
+</div>
 
 
-    <ion-item>
-      <ion-label id="no-account">Don't have an account?</ion-label>
-    </ion-item>
-    <ion-button class="white" expand="full" fill="outline" color="light" [routerLink]="['/register']">
-      <ion-text color="primary">Create a new account</ion-text>
-    </ion-button>
+<div class="split left">
+  <img src="assets/images/loginBack.png" alt="Avatar woman">
 
-    <ion-button [routerLink]="['/guest-menu']"> 
-      Log in as a guest
-    </ion-button>
+  <div class="centered">
+    <!-- <img src="assets/images/profile-icon.jpg" alt="Avatar woman"> -->
 
-  </ion-content>
 
+    <h2>.</h2>
+    <p>.</p>
+  </div>
+</div>

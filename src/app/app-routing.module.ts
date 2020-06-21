@@ -23,6 +23,100 @@ const routes: Routes = [
     path: 'student-menu',
     loadChildren: () => import('./pages/student/student-menu/student-menu.module').then( m => m.StudentMenuPageModule)
   },
+  {
+    path: 'admission-info-table',
+    loadChildren: () => import('./pages/admin/admission-info-table/admission-info-table.module').then( m => m.AdmissionInfoTablePageModule)
+  },
+  {
+    path: 'assessment',
+    loadChildren: () => import('./pages/admin/assessment/assessment.module').then( m => m.AssessmentPageModule)
+  },
+  {
+    path: 'books-in-library',
+    loadChildren: () => import('./pages/admin/books-in-library/books-in-library.module').then( m => m.BooksInLibraryPageModule)
+  },
+  {
+    path: 'student-library-books',
+    loadChildren: () => import('./pages/admin/student-library-books/student-library-books.module').then( m => m.StudentLibraryBooksPageModule)
+  },
+  {
+    path: 'canteen-menu',
+    loadChildren: () => import('./pages/admin/canteen-menu/canteen-menu.module').then( m => m.CanteenMenuPageModule)
+  },
+  {
+    path: 'clubs',
+    loadChildren: () => import('./pages/admin/clubs/clubs.module').then( m => m.ClubsPageModule)
+  },
+  {
+    path: 'eca',
+    loadChildren: () => import('./pages/admin/eca/eca.module').then( m => m.ECAPageModule)
+  },
+  {
+    path: 'club-membership',
+    loadChildren: () => import('./pages/admin/club-membership/club-membership.module').then( m => m.ClubMembershipPageModule)
+  },
+  {
+    path: 'employee-details',
+    loadChildren: () => import('./pages/admin/employee-details/employee-details.module').then( m => m.EmployeeDetailsPageModule)
+  },
+  {
+    path: 'events',
+    loadChildren: () => import('./pages/admin/events/events.module').then( m => m.EventsPageModule)
+  },
+  {
+    path: 'events-booking',
+    loadChildren: () => import('./pages/admin/events-booking/events-booking.module').then( m => m.EventsBookingPageModule)
+  },
+  {
+    path: 'faculty',
+    loadChildren: () => import('./pages/admin/faculty/faculty.module').then( m => m.FacultyPageModule)
+  },
+  {
+    path: 'guest-lectures',
+    loadChildren: () => import('./pages/admin/guest-lectures/guest-lectures.module').then( m => m.GuestLecturesPageModule)
+  },
+  {
+    path: 'library-services',
+    loadChildren: () => import('./pages/admin/library-services/library-services.module').then( m => m.LibraryServicesPageModule)
+  },
+  {
+    path: 'major',
+    loadChildren: () => import('./pages/admin/major/major.module').then( m => m.MajorPageModule)
+  },
+  {
+    path: 'student',
+    loadChildren: () => import('./pages/admin/student/student.module').then( m => m.StudentPageModule)
+  },
+  {
+    path: 'department',
+    loadChildren: () => import('./pages/admin/department/department.module').then( m => m.DepartmentPageModule)
+  },
+  {
+    path: 'nearby-activities',
+    loadChildren: () => import('./pages/admin/nearby-activities/nearby-activities.module').then( m => m.NearbyActivitiesPageModule)
+  },
+  {
+    path: 'nearby-banks',
+    loadChildren: () => import('./pages/admin/nearby-banks/nearby-banks.module').then( m => m.NearbyBanksPageModule)
+  },
+  {
+    path: 'notice',
+    loadChildren: () => import('./pages/admin/notice/notice.module').then( m => m.NoticePageModule)
+  },
+  {
+    path: 'restaurants-nearby',
+    loadChildren: () => import('./pages/admin/restaurants-nearby/restaurants-nearby.module').then( m => m.RestaurantsNearbyPageModule)
+  },
+  {
+    path: 'result',
+    loadChildren: () => import('./pages/admin/result/result.module').then( m => m.ResultPageModule)
+  },
+  {
+    path: 'unit',
+    loadChildren: () => import('./pages/admin/unit/unit.module').then( m => m.UnitPageModule)
+  },
+
+  
 
   // {
   //   path: 'sources-of-support',

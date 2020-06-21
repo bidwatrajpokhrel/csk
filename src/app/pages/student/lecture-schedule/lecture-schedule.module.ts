@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { LectureSchedulePageRoutingModule } from './lecture-schedule-routing.module';
 
 import { LectureSchedulePage } from './lecture-schedule.page';
+import { MaterialModule } from 'src/app/material.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    LectureSchedulePageRoutingModule
+    LectureSchedulePageRoutingModule,
+    MaterialModule
   ],
   declarations: [LectureSchedulePage]
 })
