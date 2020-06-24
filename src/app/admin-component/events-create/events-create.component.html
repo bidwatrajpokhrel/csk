@@ -1,0 +1,59 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title> Add Events
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<br>
+<div class="container">
+  <mat-form-field appearance="fill">
+    <mat-label>Event Name</mat-label>
+    <input matInput placeholder="Ex. Art Competition">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Clubs Associated</mat-label>
+    <mat-select>
+      <mat-option value="option">Option</mat-option>
+    </mat-select>
+    <mat-hint align="end">Select^</mat-hint>
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>Detailed Information</mat-label>
+    <textarea matInput></textarea>
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>Start Date</mat-label>
+    <input matInput [matDatepicker]="picker">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>End Date</mat-label>
+    <input matInput [matDatepicker]="picker">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #pickere></mat-datepicker>
+  </mat-form-field>
+<br>
+<mat-label>Approval : </mat-label>
+    <mat-slide-toggle>Taken</mat-slide-toggle>
+<br>
+<br>
+<mat-form-field  appearance="fill" >
+  <mat-label>Total No of Seats</mat-label>
+  <input matInput  #input 
+  maxlength="6"  
+  placeholder="Ex. 150" 
+  type="number"
+  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"  
+  (keypress)="numericOnly($event)">
+</mat-form-field>
+  </div>
+ <br>
+ <div class="a">
+  <button mat-raised-button color="primary">ADD</button>
+</div> 

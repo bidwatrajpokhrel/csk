@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {MatDialog} from "@angular/material/dialog";
+import {MatDialogConfig} from "@angular/material/dialog";
+import {EmployeeDetailsCreateComponent} from 'src/app/admin-component/employee-details-create/employee-details-create.component';
 
 @Component({
   selector: 'app-employee-details',
@@ -6,8 +9,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./employee-details.page.scss'],
 })
 export class EmployeeDetailsPage implements OnInit {
-
-  constructor() { }
+  onCreate(){
+    this.dialog.open(EmployeeDetailsCreateComponent);
+  }
+  constructor(private dialog: MatDialog) { }
 
   ngOnInit() {
   }

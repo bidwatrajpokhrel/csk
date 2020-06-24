@@ -43,7 +43,7 @@ export class StudentMenuPage implements OnInit {
     },
     {
       title: 'Places to Explore Nearby',
-      url: '/folder/Places to Explore Nearby',
+      url: '/student-menu/explore-nearby',
       icon: 'walk'
     },
     {

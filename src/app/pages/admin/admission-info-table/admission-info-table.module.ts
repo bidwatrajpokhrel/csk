@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { AdmissionInfoTablePageRoutingModule } from './admission-info-table-routing.module';
 import {MaterialModule} from 'src/app/material.module';
 import { AdmissionInfoTablePage } from './admission-info-table.page';
+import {AdmissionInfoCreateComponent} from 'src/app/admin-component/admission-info-create/admission-info-create.component';
 
 @NgModule({
   imports: [
@@ -14,8 +15,9 @@ import { AdmissionInfoTablePage } from './admission-info-table.page';
     FormsModule,
     IonicModule,
     AdmissionInfoTablePageRoutingModule,
-    MaterialModule
+    MaterialModule,
+    
   ],
-  declarations: [AdmissionInfoTablePage]
+  declarations: [AdmissionInfoTablePage,AdmissionInfoCreateComponent]
 })
 export class AdmissionInfoTablePageModule {}

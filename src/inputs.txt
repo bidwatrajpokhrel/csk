@@ -1,0 +1,95 @@
+#validated input only numbers
+<div class="container">
+  <mat-form-field hintLabel="Max 10 characters" appearance="fill">
+    <mat-label>Enter some input</mat-label>
+    <input matInput #input maxlength="10" placeholder="Ex. Nougat">
+    <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+  </mat-form-field>
+
+
+
+<div class="container">
+  <mat-form-field align="start" hintLabel="Max 3 characters" appearance="fill" >
+    <mat-label>Enter some input</mat-label>
+    <input matInput  #input 
+    maxlength="3"  
+    placeholder="Ex. Nougat" 
+    type="number"
+    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"  
+    (keypress)="numericOnly($event)">
+    <mat-hint align="end">{{input.value?.length || 0}}/3</mat-hint>
+  </mat-form-field>
+  </div>
+.ts
+numericOnly(event): boolean { // restrict e,+,-,E characters in  input type number
+    debugger
+    const charCode = (event.which) ? event.which : event.keyCode;
+    if (charCode == 101 || charCode == 69 || charCode == 45 || charCode == 43) {
+      return false;
+    }
+    return true;
+  }  
+
+
+#dropdown options
+  <mat-form-field appearance="fill">
+    <mat-label>Select me</mat-label>
+    <mat-select>
+      <mat-option value="option">Option</mat-option>
+    </mat-select>
+    <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+  </mat-form-field>
+</div>
+
+#validated basic input number without hint
+<div class="container">
+  <mat-form-field appearance="fill">
+    <mat-label>Enter some input</mat-label>
+    <input matInput #input placeholder="Ex. Nougat" type="number">
+  </mat-form-field>
+
+#validated basic input without no
+  <div class="container">
+  <mat-form-field appearance="fill">
+    <mat-label>Enter some input</mat-label>
+    <input matInput placeholder="Ex. Nougat">
+  </mat-form-field>
+
+#validated long input  
+
+<mat-form-field appearance="fill">
+  <mat-label>Detailed Information</mat-label>
+  <textarea matInput></textarea>
+</mat-form-field>
+
+  #slide
+<div class="a">
+    <mat-label>Available</mat-label>
+    <mat-slide-toggle>Yes</mat-slide-toggle>
+  </div>
+  
+#datepicker
+  <mat-form-field>
+  <mat-label>Choose a date</mat-label>
+  <input matInput [matDatepicker]="picker">
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+
+<div class="a">
+    <button mat-raised-button color="primary">ADD</button>
+</div>
+
+    css
+    .a {
+  display: table-cell;
+}
+
+.a button {
+  display: table-cell;
+  margin-right: 75px;
+}
+
+.container .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}

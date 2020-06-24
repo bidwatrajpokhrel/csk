@@ -1,0 +1,43 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>  Add Club Members Details
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<br>
+<div class="container">
+  <mat-form-field align="start" hintLabel="Max 8 numbers" appearance="fill" >
+    <mat-label>Club ID</mat-label>
+    <input matInput  #input 
+    maxlength="8"  
+    placeholder="Ex. 2452" 
+    type="number"
+    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"  
+    (keypress)="numericOnly($event)">
+    <mat-hint align="end">{{input.value?.length || 0}}/8</mat-hint>
+  </mat-form-field>
+  <mat-form-field align="start" hintLabel="Max 10 numbers" appearance="fill" >
+    <mat-label>Student ID</mat-label>
+    <input matInput  #input 
+    maxlength="10"  
+    placeholder="Ex. 1814291" 
+    type="number"
+    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"  
+    (keypress)="numericOnly($event)">
+    <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+  </mat-form-field>
+  <br>
+  <br>
+  </div>
+  <div class="a">
+    <mat-label>Active: </mat-label>
+    <mat-slide-toggle>Yes</mat-slide-toggle>
+    <br>
+    <br>
+    <button mat-raised-button color="primary">ADD</button>
+</div>
+
+

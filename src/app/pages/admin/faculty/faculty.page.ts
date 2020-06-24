@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {MatDialog} from "@angular/material/dialog";
+import {MatDialogConfig} from "@angular/material/dialog";
+import {FacultyCreateComponent} from 'src/app/admin-component/faculty-create/faculty-create.component';
 
 @Component({
   selector: 'app-faculty',
@@ -6,8 +9,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./faculty.page.scss'],
 })
 export class FacultyPage implements OnInit {
-
-  constructor() { }
+  onCreate(){
+    this.dialog.open(FacultyCreateComponent);
+  }
+  constructor(private dialog: MatDialog) { }
 
   ngOnInit() {
   }

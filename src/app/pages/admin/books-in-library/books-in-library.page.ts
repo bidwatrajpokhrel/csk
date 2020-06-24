@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {MatDialog} from "@angular/material/dialog";
+import {MatDialogConfig} from "@angular/material/dialog";
+import {BooksInLibraryCreateComponent} from 'src/app/admin-component/books-in-library-create/books-in-library-create.component';
 
 @Component({
   selector: 'app-books-in-library',
@@ -6,8 +9,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./books-in-library.page.scss'],
 })
 export class BooksInLibraryPage implements OnInit {
-
-  constructor() { }
+  onCreate(){
+    this.dialog.open(BooksInLibraryCreateComponent);
+  }
+  constructor(private dialog: MatDialog) { }
 
   ngOnInit() {
   }

@@ -1,0 +1,16 @@
+.button-row {
+    display: table-cell;
+  }
+  
+  .button-row button {
+    display: table-cell;
+    margin-right: 75px;
+  }
+
+  .container .mat-form-field + .mat-form-field {
+    margin-left: 8px;
+  }
+
+  .a .mat-label + .mat-slide-toggle {
+    margin-left: 8px;
+  }

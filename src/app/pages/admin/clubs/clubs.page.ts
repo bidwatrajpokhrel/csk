@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {MatDialog} from "@angular/material/dialog";
+import {MatDialogConfig} from "@angular/material/dialog";
+import {ClubsCreateComponent} from 'src/app/admin-component/clubs-create/clubs-create.component';
 
 @Component({
   selector: 'app-clubs',
@@ -6,8 +9,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./clubs.page.scss'],
 })
 export class ClubsPage implements OnInit {
-
-  constructor() { }
+  onCreate(){
+    this.dialog.open(ClubsCreateComponent);
+  }
+  constructor(private dialog: MatDialog) { }
 
   ngOnInit() {
   }

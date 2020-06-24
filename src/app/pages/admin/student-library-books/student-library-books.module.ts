@@ -8,6 +8,7 @@ import { StudentLibraryBooksPageRoutingModule } from './student-library-books-ro
 
 import { StudentLibraryBooksPage } from './student-library-books.page';
 import {MaterialModule} from 'src/app/material.module';
+import {StudentLibraryBooksCreateComponent} from 'src/app/admin-component/student-library-books-create/student-library-books-create.component';
 
 @NgModule({
   imports: [
@@ -17,6 +18,6 @@ import {MaterialModule} from 'src/app/material.module';
     StudentLibraryBooksPageRoutingModule,
     MaterialModule
   ],
-  declarations: [StudentLibraryBooksPage]
+  declarations: [StudentLibraryBooksPage,StudentLibraryBooksCreateComponent]
 })
 export class StudentLibraryBooksPageModule {}

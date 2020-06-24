@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { AssessmentPageRoutingModule } from './assessment-routing.module';
 import {MaterialModule} from 'src/app/material.module';
 import { AssessmentPage } from './assessment.page';
+import {AssessmentCreateComponent} from 'src/app/admin-component/assessment-create/assessment-create.component';
 
 @NgModule({
   imports: [
@@ -16,6 +17,6 @@ import { AssessmentPage } from './assessment.page';
     AssessmentPageRoutingModule,
     MaterialModule
   ],
-  declarations: [AssessmentPage]
+  declarations: [AssessmentPage,AssessmentCreateComponent]
 })
 export class AssessmentPageModule {}

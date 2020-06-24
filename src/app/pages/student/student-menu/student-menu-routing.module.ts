@@ -27,6 +27,10 @@ const routes: Routes = [
       {
         path: 'events',
         loadChildren: () => import('../events/events.module').then( m => m.EventsPageModule)
+      },
+      {
+        path: 'explore-nearby',
+        loadChildren: () => import('../nearby-explore/nearby-explore.module').then( m => m.NearbyExplorePageModule)
       }
 
     ],

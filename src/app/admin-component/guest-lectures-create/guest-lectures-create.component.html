@@ -1,0 +1,82 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title> Add Guest Lectures
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<br>
+<div class="container">
+  <mat-form-field appearance="fill">
+    <mat-label>Guest Name</mat-label>
+    <input matInput placeholder="Ex. Dr.Sushan Mal">
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>Lecture Title</mat-label>
+    <input matInput placeholder="Ex. Basics of Deep learning">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Lecture Subject</mat-label>
+    <input matInput placeholder="Ex. Artificial Intelligence">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    
+    <mat-label>Date</mat-label>
+    <input matInput [matDatepicker]="picker">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+<br>
+  <mat-form-field appearance="fill">
+    <mat-label>Time</mat-label>
+    <mat-select>
+      <mat-option value="option">1</mat-option>
+      <mat-option value="option">2</mat-option>
+      <mat-option value="option">3</mat-option>
+      <mat-option value="option">4</mat-option>
+      <mat-option value="option">5</mat-option>
+      <mat-option value="option">6</mat-option>
+      <mat-option value="option">7</mat-option>
+      <mat-option value="option">8</mat-option>
+      <mat-option value="option">9</mat-option>
+      <mat-option value="option">10</mat-option>
+      <mat-option value="option">11</mat-option>
+      <mat-option value="option">12</mat-option>
+    </mat-select>
+    <mat-hint align="end"> select^</mat-hint>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>AM/PM</mat-label>
+    <mat-select>
+      <mat-option value="option">AM</mat-option>
+      <mat-option value="option">PM</mat-option>
+    </mat-select>
+    <mat-hint align="end">Select^</mat-hint>
+  </mat-form-field>
+  <br>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>Detailed Information</mat-label>
+    <textarea matInput></textarea>
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>Club Associated</mat-label>
+    <mat-select>
+      <mat-option value="option">Club1</mat-option>
+      <mat-option value="option">Club2</mat-option>
+      <mat-option value="option">Club3</mat-option>
+    </mat-select>
+    <mat-hint align="end">Select^</mat-hint>
+  </mat-form-field>
+  </div>
+  <br>
+  <div class="a">
+    <button mat-raised-button color="primary">ADD</button>
+</div>
+
+

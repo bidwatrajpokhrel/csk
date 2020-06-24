@@ -1,0 +1,37 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title> Add Library Books
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<br>
+<div class="container">
+  <mat-form-field appearance="fill">
+    <mat-label>Book Name</mat-label>
+    <input matInput placeholder="Ex. Science">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Author</mat-label>
+    <input matInput placeholder="Ex. John Pitt">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>Published On</mat-label>
+    <input matInput [matDatepicker]="picker">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <br>
+</div>
+<div class="a">
+  <mat-label>Borrow Status</mat-label>
+  <mat-slide-toggle>On</mat-slide-toggle>
+</div>
+<br>
+<div class="button-row">
+  <button mat-raised-button color="primary">ADD</button>
+</div>
+
