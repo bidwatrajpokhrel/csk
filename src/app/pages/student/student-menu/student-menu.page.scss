@@ -1,7 +1,7 @@
 ion-menu ion-content {
     --background: var(--ion-item-background, var(--ion-background-color, #fff));
   }
-  
+
   ion-menu.md ion-content {
     --padding-start: 8px;
     --padding-end: 8px;
@@ -27,9 +27,8 @@ ion-menu ion-content {
   }
   
   ion-menu.md ion-list#inbox-list ion-list-header {
-    font-size: 22px;
+    font-size: 16px;
     font-weight: 600;
-  
     min-height: 20px;
   }
   
@@ -44,8 +43,8 @@ ion-menu ion-content {
   }
   
   ion-menu.md ion-item {
-    --padding-start: 10px;
-    --padding-end: 10px;
+    --padding-start: 5px;
+    --padding-end: 5px;
     border-radius: 4px;
   }
   

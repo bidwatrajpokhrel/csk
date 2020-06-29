@@ -11,13 +11,13 @@ body {
     top: 0;
     overflow: hidden;
     // padding-top: 20px;
-    // margin-top: 20px;
+    margin-top: 60px;
 }
   
   .left {
-    left:335px;
+    left:0;
 
-    width: 45%;
+    width: 60%;
     height: 100%;
     background-color: red;
     border-style: solid;
@@ -25,12 +25,19 @@ body {
   }
   
   .right {
-    right: 20px;
+    right: 0;
     background-color: white;
     height: 100%;
     border-style: solid;
-    border-color: #00c4cc;
-
+    border-color: white;
+    width: 40%;
+    margin-top: 58px;
+    transition: transform .2s;
+  }
+  .right:hover {
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari 3-8 */
+    transform: scale(1.1); 
   }
   
   .centered {

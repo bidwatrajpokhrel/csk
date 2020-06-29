@@ -9,8 +9,20 @@ const routes: Routes = [
     component: StudentMenuPage,
     children: [
       {
+        path: '',
+        loadChildren: () => import('../student-dashboard/student-dashboard.module').then( m => m.StudentDashboardPageModule)
+      },
+      {
+        path: 'student-dashboard',
+        loadChildren: () => import('../student-dashboard/student-dashboard.module').then( m => m.StudentDashboardPageModule)
+      },
+      {
         path: 'clubs',
         loadChildren: () => import('../student-club/student-club.module').then( m => m.StudentClubPageModule)
+      },
+      {
+        path: 'canteen-menu-student',
+        loadChildren: () => import('../canteen-menu/canteen-menu.module').then( m => m.CanteenMenuPageModule)
       },
       {
         path: 'clubs/detail',
@@ -29,10 +41,22 @@ const routes: Routes = [
         loadChildren: () => import('../events/events.module').then( m => m.EventsPageModule)
       },
       {
+        path: 'events-gallery',
+        loadChildren: () => import('../events-gallery/events-gallery.module').then( m => m.EventsGalleryPageModule)
+      },
+      {
         path: 'explore-nearby',
         loadChildren: () => import('../nearby-explore/nearby-explore.module').then( m => m.NearbyExplorePageModule)
+      },
+      {
+        path: 'guest-lectures-student',
+        loadChildren: () => import('../guest-lectures/guest-lectures.module').then( m => m.GuestLecturesPageModule)
       }
-
+      ,
+      {
+        path: 'event-student',
+        loadChildren: () => import('../event/event.module').then( m => m.EventPageModule)
+      }
     ],
   },
 ];

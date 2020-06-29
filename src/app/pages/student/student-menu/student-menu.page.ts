@@ -10,11 +10,15 @@ import { LoginService } from 'src/app/services/login.service';
 export class StudentMenuPage implements OnInit {
   
   studentPages = [
-    
+    {
+      title: 'Dashboard',
+      url: '/student-menu/student-dashboard',
+      icon: 'people'
+    },
     {
       title: 'Sources of Support',
       url: '/student-menu/sources-of-support',
-      icon: 'people'
+      icon: 'documents'
     },
     {
       title: 'Lecture Schedule',
@@ -23,33 +27,38 @@ export class StudentMenuPage implements OnInit {
     },
     {
       title: 'Guest Lectures',
-      url: '/folder/Guest Lectures',
-      icon: 'man'
+      url: '/student-menu/guest-lectures-student',
+      icon: 'calendar'
     },
     {
       title: 'Clubs',
       url: '/student-menu/clubs',
-      icon: 'add'
+      icon: 'color-palette'
     },
     {
       title: 'Events',
       url: '/student-menu/events',
-      icon: 'calendar'
+      icon: 'gift'
     },
     {
-      title: 'Fees and Offers',
-      url: '/folder/Fees and Offers',
-      icon: 'cash'
+      title: 'Event',
+      url: '/student-menu/event-student',
+      icon: 'gift'
+    },
+    {
+      title: 'Events Gallery',
+      url: '/student-menu/events-gallery',
+      icon: 'image'
     },
     {
       title: 'Places to Explore Nearby',
       url: '/student-menu/explore-nearby',
-      icon: 'walk'
+      icon: 'bicycle'
     },
     {
       title: 'Canteen Services',
-      url: '/folder/Canteen Services',
-      icon: 'restaurant'
+      url: '/student-menu/canteen-menu-student',
+      icon: 'fast-food'
     }
   ];
 

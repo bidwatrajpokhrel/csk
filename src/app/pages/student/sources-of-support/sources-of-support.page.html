@@ -1,5 +1,5 @@
 <ion-header class="ion-no-border">
-  <ion-toolbar color="white">
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
@@ -8,7 +8,7 @@
   </ion-toolbar>
 </ion-header>
 
-<super-tabs>
+<!-- <super-tabs>
   <super-tabs-toolbar slot="top" color="primary">
     <super-tab-button>
       <ion-icon name="book" color="Light"></ion-icon>
@@ -42,4 +42,27 @@
   </super-tab>
 </super-tabs-container>
 
-</super-tabs>
+</super-tabs> -->
+
+<ion-content>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12">
+        <ion-segment>
+          <ion-segment-button value="exrtaBooks">
+            <ion-icon name="copy" color="Light"></ion-icon>
+            <ion-label> Extra Books</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="proquest">
+            <ion-icon name="laptop" color="Light"></ion-icon>
+            <ion-label>Proquest</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="universityMaterials">
+            <ion-icon name="information-circle-outline" color="black" ></ion-icon>
+            <ion-label>University Support Materials</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

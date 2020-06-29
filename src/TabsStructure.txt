@@ -1,0 +1,41 @@
+Student 
+
+1. Dashboard 
+[ Page - "../../student/DashboardPage"
+Component - "../../components/DashboardComponent"]
+
+2. Sources of Suppport 
+[ Page= "../../Student/SourcesofSupportPage"
+Component - "../../components/SOSDetailsComponent"]
+
+3. Lecture Schedule
+[ Page = "../../Student/LectureSchedule"
+Component =N/A]
+
+4. Guest Lectures
+[ Page = "../../GuestLecturesPage"
+Component = "../../components/GuestLecturesDetailsComponent"]
+
+5. Clubs
+[ Page = "../../]
+Couldnot understand the structure made by Bidwat.
+
+6. Event (Events page is accordion list and event page is tiles. Decide which one to use and delete next)
+[ Page = "../../student/EventPage"
+Component = "../../Components/ClubWithEventsComponent]
+
+7. Events Gallery 
+[ Page = "../../student/EventsGalleryPage
+Component = "../../components/ImageGalleryComponent"]
+
+8. Places to Explore Nearby 
+[ Page = "../../student/NearbyExplorePage"
+Components -{
+ Nearby Banks - "../../components/NearbyBanksDetailsComponent"
+Nearby Activity - "../../components/NearbyActivityDetailsComponent"
+ Nearby Restaurants- "../../components/NearbyRestaurantsDetailsComponent"
+ Events Gallery- "../../components/ImageGalleryComponent" }]
+
+9. Canteen Services 
+[ Page ="../../student/CanteenMenupage
+Component = "../../components/CanteenMenuDetailsComponent"]

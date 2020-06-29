@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nearby-explore',
@@ -6,10 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nearby-explore.page.scss'],
 })
 export class NearbyExplorePage implements OnInit {
-click(){
-  
-}
-  constructor() { }
+
+  nearbyRestaurant() {
+    this.route.navigate(['']);
+  }
+  nearbyBank() {
+    this.route.navigate(['']);
+  }
+  nearbyActivity() {
+    this.route.navigate(['']);
+  }
+  eventGallery() {
+    this.route.navigate(['/events-gallery']);
+  }
+
+  constructor(public route: Router) { }
 
   ngOnInit() {
   }

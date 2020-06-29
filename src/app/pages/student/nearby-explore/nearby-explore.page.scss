@@ -15,22 +15,46 @@ ion-content.background{
   
   .left {
     left: 0;
-    background-color: white;
+    background-color: #f5ecd0;
+    transition: transform .2s;
+  }
+  .left:hover {
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari 3-8 */
+    transform: scale(1.1); 
   }
   
   .centera {
     left: 25%;
-    background-color: white;
+    background-color: #f5ecd0;
+    transition: transform .2s;
+  }
+  .centera:hover {
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari 3-8 */
+    transform: scale(1.1); 
   }
   
   .centerb {
     right: 25%;
-    background-color: white;
+    background-color: #f5ecd0;
+    transition: transform .2s;
+  }
+  .centerb:hover {
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari 3-8 */
+    transform: scale(1.1); 
   }
   
   .right {
     right: 0;
-    background-color: white;
+    background-color: #f5ecd0;
+    transition: transform .2s;
+  }
+  .right:hover {
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari 3-8 */
+    transform: scale(1.1); 
   }
   
   .centered {
@@ -47,7 +71,7 @@ ion-content.background{
   }
 
   .centered button {
-    background-color:white;
+    background-color:#f5ecd0;
     border:0px;
     
     }

@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { GuestMenuPageRoutingModule } from './guest-menu-routing.module';
-
+import { ComponentsModule } from '../../../components/components.module'
 import { GuestMenuPage } from './guest-menu.page';
 
 @NgModule({
@@ -13,7 +13,8 @@ import { GuestMenuPage } from './guest-menu.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    GuestMenuPageRoutingModule
+    GuestMenuPageRoutingModule,
+    ComponentsModule,
   ],
   declarations: [GuestMenuPage]
 })

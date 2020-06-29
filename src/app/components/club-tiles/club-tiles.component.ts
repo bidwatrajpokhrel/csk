@@ -3,7 +3,8 @@ import { StorageService } from 'src/app/services/storage.service';
 import { PublicClubService } from 'src/app/services/public/public-club.service';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
-
+import {MatDialog} from "@angular/material/dialog";
+import {ClubDetailsComponent} from 'src/app/components/club-details/club-details.component';
 @Component({
   selector: 'app-club-tiles',
   templateUrl: './club-tiles.component.html',
@@ -15,9 +16,13 @@ export class ClubTilesComponent implements OnInit {
     private storageService: StorageService,
     private publiclubService: PublicClubService,
     private router: Router,
-    private authService: LoginService
+    private authService: LoginService,
+    private dialog: MatDialog
   ) {
     
+  }
+  onClick(){
+    this.dialog.open(ClubDetailsComponent);
   }
 
   clubs: any;

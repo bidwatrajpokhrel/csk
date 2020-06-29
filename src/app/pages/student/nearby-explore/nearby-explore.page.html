@@ -1,40 +1,44 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>NearbyExplore</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Places to Explore Nearby</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding class="background">
-  <div class="split left">
+  <div class="split left" (click)="nearbyRestaurant()">
   <div class="centered">
-    <button>
-    <img src="assets/images/nearbyRestaurants.jpg" alt="Avatar woman"></button>
+    <img src="assets/images/nearbyRestaurants.png" alt="Restaurant">
     <h2>Explore Nearby</h2>
     <p>RESTAURANTS</p>
   </div>
 </div>
 
-<div class="split centera">
+<div class="split centera" (click)="nearbyBank()">
   <div class="centered">
-    <img src="assets/images/nearbyBanks.jpg" alt="Avatar man">
+    <img src="assets/images/nearbyBanks.png" alt="Bank">
     <h2>Explore Nearby</h2>
     <p>BANKS</p>
   </div>
 </div>
 
-<div class="split centerb">
+<div class="split centerb" (click)="nearbyActivity()">
   <div class="centered">
-    <img src="assets/images/nearbyActivity.jpg" alt="Avatar woman">
+    <img src="assets/images/nearbyActivity.png" alt="Activity">
     <h2>Explore Nearby</h2>
     <p>ACTIVITIES</p>
   </div>
 </div>
 
-<div class="split right">
+<div class="split right" (click)="eventGallery()">
   <div class="centered">
-    <img src="assets/images/profile-icon.jpg" alt="Avatar man">
-    <h2>John Doe</h2>
-    <p>Some text here too.</p>
+    <video width="110" height="100" autoplay loop>
+      <source src="assets/images/videoArrow.mp4" type="video/mp4">
+    </video>   
+    <h2>Click to Explore</h2>
+    <p>EVENTS GALLERY</p>
   </div>
 </div>
 </ion-content>
