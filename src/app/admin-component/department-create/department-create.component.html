@@ -7,22 +7,18 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
-<br>
-<div class="container">
-  <mat-form-field appearance="fill">
-    <mat-label>Department Name</mat-label>
-    <input matInput placeholder="Ex. Biology">
-  </mat-form-field>
-  <br>
-  
-  <mat-form-field appearance="fill">
-    <mat-label>Detailed Information</mat-label>
-    <textarea matInput></textarea>
-  </mat-form-field>
 
-  </div>
-  
-  <br>
-  <div class="a">
-    <button mat-raised-button color="primary">ADD</button>
+<div>
+<ion-item>
+  <ion-label position="stacked">Department Name</ion-label>
+  <ion-input placeholder="Name of the Department" [(ngModel)]="data.name"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label position="stacked">Description/Text</ion-label>
+  <ion-textarea placeholder="About Department" [(ngModel)]="data.description"></ion-textarea>
+</ion-item>
+
+
+<ion-button (click)="onCreate()">Add Department</ion-button>
+
 </div>

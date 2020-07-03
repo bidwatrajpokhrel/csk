@@ -7,27 +7,35 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
-<br>
-<div class="container">
-  <mat-form-field appearance="fill">
-    <mat-label>Club Name</mat-label>
-    <input matInput placeholder="Ex. Social Club">
-  </mat-form-field>
-  <mat-form-field appearance="fill">
-    <mat-label>Detailed Information</mat-label>
-    <textarea matInput></textarea>
-  </mat-form-field>
-  <br>
-  <mat-form-field appearance="fill">
-    <mat-label>President Name</mat-label>
-    <input matInput placeholder="Ex. Brad Henderson">
-  </mat-form-field>
-  <mat-form-field appearance="fill">
-    <mat-label>Vice President Name</mat-label>
-    <input matInput placeholder="Ex. Max Bowell">
-  </mat-form-field>
-  </div>
-  <div class="a">
-    <button mat-raised-button color="primary">ADD</button>
-</div>
 
+
+<div>
+  <ion-item>
+    <ion-label position="stacked">Name</ion-label>
+    <ion-input placeholder="Name" [(ngModel)]="data.name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Description</ion-label>
+    <ion-textarea placeholder="Description" [(ngModel)]="data.description"></ion-textarea>
+  </ion-item>
+
+
+  <ion-item>
+    <label for="president">President:</label>
+    <select name="president" id="president" [(ngModel)]="data.president">
+      <option *ngFor="let student of students" [value]="student.id">{{student.name}}</option>
+    </select>
+  </ion-item>
+
+  <ion-item>
+    <label for="president">Vice President:</label>
+    <select name="vice_president" id="vice_president" [(ngModel)]="data.vice_president">
+      <option *ngFor="let student of students" [value]="student.id">{{student.name}}</option>
+    </select>
+  </ion-item>
+
+
+  <ion-button (click)="onCreate()">Add Club</ion-button>
+
+
+</div>

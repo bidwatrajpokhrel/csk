@@ -7,6 +7,8 @@ import { environment } from 'src/environments/environment';
 })
 export class HttpService {
 
+  token = 'Xo-KTJz0e9i4mrJrznJ2DA';
+
   constructor(private http: HttpClient) {}
 
   post(serviceName: string, data: any){
@@ -24,6 +26,39 @@ export class HttpService {
     
     const url = environment.apiUrl + serviceName;
     return this.http.get(url, options);
+  }
+  
+
+  getWithToken(serviceName: string){
+    const headers = new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + this.token,
+    });
+    const options = { headers: headers };
+    const url = environment.apiUrl + serviceName; 
+    return this.http.get(url, options);
+  }
+
+
+
+  postWithToken(serviceName: string, data: any){
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + this.token,
+  });    
+    const options = { headers: headers};
+    const url = environment.apiUrl + serviceName; 
+    return this.http.post(url, data, options);
+  }
+
+  postWithTokenEmpty(serviceName: string){
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + this.token,
+  });    
+    const options = { headers: headers};
+    const url = environment.apiUrl + serviceName; 
+    return this.http.post(url, {data: '1'}, options);
   }
   
 }

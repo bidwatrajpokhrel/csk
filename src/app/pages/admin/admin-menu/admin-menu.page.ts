@@ -73,7 +73,7 @@ export class AdminMenuPage implements OnInit {
     {
       title: 'Events Booking',
       url: '/admin-menu/events-booking',
-      icon: 'bicycle-add'
+      icon: 'bicycle'
     }
     ,
     {

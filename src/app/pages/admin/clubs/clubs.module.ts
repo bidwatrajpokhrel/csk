@@ -8,6 +8,7 @@ import { ClubsPageRoutingModule } from './clubs-routing.module';
 
 import { ClubsPage } from './clubs.page';
 import {MaterialModule} from 'src/app/material.module';
+import { ClubsCreateComponent } from 'src/app/admin-component/clubs-create/clubs-create.component';
 
 @NgModule({
   imports: [
@@ -17,6 +18,6 @@ import {MaterialModule} from 'src/app/material.module';
     ClubsPageRoutingModule,
     MaterialModule
   ],
-  declarations: [ClubsPage]
+  declarations: [ClubsPage, ClubsCreateComponent]
 })
 export class ClubsPageModule {}

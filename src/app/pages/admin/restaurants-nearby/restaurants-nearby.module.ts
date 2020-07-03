@@ -8,6 +8,7 @@ import { RestaurantsNearbyPageRoutingModule } from './restaurants-nearby-routing
 
 import { RestaurantsNearbyPage } from './restaurants-nearby.page';
 import {MaterialModule} from 'src/app/material.module';
+import { RestaurantsNearbyCreateComponent } from 'src/app/admin-component/restaurants-nearby-create/restaurants-nearby-create.component';
 
 @NgModule({
   imports: [
@@ -17,6 +18,6 @@ import {MaterialModule} from 'src/app/material.module';
     RestaurantsNearbyPageRoutingModule,
     MaterialModule
   ],
-  declarations: [RestaurantsNearbyPage]
+  declarations: [RestaurantsNearbyPage, RestaurantsNearbyCreateComponent]
 })
 export class RestaurantsNearbyPageModule {}

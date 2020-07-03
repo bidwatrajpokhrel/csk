@@ -8,6 +8,7 @@ import { GuestLecturesPageRoutingModule } from './guest-lectures-routing.module'
 
 import { GuestLecturesPage } from './guest-lectures.page';
 import{MaterialModule} from 'src/app/material.module';
+import { GuestLecturesCreateComponent } from 'src/app/admin-component/guest-lectures-create/guest-lectures-create.component';
 
 @NgModule({
   imports: [
@@ -15,8 +16,8 @@ import{MaterialModule} from 'src/app/material.module';
     FormsModule,
     IonicModule,
     GuestLecturesPageRoutingModule,
-    MaterialModule
+    MaterialModule,
   ],
-  declarations: [GuestLecturesPage]
+  declarations: [GuestLecturesPage, GuestLecturesCreateComponent]
 })
 export class GuestLecturesPageModule {}

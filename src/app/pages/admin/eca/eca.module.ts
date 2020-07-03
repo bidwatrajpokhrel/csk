@@ -8,6 +8,7 @@ import { ECAPageRoutingModule } from './eca-routing.module';
 
 import { ECAPage } from './eca.page';
 import {MaterialModule} from 'src/app/material.module';
+import { ECACreateComponent } from 'src/app/admin-component/ecacreate/ecacreate.component';
 
 @NgModule({
   imports: [
@@ -17,6 +18,6 @@ import {MaterialModule} from 'src/app/material.module';
     ECAPageRoutingModule,
     MaterialModule
   ],
-  declarations: [ECAPage]
+  declarations: [ECAPage, ECACreateComponent]
 })
 export class ECAPageModule {}

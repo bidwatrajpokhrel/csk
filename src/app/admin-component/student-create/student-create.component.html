@@ -7,17 +7,50 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
-<br>
-<div class="container">
-  <mat-form-field appearance="fill">
-    <mat-label>Enter some input</mat-label>
-    <input matInput placeholder="Ex. Nougat">
-  </mat-form-field>
-  <mat-form-field appearance="fill">
-    <mat-label>Select me</mat-label>
-    <mat-select>
-      <mat-option value="option">Option</mat-option>
-    </mat-select>
-    <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
-  </mat-form-field>
+
+<div>
+
+  <ion-item>
+    <ion-label position="stacked">Name</ion-label>
+    <ion-input placeholder="Name" [(ngModel)]="data.name"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Level</ion-label>
+    <ion-input placeholder="4, 5 or 6" type="number" [(ngModel)]="data.student_level"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Email</ion-label>
+    <ion-input placeholder="student@example.com" type="email" [(ngModel)]="data.email"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Password</ion-label>
+    <ion-input placeholder="********" type="password" [(ngModel)]="data.password"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Description</ion-label>
+    <ion-textarea placeholder="About Student" [(ngModel)]="data.description"></ion-textarea>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-list>
+      <ion-radio-group [(ngModel)]="majorStudent.major_id">
+        <ion-list-header>Major</ion-list-header>
+        <ion-item *ngFor="let major of majors">
+          <ion-label>{{major.name}}</ion-label>
+          <ion-radio slot="start" [value]="major.id"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+  </ion-item>
+
+
+
+  <ion-button (click)="onCreate()">Add Student</ion-button>
+
+</div>
   

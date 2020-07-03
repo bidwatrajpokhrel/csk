@@ -8,6 +8,7 @@ import { UnitPageRoutingModule } from './unit-routing.module';
 
 import { UnitPage } from './unit.page';
 import {MaterialModule} from 'src/app/material.module';
+import { UnitCreateComponent } from 'src/app/admin-component/unit-create/unit-create.component';
 
 @NgModule({
   imports: [
@@ -17,6 +18,6 @@ import {MaterialModule} from 'src/app/material.module';
     UnitPageRoutingModule,
     MaterialModule
   ],
-  declarations: [UnitPage]
+  declarations: [UnitPage, UnitCreateComponent]
 })
 export class UnitPageModule {}

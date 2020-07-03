@@ -7,36 +7,16 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
-<br>
-<div class="container">
-  <mat-form-field appearance="fill">
-    <mat-label>Food Name</mat-label>
-    <input matInput placeholder="Ex. Pizza">
-  </mat-form-field>
-  <mat-form-field align="start" hintLabel="Max 3 number" appearance="fill" >
-    <mat-label>Price</mat-label>
-    <input matInput  #input 
-    maxlength="3"  
-    placeholder="Ex. 150" 
-    type="number"
-    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"  
-    (keypress)="numericOnly($event)">
-    
-    <mat-hint align="end">{{input.value?.length || 0}}/3</mat-hint>
-  </mat-form-field>
-  <br>
-  <br>
-  <mat-form-field appearance="fill">
-    <mat-label>Ingredients</mat-label>
-    <textarea matInput></textarea>
-  </mat-form-field>
-</div>
-  <div class="a">
-    <mat-label>Available</mat-label>
-    <mat-slide-toggle>Yes</mat-slide-toggle>
-  </div>
-  <br>
-  <div class="button-row">
-    <button mat-raised-button color="primary">ADD</button>
-</div>
-
+<ion-item>
+  <ion-label type="stacked">Name: </ion-label>
+  <ion-input placeholder="food name" [(ngModel)]="data.name"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label type="stacked">Price: </ion-label>
+  <ion-input placeholder="food Price" type="number" [(ngModel)]="data.price"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label type="stacked">Descripton: </ion-label>
+  <ion-textarea placeholder="Food Description" type="number" [(ngModel)]="data.description"></ion-textarea>
+</ion-item>
+<ion-button (click)="onCreate()">Add Item</ion-button>

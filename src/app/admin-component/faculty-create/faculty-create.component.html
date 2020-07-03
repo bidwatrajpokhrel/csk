@@ -7,33 +7,76 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
-<br>
-<div class="container">
-  <mat-form-field appearance="fill">
-    <mat-label>Faculty Name</mat-label>
-    <input matInput placeholder="Ex. Rami Shyam">
-  </mat-form-field>
-  <mat-form-field hintLabel="Max 2 characters" appearance="fill">
-    <mat-label>Title</mat-label>
-    <input matInput #input maxlength="2" placeholder="Ex. Mr" type="text">
-    <mat-hint align="end">{{input.value?.length || 0}}/2</mat-hint>
-  </mat-form-field>
-  <br>
-  <br>
-  <mat-form-field appearance="fill">
-    <mat-label>Qualification</mat-label>
-    <textarea matInput></textarea>
-  </mat-form-field>
-  <mat-form-field appearance="fill">
-    <mat-label>Type</mat-label>
-    <mat-select>
-      <mat-option value="option1">Option1</mat-option>
-      <mat-option value="option2">Option2</mat-option>
-    </mat-select>
-    <mat-hint align="end">Select^</mat-hint>
-  </mat-form-field>
-  </div>
-  <br>
-  <div class="a">
-    <button mat-raised-button color="primary">ADD</button>
+
+
+<div>
+  <ion-item>
+    <ion-label position="stacked">Name</ion-label>
+    <ion-input placeholder="Name" [(ngModel)]="data.name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Title</ion-label>
+    <ion-input placeholder="Ex. Prof., Dr. ..." [(ngModel)]="data.title"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Qualification</ion-label>
+    <ion-textarea placeholder="Qualificaition/Resume" [(ngModel)]="data.qualification"></ion-textarea>
+  </ion-item>
+
+  <ion-item>
+    <ion-list>
+      <ion-radio-group [(ngModel)]="data.type_">
+        <ion-list-header>
+          <ion-label position="stacked">Type:</ion-label>
+        </ion-list-header>  
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label>Academic</ion-label>
+              <ion-radio slot="start" value="Teaching"></ion-radio>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <ion-label>Administrative</ion-label>
+              <ion-radio slot="start" value="Administrative"></ion-radio>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label>Staff</ion-label>
+              <ion-radio slot="start" value="Staff"></ion-radio>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <ion-label>Research</ion-label>
+              <ion-radio slot="start" value="Research"></ion-radio>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-radio-group>
+    </ion-list>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-list>
+      <ion-radio-group [(ngModel)]="departmentfaculty.department_id">
+        <ion-list-header>Department</ion-list-header>
+        <ion-item *ngFor="let department of departments">
+          <ion-label>{{department.name}}</ion-label>
+          <ion-radio slot="start" [value]="department.id"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+
+  </ion-item>
+
+
+
+  <ion-button (click)="onCreate()">Add Faculty</ion-button>
+
 </div>

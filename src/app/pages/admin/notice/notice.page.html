@@ -1,4 +1,4 @@
-<div><ion-header class="ion-no-border">
+<ion-header class="ion-no-border">
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
@@ -7,6 +7,7 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
+<ion-content>
 <div class="search-div">
   <button slot= "start" mat-raised-button (click)="onCreate()">
     <mat-icon>add</mat-icon>Create
@@ -20,28 +21,28 @@
 <!-- </div> -->
 <div class="mat-elevation-z8">
   <mat-table [dataSource]="listData"  matSort>
-    <ng-container matColumnDef="noticeID">
+    <ng-container matColumnDef="noticeId">
       <mat-header-cell *matHeaderCellDef  mat-sort-header>Notice ID</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.noticeID}}</mat-cell>
+      <mat-cell *matCellDef="let element">{{element.id}}</mat-cell>
     </ng-container>
     <ng-container matColumnDef="noticeName">
       <mat-header-cell *matHeaderCellDef  mat-sort-header>Name</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.noticeName}}</mat-cell>
+      <mat-cell *matCellDef="let element">{{element.name}}</mat-cell>
     </ng-container>
     <ng-container matColumnDef="noticeContent">
       <mat-header-cell *matHeaderCellDef mat-sort-header>Content</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.noticeContent}}</mat-cell>
+      <mat-cell *matCellDef="let element">{{element.content}}</mat-cell>
     </ng-container>
     <ng-container matColumnDef="noticeAuthor">
       <mat-header-cell *matHeaderCellDef mat-sort-header>Author</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.noticeAuthor}}</mat-cell>
+      <mat-cell *matCellDef="let element">{{element.author}}</mat-cell>
     </ng-container>
     
     <ng-container matColumnDef="actions">
-      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-header-cell *matHeaderCellDef>Actions</mat-header-cell>
       <mat-cell *matCellDef="let row">
-        <button mat-icon-button (click)="onEdit(row)"><mat-icon>launch</mat-icon></button>
-        <button mat-icon-button color="warn" (click)="onDelete(row.$key)"><mat-icon>delete_outline</mat-icon></button>
+        <button mat-icon-button (click)="onEdit()"><mat-icon>launch</mat-icon></button>
+        <button mat-icon-button color="warn" (click)="onDelete()"><mat-icon>delete_outline</mat-icon></button>
       </mat-cell>
     </ng-container>
     <ng-container matColumnDef="loading">
@@ -57,11 +58,11 @@
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
     <mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide':listData!=null}"></mat-footer-row>
-    <mat-footer-row *matFooterRowDef="['noData']" [ngClass]="{'hide':!(listData!=null && listData.data.length==0)}"></mat-footer-row>
+    <mat-footer-row *matFooterRowDef="['noData']" [ngClass]="{'hide':!(listData!=null && listData.length==0)}"></mat-footer-row>
   </mat-table>
   <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [pageSize]="5" showFirstLastButtons></mat-paginator>
 </div>
 
 </div>
 
-</div>
+</ion-content>

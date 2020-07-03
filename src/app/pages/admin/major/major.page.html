@@ -20,28 +20,43 @@
 <!-- </div> -->
 <div class="mat-elevation-z8">
   <mat-table [dataSource]="listData"  matSort>
-    <ng-container matColumnDef="majorID">
-      <mat-header-cell *matHeaderCellDef  mat-sort-header>Major ID</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.majorID}}</mat-cell>
+    <ng-container matColumnDef="majorId">
+      <mat-header-cell *matHeaderCellDef  mat-sort-header>Major Id</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.id}}</mat-cell>
     </ng-container>
     <ng-container matColumnDef="majorName">
       <mat-header-cell *matHeaderCellDef  mat-sort-header>Name</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.majorName}}</mat-cell>
+      <mat-cell *matCellDef="let element">{{element.name}}</mat-cell>
     </ng-container>
     <ng-container matColumnDef="majorQualification">
       <mat-header-cell *matHeaderCellDef mat-sort-header>Eligibility</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.majorQualification}}</mat-cell>
+      <mat-cell *matCellDef="let element">{{element.description}}</mat-cell>
     </ng-container>
     <ng-container matColumnDef="majorHead">
       <mat-header-cell *matHeaderCellDef mat-sort-header>Head</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.majorHead}}</mat-cell>
+      <mat-cell *matCellDef="let element">{{element.head.name}}</mat-cell>
     </ng-container>
-    
+    <ng-container matColumnDef="majorImage">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Image</mat-header-cell>
+      <mat-cell *matCellDef="let element"><img [src]="element.image"><br>
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="editImage">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Edit Image</mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <input type="file" (change)="onFileSelected($event, element.id)"><br>
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="majorUnits">
+      <mat-header-cell *matHeaderCellDef>Units</mat-header-cell>
+      <mat-cell *matCellDef="let element"><ul><li *ngFor="let unit of element.units">{{unit.name}}</li></ul></mat-cell>
+    </ng-container>
+
     <ng-container matColumnDef="actions">
-      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-header-cell *matHeaderCellDef>Actions</mat-header-cell>
       <mat-cell *matCellDef="let row">
-        <button mat-icon-button (click)="onEdit(row)"><mat-icon>launch</mat-icon></button>
-        <button mat-icon-button color="warn" (click)="onDelete(row.$key)"><mat-icon>delete_outline</mat-icon></button>
+        <button mat-icon-button (click)="onEdit()"><mat-icon>launch</mat-icon></button>
+        <button mat-icon-button color="warn" (click)="onDelete()"><mat-icon>delete_outline</mat-icon></button>
       </mat-cell>
     </ng-container>
     <ng-container matColumnDef="loading">
@@ -57,7 +72,7 @@
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
     <mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide':listData!=null}"></mat-footer-row>
-    <mat-footer-row *matFooterRowDef="['noData']" [ngClass]="{'hide':!(listData!=null && listData.data.length==0)}"></mat-footer-row>
+    <mat-footer-row *matFooterRowDef="['noData']" [ngClass]="{'hide':!(listData!=null && listData.length==0)}"></mat-footer-row>
   </mat-table>
   <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [pageSize]="5" showFirstLastButtons></mat-paginator>
 </div>

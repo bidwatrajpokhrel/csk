@@ -8,6 +8,7 @@ import { StudentPageRoutingModule } from './student-routing.module';
 
 import { StudentPage } from './student.page';
 import {MaterialModule} from 'src/app/material.module';
+import { StudentCreateComponent } from 'src/app/admin-component/student-create/student-create.component';
 
 @NgModule({
   imports: [
@@ -17,6 +18,6 @@ import {MaterialModule} from 'src/app/material.module';
     StudentPageRoutingModule,
     MaterialModule
   ],
-  declarations: [StudentPage]
+  declarations: [StudentPage, StudentCreateComponent]
 })
 export class StudentPageModule {}

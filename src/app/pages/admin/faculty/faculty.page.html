@@ -1,4 +1,4 @@
-<div><ion-header class="ion-no-border">
+<ion-header class="ion-no-border">
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
@@ -7,6 +7,8 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
+
+<ion-content>
 <div class="search-div">
   <button slot= "start" mat-raised-button (click)="onCreate()">
     <mat-icon>add</mat-icon>Create
@@ -17,51 +19,52 @@
       <mat-icon>close</mat-icon>
     </button>
   </mat-form-field>
-<!-- </div> -->
+
 <div class="mat-elevation-z8">
   <mat-table [dataSource]="listData"  matSort>
-    <ng-container matColumnDef="facultyID">
+    <ng-container matColumnDef="facultyId">
       <mat-header-cell *matHeaderCellDef  mat-sort-header>Faculty ID</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.facultyID}}</mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="facultyName">
-      <mat-header-cell *matHeaderCellDef  mat-sort-header>Name</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.facultyName}}</mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="facultyAge">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>Age</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.facultyAge}}</mat-cell>
+      <mat-cell *matCellDef="let element">{{element.id}}</mat-cell>
     </ng-container>
     <ng-container matColumnDef="facultyTitle">
       <mat-header-cell *matHeaderCellDef mat-sort-header>Title</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.facultyTitle}}</mat-cell>
+      <mat-cell *matCellDef="let element">{{element.title}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="facultyName">
+      <mat-header-cell *matHeaderCellDef  mat-sort-header>Name</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.name}}</mat-cell>
     </ng-container>
     <ng-container matColumnDef="facultyQualification">
       <mat-header-cell *matHeaderCellDef mat-sort-header>Qualification</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.facultyQualification}}</mat-cell>
+      <mat-cell *matCellDef="let element">{{element.qualification}}</mat-cell>
     </ng-container>
     <ng-container matColumnDef="facultyType">
       <mat-header-cell *matHeaderCellDef mat-sort-header>Type</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.facultyType}}</mat-cell>
+      <mat-cell *matCellDef="let element">{{element.type}}</mat-cell>
     </ng-container>
-    <ng-container matColumnDef="facultyDepartmentID">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>Faculty Department ID</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.facultyDepartmentID}}</mat-cell>
+    <ng-container matColumnDef="facultyDepartment">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Department</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.departments.info.name}}</mat-cell>
     </ng-container>
-    <ng-container matColumnDef="departmentID">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>Department ID</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.departmentID}}</mat-cell>
+    <ng-container matColumnDef="facultyImage">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Image</mat-header-cell>
+      <mat-cell *matCellDef="let element"><img [src]="element.image"><br>
+      </mat-cell>
     </ng-container>
-    <ng-container matColumnDef="activeStatus">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>Status</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.activeStatus}}</mat-cell>
+    <ng-container matColumnDef="editImage">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Edit Image</mat-header-cell>
+    <mat-cell *matCellDef="let element">
+      <input type="file" (change)="onFileSelected($event, element.id)"><br>
+    </mat-cell>
     </ng-container>
+
+  
     
     <ng-container matColumnDef="actions">
-      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-header-cell *matHeaderCellDef>Action</mat-header-cell>
       <mat-cell *matCellDef="let row">
-        <button mat-icon-button (click)="onEdit(row)"><mat-icon>launch</mat-icon></button>
-        <button mat-icon-button color="warn" (click)="onDelete(row.$key)"><mat-icon>delete_outline</mat-icon></button>
+        <button mat-icon-button (click)="onEdit()"><mat-icon>launch</mat-icon></button>
+        <button mat-icon-button color="warn" (click)="onDelete()"><mat-icon>delete_outline</mat-icon></button>
       </mat-cell>
     </ng-container>
     <ng-container matColumnDef="loading">
@@ -77,11 +80,12 @@
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
     <mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide':listData!=null}"></mat-footer-row>
-    <mat-footer-row *matFooterRowDef="['noData']" [ngClass]="{'hide':!(listData!=null && listData.data.length==0)}"></mat-footer-row>
+    <mat-footer-row *matFooterRowDef="['noData']" [ngClass]="{'hide':!(listData!=null && listData.length==0)}"></mat-footer-row>
   </mat-table>
   <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [pageSize]="5" showFirstLastButtons></mat-paginator>
 </div>
 
 </div>
 
-</div>
+</ion-content>
+
