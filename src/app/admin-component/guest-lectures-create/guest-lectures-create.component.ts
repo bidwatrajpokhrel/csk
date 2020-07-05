@@ -3,6 +3,7 @@ import { HttpService } from 'src/app/services/http.service';
 import { AlertService } from 'src/app/services/alert.service';
 import { ToastService } from 'src/app/services/toast.service';
 import { DatePipe } from '@angular/common';
+import { StorageService } from 'src/app/services/storage.service';
 
 @Component({
   selector: 'app-guest-lectures-create',
@@ -19,18 +20,28 @@ export class GuestLecturesCreateComponent implements OnInit {
     subject: '',
     title: ''
   }
-
+  editData: any;
   message: string;
 
   constructor(private httpService:HttpService,
     private alertService: AlertService,
     private toastService: ToastService,
+    private storageService: StorageService,
     private datePipe: DatePipe) { }
 
   clubs: any;
   ngOnInit() {
     this.httpService.get('/public/clubs/').subscribe((result: any)=>{
       this.clubs = result.data;
+      this.storageService.get('editGuestLecture').then(res=>{
+        this.editData=res;
+        this.data.name=this.editData.guest_name;
+        this.data.description=this.editData.description;
+        this.data.club=this.editData.club.id;
+        this.data.date_time_=this.editData.datetime;
+        this.data.subject=this.editData.subject;
+        this.data.title=this.editData.title;
+      })
     });
   }
 
@@ -60,6 +71,20 @@ export class GuestLecturesCreateComponent implements OnInit {
   }
 
   ngOnDestroy(){
-    window.location.reload()
+    this.storageService.removeItem('editGuestLecture').then(res=>console.log('removed'));
+    window.location.reload();
+
+  }
+
+  onEdit(){
+    this.data.date_time_=this.datePipe.transform(this.data.date_time_, "dd-MMM-yy");
+    this.httpService.postWithToken(`/admin/guest-lectures-edit/${this.editData.id}`, this.data).subscribe((result:any)=>{
+      this.alertService.presentAlert("Data inserted Successfully", "Guest Lecture edited", "Success");
+      this.toastService.presentToast("Guest Lecture Edited");
+      this.clear();
+    },
+    error=>{
+      this.toastService.presentToast("An error occured. Please try again");
+    });
   }
 }

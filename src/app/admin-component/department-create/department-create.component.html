@@ -19,6 +19,7 @@
 </ion-item>
 
 
-<ion-button (click)="onCreate()">Add Department</ion-button>
+<ion-button *ngIf="!editData" (click)="onCreate()">Add Department</ion-button>
+<ion-button *ngIf="editData" (click)="onEdit()">Edit Department</ion-button>
 
 </div>

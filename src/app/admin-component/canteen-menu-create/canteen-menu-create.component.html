@@ -19,4 +19,5 @@
   <ion-label type="stacked">Descripton: </ion-label>
   <ion-textarea placeholder="Food Description" type="number" [(ngModel)]="data.description"></ion-textarea>
 </ion-item>
-<ion-button (click)="onCreate()">Add Item</ion-button>
+<ion-button *ngIf="!editData" (click)="onCreate()">Add Item</ion-button>
+<ion-button *ngIf="editData" (click)="onEdit()">Edit Item</ion-button>

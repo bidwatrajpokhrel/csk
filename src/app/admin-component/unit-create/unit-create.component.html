@@ -48,6 +48,7 @@
 
 
 
-  <ion-button (click)="onCreate()">Add Unit</ion-button>
+  <ion-button *ngIf="!editData" (click)="onCreate()">Add Unit</ion-button>
+  <ion-button *ngIf="editData" (click)="onEdit()">Edit Unit</ion-button>
 
 </div>

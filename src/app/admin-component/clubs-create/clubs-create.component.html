@@ -35,7 +35,8 @@
   </ion-item>
 
 
-  <ion-button (click)="onCreate()">Add Club</ion-button>
+  <ion-button *ngIf="!editData"(click)="onCreate()">Add Club</ion-button>
+  <ion-button *ngIf="editData" (click)="onEdit()">Edit Club</ion-button>
 
 
 </div>

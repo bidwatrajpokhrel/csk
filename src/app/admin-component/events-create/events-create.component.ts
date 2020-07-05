@@ -3,6 +3,7 @@ import { HttpService } from 'src/app/services/http.service';
 import { AlertService } from 'src/app/services/alert.service';
 import { ToastService } from 'src/app/services/toast.service';
 import { DatePipe } from '@angular/common';
+import { StorageService } from 'src/app/services/storage.service';
 
 @Component({
   selector: 'app-events-create',
@@ -18,15 +19,24 @@ export class EventsCreateComponent implements OnInit {
     event_to: '',
     no_of_seats: ''
   }
-
+  editData:any;
   message: string;
 
-  constructor(private httpService: HttpService, private alertService: AlertService, private toastService: ToastService, private datePipe: DatePipe) { }
+  constructor(private httpService: HttpService, private alertService: AlertService, private toastService: ToastService, private datePipe: DatePipe, private storageService:StorageService) { }
 
   clubs: any;
   ngOnInit() {
     this.httpService.get('/public/clubs/').subscribe((result: any)=>{
       this.clubs = result.data;
+      this.storageService.get('editEvent').then(res=>{
+        this.editData=res;
+        this.data.name=this.editData.name;
+        this.data.description=this.editData.description;
+        this.data.club=this.editData.club.id;
+        this.data.event_from=this.datePipe.transform(this.editData.event_from, "dd-MMM-yy");
+        this.data.event_to=this.datePipe.transform(this.editData.event_to, "dd-MMM-yy");
+        this.data.no_of_seats=this.editData.event_no_of_seats;
+      });
     });
   }
 
@@ -53,10 +63,24 @@ export class EventsCreateComponent implements OnInit {
     this.data.event_to='';
     this.data.club='';
     this.data.no_of_seats='';
-
   }
 
   ngOnDestroy(){
-    window.location.reload()
+    this.storageService.removeItem('editEvent').then(res=>console.log('remove'));
+    window.location.reload();
+  }
+
+  onEdit(){
+    this.data.event_from=this.datePipe.transform(this.data.event_from, "dd-MMM-yy");
+    this.data.event_to=this.datePipe.transform(this.data.event_to, "dd-MMM-yy");
+    this.httpService.postWithToken(`/admin/events-edit/${this.editData.id}`, this.data).subscribe((result:any)=>{
+      this.message = "Name: " + result.name + "<br>Description: " + result.description + "<br>Start Date: " + result.from + "<br>End Date: " + result.to + "<br>Number of seats: " + result.seats + "<br>Club: " + result.club;
+      this.alertService.presentAlert("Data inserted Successfully", "Event Edited",this.message);
+      this.toastService.presentToast("Event edited Successfully <br>" + this.message)
+      this.clear();      
+    },
+    error=>{
+      this.toastService.presentToast("An error occured. Please try again")
+    });
   }
 }

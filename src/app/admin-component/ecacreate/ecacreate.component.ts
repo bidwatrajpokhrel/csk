@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpService } from 'src/app/services/http.service';
 import { AlertService } from 'src/app/services/alert.service';
 import { ToastService } from 'src/app/services/toast.service';
+import { StorageService } from 'src/app/services/storage.service';
 
 @Component({
   selector: 'app-ecacreate',
@@ -16,17 +17,24 @@ export class ECACreateComponent implements OnInit {
     incharge: ''
 
   }
-
+  editData: any;
   message: string;
 
   constructor(private httpService:HttpService,
     private alertService: AlertService,
-    private toastService: ToastService) { }
+    private toastService: ToastService,
+    private storageService: StorageService) { }
 
   faculties: any;
   ngOnInit() {
     this.httpService.get('/public/faculty/').subscribe((result: any)=>{
       this.faculties = result.data;
+      this.storageService.get('editECA').then(res=>{
+        this.editData = res;
+        this.data.name = this.editData.name;
+        this.data.description=this.editData.description;
+        this.data.incharge=this.editData.incharge.id;
+      });
     });
   }
 
@@ -53,7 +61,20 @@ export class ECACreateComponent implements OnInit {
   }
 
   ngOnDestroy(){
-    window.location.reload()
+    this.storageService.removeItem('editECA').then(res=>console.log('removed'));
+    window.location.reload();
+  }
+
+  onEdit(){
+    this.httpService.postWithToken(`/admin/eca-edit/${this.editData.id}`, this.data).subscribe((result:any)=>{
+      this.message = "Name: " + result.name + "<br> Incharge: " + result.incharge + "<br> Description: " + result.description; 
+      this.alertService.presentAlert("Data edited Successfully", "ECA edited", this.message);
+      this.toastService.presentToast("ECA Edited <br>" + this.message)
+      this.clear();
+    },
+    error=>{
+      this.toastService.presentToast("An error occured. Please try again")
+    });
   }
 
 

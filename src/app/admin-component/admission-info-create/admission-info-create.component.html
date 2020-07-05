@@ -20,5 +20,6 @@
   </ion-item>
 
 
-  <ion-button (click)="onCreate()">Add Admission Information</ion-button>
+  <ion-button (click)="onCreate()" *ngIf="!editData">Add Admission Information</ion-button>
+  <ion-button (click)="onEdit()" *ngIf="editData">Edit Admission Information</ion-button>
 </div>

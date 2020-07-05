@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpService } from 'src/app/services/http.service';
 import { AlertService } from 'src/app/services/alert.service';
 import { ToastService } from 'src/app/services/toast.service';
+import { StorageService } from 'src/app/services/storage.service';
 
 @Component({
   selector: 'app-student-create',
@@ -21,14 +22,22 @@ export class StudentCreateComponent implements OnInit {
     password: '',
     description: ''
   };
+  editData: any;
   message: string;
 
-  constructor(private httpService: HttpService, private alertService: AlertService, private toastService: ToastService) { }
+  constructor(private httpService: HttpService, private alertService: AlertService, private toastService: ToastService, private storageService: StorageService) { }
   
   majors: any;
   ngOnInit() {
     this.httpService.get('/public/major/').subscribe((result: any)=>{
       this.majors = result.data;
+      this.storageService.get('editStudent').then(res=>{
+        this.editData=res;
+        this.data.name=this.editData.name;
+        this.data.student_level=this.editData.level;
+        this.data.password=this.editData.password;
+        this.data.description=this.editData.description;
+      });
     });
   }
 
@@ -62,7 +71,20 @@ export class StudentCreateComponent implements OnInit {
   }
 
   ngOnDestroy(){
-   window.location.reload()
+    this.storageService.removeItem('editStudent').then(res=>console.log('removed'));
+    window.location.reload();
+  }
+
+  onEdit(){
+    this.httpService.postWithToken(`/admin/student-edit/${this.editData.id}`, this.data).subscribe((result:any)=>{
+      this.message = "Name: " + result.name + "<br>" + "Description: " + result.description + "<br>" + "Level: " + result.level;
+      this.alertService.presentAlert("Data inserted Successfully", "Student edited",this.message);
+      this.toastService.presentToast("Successfully edited Student<br>" + this.message);
+      this.clear();
+    },
+    error=>{
+      this.toastService.presentToast("An error occured. Please try again")
+    });
   }
 
 

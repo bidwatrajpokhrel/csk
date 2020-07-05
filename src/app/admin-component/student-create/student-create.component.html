@@ -22,7 +22,7 @@
 
   <ion-item>
     <ion-label position="stacked">Email</ion-label>
-    <ion-input placeholder="student@example.com" type="email" [(ngModel)]="data.email"></ion-input>
+    <ion-input placeholder="student@example.com" type="email" [(ngModel)]="data.email" [disabled]="editData"></ion-input>
   </ion-item>
 
   <ion-item>
@@ -42,7 +42,7 @@
         <ion-list-header>Major</ion-list-header>
         <ion-item *ngFor="let major of majors">
           <ion-label>{{major.name}}</ion-label>
-          <ion-radio slot="start" [value]="major.id"></ion-radio>
+          <ion-radio slot="start" [value]="major.id" [disabled]="editData"></ion-radio>
         </ion-item>
       </ion-radio-group>
     </ion-list>
@@ -50,7 +50,8 @@
 
 
 
-  <ion-button (click)="onCreate()">Add Student</ion-button>
+  <ion-button *ngIf="!editData" (click)="onCreate()">Add Student</ion-button>
+  <ion-button *ngIf="editData" (click)="onEdit()">Edit Student</ion-button>
 
 </div>
   

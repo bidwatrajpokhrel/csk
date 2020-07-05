@@ -22,7 +22,18 @@ const routes: Routes = [
   {
     path: 'student-menu',
     loadChildren: () => import('./pages/student/student-menu/student-menu.module').then( m => m.StudentMenuPageModule)
-   }
+   },
+   
+  // {
+  //   path: 'talking-heads',
+  //   loadChildren: () => import('./pages/admin/talking-heads/talking-heads.module').then( m => m.TalkingHeadsPageModule)
+  // },
+
+  // {
+  //   path: 'gallery',
+  //   loadChildren: () => import('./pages/admin/gallery/gallery.module').then( m => m.GalleryPageModule)
+  // }
+
   // {
   //   path: 'admission-info-table',
   //   loadChildren: () => import('./pages/admin/admission-info-table/admission-info-table.module').then( m => m.AdmissionInfoTablePageModule)

@@ -39,7 +39,7 @@
     </ng-container>
     <ng-container matColumnDef="guestLectureDateTime">
       <mat-header-cell *matHeaderCellDef mat-sort-header>Date</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.datetime}}</mat-cell>
+      <mat-cell *matCellDef="let element">{{element.datetime | date: 'longDate'}}</mat-cell>
     </ng-container>
     <ng-container matColumnDef="guestLectureAbout">
       <mat-header-cell *matHeaderCellDef mat-sort-header>About</mat-header-cell>
@@ -67,7 +67,7 @@
       <mat-header-cell *matHeaderCellDef>Actions</mat-header-cell>
       <mat-cell *matCellDef="let row">
         <button mat-icon-button (click)="onEdit(row)"><mat-icon>launch</mat-icon></button>
-        <button mat-icon-button color="warn" (click)="onDelete(row.$key)"><mat-icon>delete_outline</mat-icon></button>
+        <button mat-icon-button color="warn" (click)="onDelete(row)"><mat-icon>delete_outline</mat-icon></button>
       </mat-cell>
     </ng-container>
     <ng-container matColumnDef="loading">

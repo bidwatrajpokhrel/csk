@@ -1,4 +1,4 @@
-<div><ion-header class="ion-no-border">
+<ion-header class="ion-no-border">
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
@@ -7,6 +7,7 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
+<ion-content>
 <div class="search-div">
   <button slot= "start" mat-raised-button (click)="onCreate()">
     <mat-icon>add</mat-icon>Create
@@ -20,48 +21,56 @@
 <!-- </div> -->
 <div class="mat-elevation-z8">
   <mat-table [dataSource]="listData"  matSort>
-    <ng-container matColumnDef="studentID">
-      <mat-header-cell *matHeaderCellDef  mat-sort-header>Student ID</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.studentID}}</mat-cell>
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef  mat-sort-header>ID</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.id}}</mat-cell>
     </ng-container>
-    <ng-container matColumnDef="studentName">
+    <ng-container matColumnDef="name">
       <mat-header-cell *matHeaderCellDef  mat-sort-header>Name</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.studentName}}</mat-cell>
+      <mat-cell *matCellDef="let element">{{element.name}}</mat-cell>
     </ng-container>
-    <ng-container matColumnDef="studentLevel">
+    <ng-container matColumnDef="level">
       <mat-header-cell *matHeaderCellDef mat-sort-header>Level</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.studentLevel}}</mat-cell>
+      <mat-cell *matCellDef="let element">{{element.level}}</mat-cell>
     </ng-container>
-    <ng-container matColumnDef="studentEmail">
+    <ng-container matColumnDef="email">
       <mat-header-cell *matHeaderCellDef mat-sort-header>E-mail</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.studentEmail}}</mat-cell>
+      <mat-cell *matCellDef="let element">{{element.email}}</mat-cell>
     </ng-container>
-    <ng-container matColumnDef="studentPassword">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>Password</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.studentPassword}}</mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="studentAbout">
+    <ng-container matColumnDef="about">
       <mat-header-cell *matHeaderCellDef mat-sort-header>About</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.studentAbout}}</mat-cell>
+      <mat-cell *matCellDef="let element">{{element.description}}</mat-cell>
     </ng-container>
-    <ng-container matColumnDef="majorStudentID">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>Major Student ID</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.studentEmail}}</mat-cell>
+    <ng-container matColumnDef="major">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Major</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.major.info.name}}</mat-cell>
     </ng-container>
-    <ng-container matColumnDef="majorID">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>Major ID</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.majorID}}</mat-cell>
+    <ng-container matColumnDef="clubs">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Clubs</mat-header-cell>
+      <mat-cell *matCellDef="let element"><ul *ngFor="let club of element.clubs"><li>{{club.info.name}}</li></ul></mat-cell>
     </ng-container>
-    <ng-container matColumnDef="activeStatus">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>Status</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.activeStatus}}</mat-cell>
+    <ng-container matColumnDef="events">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Events</mat-header-cell>
+      <mat-cell *matCellDef="let element"><ul *ngFor="let event of element.events"><li>{{event.info.name}}</li></ul></mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="image">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Image</mat-header-cell>
+      <mat-cell *matCellDef="let element"><img [src]="element.image"><br>
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="editImage">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Edit Image</mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <input type="file" (change)="onFileSelected($event, element.id)"><br>
+      </mat-cell>
     </ng-container>
     
     <ng-container matColumnDef="actions">
       <mat-header-cell *matHeaderCellDef></mat-header-cell>
       <mat-cell *matCellDef="let row">
         <button mat-icon-button (click)="onEdit(row)"><mat-icon>launch</mat-icon></button>
-        <button mat-icon-button color="warn" (click)="onDelete(row.$key)"><mat-icon>delete_outline</mat-icon></button>
+        <button mat-icon-button color="warn" (click)="onDelete(row)"><mat-icon>delete_outline</mat-icon></button>
       </mat-cell>
     </ng-container>
     <ng-container matColumnDef="loading">
@@ -77,11 +86,10 @@
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
     <mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide':listData!=null}"></mat-footer-row>
-    <mat-footer-row *matFooterRowDef="['noData']" [ngClass]="{'hide':!(listData!=null && listData.data.length==0)}"></mat-footer-row>
+    <mat-footer-row *matFooterRowDef="['noData']" [ngClass]="{'hide':!(listData!=null && listData.length==0)}"></mat-footer-row>
   </mat-table>
   <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [pageSize]="5" showFirstLastButtons></mat-paginator>
 </div>
 
 </div>
-
-</div>
+</ion-content>

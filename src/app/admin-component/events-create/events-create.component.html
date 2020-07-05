@@ -43,7 +43,8 @@
     </select>
   </ion-item>
 
-  <ion-button (click)="onCreate()">Add Event</ion-button>
+  <ion-button *ngIf="!editData" (click)="onCreate()">Add Event</ion-button>
+  <ion-button *ngIf="editData" (click)="onEdit()">Edit Event</ion-button>
 
 </div>
 

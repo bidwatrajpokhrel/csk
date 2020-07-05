@@ -35,6 +35,7 @@
 
 
 
-  <ion-button (click)="onCreate()">Add Major</ion-button>
+  <ion-button *ngIf="!editData" (click)="onCreate()">Add Major</ion-button>
+  <ion-button *ngIf="editData" (click)="onEdit()">Edit Major</ion-button>
 
 </div>

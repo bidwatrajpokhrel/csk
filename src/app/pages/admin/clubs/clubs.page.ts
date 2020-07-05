@@ -3,6 +3,9 @@ import {MatDialog} from "@angular/material/dialog";
 import {MatDialogConfig} from "@angular/material/dialog";
 import {ClubsCreateComponent} from 'src/app/admin-component/clubs-create/clubs-create.component';
 import { HttpService } from 'src/app/services/http.service';
+import { StorageService } from 'src/app/services/storage.service';
+import { ToastController } from '@ionic/angular';
+import { ToastService } from 'src/app/services/toast.service';
 
 @Component({
   selector: 'app-clubs',
@@ -28,7 +31,7 @@ export class ClubsPage implements OnInit {
     });
   }
 
-  constructor(private dialog: MatDialog, private httpService: HttpService) { }
+  constructor(private dialog: MatDialog, private httpService: HttpService, private storageService: StorageService, private toastService: ToastService) { }
 
   listData: any;
   ngOnInit() {
@@ -38,4 +41,18 @@ export class ClubsPage implements OnInit {
     })
   }
 
+  onEdit(editData){
+    this.storageService.store('editClubs', editData).then(res=>{
+      this.dialog.open(ClubsCreateComponent);
+    });
+  }
+
+  onDelete(id){
+    this.httpService.postWithTokenEmpty(`/admin/club-delete/${id.id}`).subscribe(res=>{
+      this.toastService.presentToast('Content Deleted');
+      window.location.reload();
+    },error=>{
+      this.toastService.presentToast('Something went wrong. Check that field has no dependencies')
+    });
+    }
 }

@@ -73,7 +73,8 @@
   </div>
   <br>
   <div class="a">
-    <button mat-raised-button color="primary" (click)="onCreate()">ADD</button>
+    <button mat-raised-button *ngIf="!editData" color="primary" (click)="onCreate()">ADD</button>
+    <button mat-raised-button *ngIf="editData" color="primary" (click)="onEdit()">Edit</button>
 </div>
 
 

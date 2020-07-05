@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpService } from 'src/app/services/http.service';
 import { AlertService } from 'src/app/services/alert.service';
 import { ToastService } from 'src/app/services/toast.service';
+import { StorageService } from 'src/app/services/storage.service';
 
 @Component({
   selector: 'app-unit-create',
@@ -18,8 +19,9 @@ export class UnitCreateComponent implements OnInit {
     major: ''
   }
   message: string;
+  editData: any;
 
-  constructor(private httpService: HttpService, private alertService: AlertService, private toastService: ToastService) { }
+  constructor(private httpService: HttpService, private alertService: AlertService, private toastService: ToastService, private storageService: StorageService) { }
 
   faculties: any;
   majors: any;
@@ -28,6 +30,14 @@ export class UnitCreateComponent implements OnInit {
       this.faculties = result.data;
       this.httpService.get('/public/major').subscribe((res: any)=>{
         this.majors = res.data;
+        this.storageService.get('editUnit').then(res=>{
+          this.editData=res;
+          this.data.credit=this.editData.credit;
+          this.data.name=this.editData.name;
+          this.data.description=this.editData.description;
+          this.data.major=this.editData.major.id;
+          this.data.leader=this.editData.leader.id;
+        });
       });
     });
   }
@@ -54,7 +64,19 @@ export class UnitCreateComponent implements OnInit {
   }
 
   ngOnDestroy(){
-    window.location.reload()
+    this.storageService.removeItem('editUnit').then(res=>console.log('removed'));
+    window.location.reload();
+  }
+  
+  onEdit(){
+    this.httpService.postWithToken(`/admin/unit-edit/${this.editData.id}`, this.data).subscribe((result:any)=>{
+      this.alertService.presentAlert("Data inserted Successfully", "Unit edited", "SUCCESS");
+      this.toastService.presentToast("Successfully edited Unit");
+      this.clear();
+    },
+    error=>{
+      this.toastService.presentToast("An error occured. Please try again")
+    });
   }
 
 }
