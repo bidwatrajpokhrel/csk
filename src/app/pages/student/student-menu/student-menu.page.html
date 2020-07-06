@@ -1,12 +1,24 @@
 <ion-split-pane contentId="content">
   <ion-menu contentId="content">
 
-
+<div class="parent">
+  <div class="child">
     <ion-content>
       
       <ion-list id="inbox-list">
-        <ion-list-header>PCPS Student Portal</ion-list-header>
-        <ion-note>WELCOME</ion-note>
+         <ion-list-header>
+        <div class="images">
+          <img src="assets/images/profile.jpg" style="float: right;">
+        </div>
+          <div class="welcome">
+        <h1> WELCOME <br>
+          Aastha Pandey
+        </h1>
+        
+        </div>
+        </ion-list-header>
+      <br><br>
+        <!-- <ion-note>WELCOME</ion-note> -->
           <!-- list elements -->
         <ion-menu-toggle auto-hide="false" *ngFor="let p of studentPages">
           <ion-item [routerLink]="p.url" routerDirection="root" [class.active-item]="selectedPath.startsWith(p.url)">
@@ -23,6 +35,7 @@
         </ion-item>
       </ion-list>
     </ion-content>
+  </div></div>
   </ion-menu>
 
   <ion-router-outlet id="content" main></ion-router-outlet>

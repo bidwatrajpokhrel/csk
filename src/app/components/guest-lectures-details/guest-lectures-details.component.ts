@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {MatDialog} from '@angular/material/dialog';
 @Component({
   selector: 'app-guest-lectures-details',
   templateUrl: './guest-lectures-details.component.html',
@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GuestLecturesDetailsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dialog:MatDialog) { }
 
   ngOnInit() {}
 

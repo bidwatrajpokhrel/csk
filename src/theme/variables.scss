@@ -5,7 +5,9 @@
 :root {
   /** primary **/
   // --ion-color-primary: #3880ff;
-  --ion-color-primary: #00c4cc;
+  // --ion-color-primary: #00c4cc;
+  --ion-color-primary: #416396;
+
   --ion-color-primary-rgb: 56, 128, 255;
   --ion-color-primary-contrast: #ffffff;
   --ion-color-primary-contrast-rgb: 255, 255, 255;
@@ -75,6 +77,10 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+}
+.custom-toolbar{
+  --background: linear-gradient(to bottom right, #1d273d, #8bade0);
+
 }
 
 @media (prefers-color-scheme: dark) {

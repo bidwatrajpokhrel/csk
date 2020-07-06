@@ -1,0 +1,13 @@
+w3-col::-webkit-scrollbar {
+    display: none;
+   
+  }
+
+  .w3-col {
+    overflow-y: scroll;
+    max-height: 500px;
+  }
+
+  .w3-container {
+    overflow: hidden;
+  }

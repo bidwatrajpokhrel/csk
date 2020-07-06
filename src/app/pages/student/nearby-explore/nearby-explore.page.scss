@@ -4,19 +4,22 @@ ion-content.background{
 
 .split {
     height: 50%;
-    width: 25%;
+    width: 20%;
     position: fixed;
     z-index: 1;
     top: 0;
     overflow-x: hidden;
     padding-top: 20px;
-    margin-top: 330px;
+    margin-top: 310px;
   }
   
   .left {
     left: 0;
-    background-color: #f5ecd0;
+    background-color: #ffeab8;
     transition: transform .2s;
+    opacity: 0.7;
+    border-radius: 30px;
+    margin-left:20px;
   }
   .left:hover {
     -ms-transform: scale(1.1); /* IE 9 */
@@ -26,8 +29,11 @@ ion-content.background{
   
   .centera {
     left: 25%;
-    background-color: #f5ecd0;
+    background-color: #ffeab8;
     transition: transform .2s;
+    opacity: 0.7;
+    border-radius: 30px;
+    margin-left:20px;
   }
   .centera:hover {
     -ms-transform: scale(1.1); /* IE 9 */
@@ -37,8 +43,12 @@ ion-content.background{
   
   .centerb {
     right: 25%;
-    background-color: #f5ecd0;
+    background-color: #ffeab8;
     transition: transform .2s;
+    opacity: 0.7;
+    border-radius: 30px;
+    margin-left:20px;
+    margin-right: 20px;
   }
   .centerb:hover {
     -ms-transform: scale(1.1); /* IE 9 */
@@ -48,8 +58,12 @@ ion-content.background{
   
   .right {
     right: 0;
-    background-color: #f5ecd0;
+    background-color: #ffeab8;
     transition: transform .2s;
+    opacity: 0.7;
+    border-radius: 30px;
+    margin-left:20px;
+    margin-right: 20px;
   }
   .right:hover {
     -ms-transform: scale(1.1); /* IE 9 */
@@ -71,7 +85,7 @@ ion-content.background{
   }
 
   .centered button {
-    background-color:#f5ecd0;
+    background-color:#a6deae;
     border:0px;
     
     }

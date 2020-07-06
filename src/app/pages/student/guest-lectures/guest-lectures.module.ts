@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 import { HttpClientModule } from '@angular/common/http';
-import {GuestLecturesDetailsComponent} from 'src/app/components/guest-lectures-details/guest-lectures-details.component';
+import {ComponentsModule} from 'src/app/components/components.module';
 import { GuestLecturesPageRoutingModule } from './guest-lectures-routing.module';
 import { GuestLecturesPage } from './guest-lectures.page';
 import {MaterialModule} from 'src/app/material.module';
@@ -15,8 +15,9 @@ import {MaterialModule} from 'src/app/material.module';
     IonicModule,
     GuestLecturesPageRoutingModule,
     HttpClientModule,
-    MaterialModule
+    MaterialModule,
+    ComponentsModule
   ],
-  declarations: [GuestLecturesPage,GuestLecturesDetailsComponent]
+  declarations: [GuestLecturesPage]
 })
 export class GuestLecturesPageModule {}

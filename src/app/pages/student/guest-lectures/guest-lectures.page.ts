@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {GuestLecturesDetailsComponent} from 'src/app/components/guest-lectures-details/guest-lectures-details.component';
 import {MatDialog} from '@angular/material/dialog';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-guest-lectures',
   templateUrl: './guest-lectures.page.html',
@@ -10,7 +11,10 @@ export class GuestLecturesPage implements OnInit {
  onClick(){
    this.dialog.open(GuestLecturesDetailsComponent);
  }
-constructor(private dialog: MatDialog) { 
+ clickAllGuestLectures(){
+  this.route.navigate(['/all-guest-lectures-student']);
+ }
+constructor(private dialog: MatDialog, private route:Router) { 
 }
 
 ngOnInit() {}

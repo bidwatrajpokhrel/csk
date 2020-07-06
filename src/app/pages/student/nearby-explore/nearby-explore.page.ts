@@ -9,16 +9,16 @@ import { Router } from '@angular/router';
 export class NearbyExplorePage implements OnInit {
 
   nearbyRestaurant() {
-    this.route.navigate(['']);
+    this.route.navigate(['/student-menu/nearby-restaurants']);
   }
   nearbyBank() {
-    this.route.navigate(['']);
+    this.route.navigate(['/student-menu/nearby-banks']);
   }
   nearbyActivity() {
-    this.route.navigate(['']);
+    this.route.navigate(['/student-menu/nearby-activity']);
   }
   eventGallery() {
-    this.route.navigate(['/events-gallery']);
+    this.route.navigate(['/student-menu/events-gallery']);
   }
 
   constructor(public route: Router) { }

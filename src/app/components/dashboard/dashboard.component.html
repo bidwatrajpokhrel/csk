@@ -1,7 +1,7 @@
 <div class="split left">
  
-  <ion-header id="header" color= "primary" >
-    <ion-toolbar color="primary">
+  <ion-header id="header">
+    <ion-toolbar class="custom-header">
       <ion-buttons slot="start">
         <ion-back-button></ion-back-button>
       </ion-buttons>
@@ -27,15 +27,10 @@
 
 <div class="split right">
 
-<ion-header id="header" color="primary">
-<ion-toolbar color="primary">
+<ion-header id="header">
+<ion-toolbar class="custom-header">
   <ion-buttons slot="start">
     <ion-back-button></ion-back-button>
-  </ion-buttons>
-  <ion-buttons slot="end">
-    <ion-button >
-      <ion-icon name="create"></ion-icon>
-    </ion-button>
   </ion-buttons>
   <ion-title>Your Profile</ion-title>
 </ion-toolbar>
@@ -45,7 +40,7 @@
   <ion-col style="display:flex; justify-content: center;">
     <ion-row>
       <ion-avatar class="prof">
-        <img src="https://i.imgur.com/A1eXmEF.png">
+        <img src="assets/images/profile.jpg">
       </ion-avatar>
     </ion-row>
   </ion-col>
@@ -89,22 +84,21 @@
     </ion-row>
   </ion-grid>
 </ion-item-divider><br>
-<ion-label class="lblReview">Extras:</ion-label>
+<ion-label class="lblReview">Units:</ion-label>
 <div scrollY="true" id="scrollable">
   <ion-content>
-    <ion-card (click)="viewDetail(space)">
+    <ion-card (click)="clickUnits()">
       <img src="https://i.imgur.com/0pEZhHd.jpg">
       <ion-card-content>
-        <ion-card-title>Clubs</ion-card-title>
-        <ion-icon name="pin"></ion-icon><br>
-        <strong>No. of Clubs:</strong>&ensp;
+        <ion-icon name="journal"></ion-icon><br>
+        <strong>No. of Units:</strong>&ensp;
       </ion-card-content>
     </ion-card>
   </ion-content>
 </div>
 <div scrollY="true" id="scrollable">
   <ion-content>
-    <ion-card (click)="viewDetail(space)">
+    <ion-card (click)="clickResult()">
       <img src="https://i.imgur.com/0pEZhHd.jpg">
       <ion-card-content>
         <ion-card-title>Result</ion-card-title>

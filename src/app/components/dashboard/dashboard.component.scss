@@ -21,7 +21,7 @@ body {
     height: 100%;
     background-color: red;
     border-style: solid;
-    border-color: #00c4cc;
+    border-color: #1d273d;
   }
   
   .right {
@@ -29,17 +29,12 @@ body {
     background-color: white;
     height: 100%;
     border-style: solid;
-    border-color: white;
+    border-color: #1d273d;
     width: 40%;
-    margin-top: 58px;
+    margin-top: 60px;
     transition: transform .2s;
   }
-  .right:hover {
-    -ms-transform: scale(1.1); /* IE 9 */
-    -webkit-transform: scale(1.1); /* Safari 3-8 */
-    transform: scale(1.1); 
-  }
-  
+ 
   .centered {
     position: absolute;
     top: 50%;
@@ -208,6 +203,24 @@ div[scrolly=true] {
 
 #scrollable {
   height: 70%;
+}
+ion-card:hover{
+  animation: tapAnimation 0.25s cubic-bezier(0.31, 1, 0.34,1) forwards;
+}
+@keyframes tapAnimation {
+  0% {
+      opacity: 1;
+      transform: scale(0.96); 
+  }
+  100% {
+      opacity: 1;
+      background: rgba(0,0,0,0.05);
+      transform: scale(1);
+  }
+}
+.custom-header{
+  // --background: -webkit-linear-gradient(45deg, #8bade0 0%, #8bade0 100%);
+  --background-color: #8bade0;
 }
 
 

@@ -1,8 +1,11 @@
 .horizontal-cards {
     ion-card {
         display: inline-block;
-        width: 300px;
-        
+        width: 265px;
+        margin-top: 20px;
+        margin-right: 0px;
+        margin-left: 27px;
+        margin-bottom: 20px;
     }
 }
 ion-card:hover{
@@ -19,3 +22,29 @@ ion-card:hover{
         transform: scale(1);
     }
 }
+div.sticky {
+    position: fixed;
+    bottom: 60px;
+    right: 18px;
+    z-index: 9500;
+    cursor: pointer;
+  //   width: 24px;
+    padding: 18px 18px 14px;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: all 0.145s ease-out;
+    -moz-transition: all 0.145s ease-out;
+    -ms-transition: all 0.145s ease-out;
+    transition: all 0.145s ease-out;
+    text-transform: uppercase;
+    background-color: #ff700a; 
+    font-style: italic;
+    color: white;
+    }
+    
+  
+    .sticky:hover{
+        background-color: cadetblue;
+    }

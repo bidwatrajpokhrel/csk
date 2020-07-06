@@ -58,7 +58,7 @@ ion-menu ion-content {
   }
   
   ion-menu.md ion-item ion-icon {
-    color: #616e7e;
+    color: white;
   }
   
   ion-menu.md ion-item ion-label {
@@ -116,4 +116,17 @@ ion-menu ion-content {
   
   ion-item.selected {
     --color: var(--ion-color-primary);
+  }
+
+  ion-menu {
+    --ion-background-color: #1d273d;
+    --ion-text-color: var(--ion-color-primary-contrast);
+  
+    ion-toolbar {
+      --background: #1d273d;
+    }
+  
+    ion-list {/* optional, but it needs when you use gradient as a background color.*/
+  --background: -webkit-linear-gradient(45deg, #416396 0%, white 100%);
+    }
   }

@@ -1,9 +1,9 @@
 <ion-header>
-    <ion-toolbar color="primary">
-        <ion-buttons slot="start">
+    <ion-toolbar class="custom-toolbar">
+        <ion-buttons slot="start" style="color: white;">
             <ion-menu-button></ion-menu-button>
           </ion-buttons>
-      <ion-title>
+      <ion-title style="color: white;text-align: center;">
         Guest Lectures
       </ion-title>
     </ion-toolbar>
@@ -24,4 +24,7 @@
       </ion-card>
     
     </div>
+    <div class="sticky" (click)="clickAllGuestLectures()">
+      See all Guest lectures ->
+     </div>
   </ion-content>

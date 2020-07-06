@@ -1,0 +1,22 @@
+.horizontal-cards {
+    margin-left: 80px;
+    margin-right: 80px;
+    ion-card {
+        display: inline-block;
+        width: 340px;
+    }
+}
+ion-card:hover{
+    animation: tapAnimation 1s;
+}
+@keyframes tapAnimation {
+    0% {
+        opacity: 1;
+        transform: scale(0.96); 
+    }
+    100% {
+        opacity: 1;
+        background: rgba(0,0,0,0.05);
+        transform: scale(1);
+    }
+}

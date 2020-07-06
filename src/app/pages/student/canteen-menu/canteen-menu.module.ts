@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import {MaterialModule} from 'src/app/material.module';
 import { CanteenMenuPageRoutingModule } from './canteen-menu-routing.module';
-import {CanteenMenuDetailsComponent} from 'src/app/components/canteen-menu-details/canteen-menu-details.component';
+import {ComponentsModule} from 'src/app/components/components.module';
 import { CanteenMenuPage } from './canteen-menu.page';
 
 @NgModule({
@@ -14,8 +14,10 @@ import { CanteenMenuPage } from './canteen-menu.page';
     FormsModule,
     IonicModule,
     CanteenMenuPageRoutingModule,
-    MaterialModule
+    MaterialModule,
+    ComponentsModule
   ],
-  declarations: [CanteenMenuPage,CanteenMenuDetailsComponent]
+  exports:[],
+  declarations: [CanteenMenuPage]
 })
 export class CanteenMenuPageModule {}
