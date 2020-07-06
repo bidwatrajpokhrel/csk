@@ -13,6 +13,15 @@ import { HttpClientModule } from '@angular/common/http';
 import {ClubDetailsComponent} from './club-details/club-details.component';
 import {GuestLecturesDetailsComponent} from './guest-lectures-details/guest-lectures-details.component';
 import {CanteenMenuDetailsComponent} from './canteen-menu-details/canteen-menu-details.component';
+import {AllEventsComponent} from './all-events/all-events.component';
+import {UnitDetailsComponent} from './unit-details/unit-details.component';
+import {UnitDetailsInfoComponent} from './unit-details-info/unit-details-info.component';
+import {SOSdetailsComponent} from './sosdetails/sosdetails.component';
+import {NearbyBanksDetailsComponent} from './nearby-banks-details/nearby-banks-details.component';
+import {NearbyActivityDetailsComponent} from './nearby-activity-details/nearby-activity-details.component';
+import {NearbyRestaurantsDetailsComponent} from './nearby-restaurants-details/nearby-restaurants-details.component';
+import {CanteenMenuComponent} from './canteen-menu/canteen-menu.component';
+
 @NgModule({
     imports:[
         CommonModule,
@@ -23,23 +32,39 @@ import {CanteenMenuDetailsComponent} from './canteen-menu-details/canteen-menu-d
     ],
     declarations: [
         ClubTilesComponent,
+        NearbyRestaurantsDetailsComponent,
+        NearbyActivityDetailsComponent,
         ClubWithEventsComponent,
         AccordionListComponent,
         DashboardComponent,
         ImageGalleryComponent,
         ClubDetailsComponent,
         GuestLecturesDetailsComponent,
-        CanteenMenuDetailsComponent
+        CanteenMenuDetailsComponent,
+        AllEventsComponent,
+        UnitDetailsComponent,
+        UnitDetailsInfoComponent,
+        SOSdetailsComponent,
+        NearbyBanksDetailsComponent,
+        CanteenMenuComponent
     ],
     exports: [
         ClubTilesComponent,
+        NearbyRestaurantsDetailsComponent,
+        NearbyActivityDetailsComponent,
         ClubWithEventsComponent,
         AccordionListComponent,
         DashboardComponent,
         ImageGalleryComponent,
         ClubDetailsComponent,
         GuestLecturesDetailsComponent,
-        CanteenMenuDetailsComponent
+        CanteenMenuDetailsComponent,
+        AllEventsComponent,
+        UnitDetailsComponent,
+        UnitDetailsInfoComponent,
+        SOSdetailsComponent,
+        NearbyBanksDetailsComponent,
+        CanteenMenuComponent
     ],
 })
 export class ComponentsModule {}

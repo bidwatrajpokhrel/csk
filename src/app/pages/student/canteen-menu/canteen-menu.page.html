@@ -1,19 +1,11 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
+  <ion-toolbar class="custom-toolbar">
+    <ion-buttons slot="start" style="color: white;">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Canteen Menu</ion-title>
+    <ion-title style="color: white;text-align: center;">Canteen Menu</ion-title>
   </ion-toolbar>
 
 <ion-content>
-  <div class ="collection" ion-padding (click)="onClick()">
-    <div class="collection-item" text-center>
-        <ion-button>
-            <ion-icon name="bookmark" slot="start"></ion-icon>
-              Bookmark       
-         </ion-button>
-      <img src="assets/images/nearbyRestaurants.png">
-    </div>
-  </div>
+  <app-canteen-menu></app-canteen-menu>
 </ion-content>

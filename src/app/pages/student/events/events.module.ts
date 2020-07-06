@@ -20,6 +20,7 @@ import { ComponentsModule } from 'src/app/components/components.module';
     ComponentsModule
   ],
   
+  
   declarations: [EventsPage]
 })
 export class EventsPageModule {}

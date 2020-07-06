@@ -22,7 +22,98 @@ const routes: Routes = [
   {
     path: 'student-menu',
     loadChildren: () => import('./pages/student/student-menu/student-menu.module').then( m => m.StudentMenuPageModule)
-   }
+   },
+  {
+    path: 'guest-home',
+    loadChildren: () => import('./pages/guest/guest-home/guest-home.module').then( m => m.GuestHomePageModule)
+  },
+  {
+    path: 'about-university-guest',
+    loadChildren: () => import('./pages/guest/about-university-guest/about-university-guest.module').then( m => m.AboutUniversityGuestPageModule)
+  },
+  {
+    path: 'recognition-guest',
+    loadChildren: () => import('./pages/guest/recognition-guest/recognition-guest.module').then( m => m.RecognitionGuestPageModule)
+  },
+  {
+    path: 'messages-guest',
+    loadChildren: () => import('./pages/guest/messages-guest/messages-guest.module').then( m => m.MessagesGuestPageModule)
+  },
+  {
+    path: 'infrastructure-guest',
+    loadChildren: () => import('./pages/guest/infrastructure-guest/infrastructure-guest.module').then( m => m.InfrastructureGuestPageModule)
+  },
+  {
+    path: 'facilities-guest',
+    loadChildren: () => import('./pages/guest/facilities-guest/facilities-guest.module').then( m => m.FacilitiesGuestPageModule)
+  },
+  {
+    path: 'our-team-guest',
+    loadChildren: () => import('./pages/guest/our-team-guest/our-team-guest.module').then( m => m.OurTeamGuestPageModule)
+  },
+  {
+    path: 'alumni-stories-guest',
+    loadChildren: () => import('./pages/guest/alumni-stories-guest/alumni-stories-guest.module').then( m => m.AlumniStoriesGuestPageModule)
+  },
+  {
+    path: 'holidays-list-guest',
+    loadChildren: () => import('./pages/guest/holidays-list-guest/holidays-list-guest.module').then( m => m.HolidaysListGuestPageModule)
+  },
+  {
+    path: 'intake-calender-guest',
+    loadChildren: () => import('./pages/guest/intake-calender-guest/intake-calender-guest.module').then( m => m.IntakeCalenderGuestPageModule)
+  },
+  {
+    path: 'admission-procedure-guest',
+    loadChildren: () => import('./pages/guest/admission-procedure-guest/admission-procedure-guest.module').then( m => m.AdmissionProcedureGuestPageModule)
+  },
+  {
+    path: 'fee-structure-guest',
+    loadChildren: () => import('./pages/guest/fee-structure-guest/fee-structure-guest.module').then( m => m.FeeStructureGuestPageModule)
+  },
+  {
+    path: 'scholarship-guest',
+    loadChildren: () => import('./pages/guest/scholarship-guest/scholarship-guest.module').then( m => m.ScholarshipGuestPageModule)
+  },
+  {
+    path: 'student-support',
+    loadChildren: () => import('./pages/guest/student-support/student-support.module').then( m => m.StudentSupportPageModule)
+  },
+  {
+    path: 'events-guest',
+    loadChildren: () => import('./pages/guest/events-guest/events-guest.module').then( m => m.EventsGuestPageModule)
+  },
+  {
+    path: 'events-gallery-guest',
+    loadChildren: () => import('./pages/guest/events-gallery-guest/events-gallery-guest.module').then( m => m.EventsGalleryGuestPageModule)
+  },
+  {
+    path: 'news-guest',
+    loadChildren: () => import('./pages/guest/news-guest/news-guest.module').then( m => m.NewsGuestPageModule)
+  },
+  {
+    path: 'courses-guest',
+    loadChildren: () => import('./pages/guest/courses-guest/courses-guest.module').then( m => m.CoursesGuestPageModule)
+  },
+  {
+    path: 'courses-details-guest',
+    loadChildren: () => import('./pages/guest/courses-details-guest/courses-details-guest.module').then( m => m.CoursesDetailsGuestPageModule)
+  },
+  {
+    path: 'all-event-student',
+    loadChildren: () => import('./pages/student/all-event-student/all-event-student.module').then( m => m.AllEventStudentPageModule)
+  },
+  {
+    path: 'all-guest-lectures-student',
+    loadChildren: () => import('./pages/student/all-guest-lectures-student/all-guest-lectures-student.module').then( m => m.AllGuestLecturesStudentPageModule)
+  },  {
+    path: 'canteen-menu-guest',
+    loadChildren: () => import('./pages/guest/canteen-menu-guest/canteen-menu-guest.module').then( m => m.CanteenMenuGuestPageModule)
+  }
+
+
+
+
   // {
   //   path: 'admission-info-table',
   //   loadChildren: () => import('./pages/admin/admission-info-table/admission-info-table.module').then( m => m.AdmissionInfoTablePageModule)

@@ -1,10 +1,14 @@
-<div *ngIf="clubDetail">
-  <ion-card>
+<div *ngIf="clubDetail" class="box">
+  <div class="images">
+    <img src="assets/images/aboutUS.jpg" style="float: left;">
+  </div>
+  <div class="description">
+  <ion-label>
     Name: {{clubDetail.name}} <br>
     Desription: {{clubDetail.description}}<br>
     President: {{clubDetail.president.name}}<br>
     Vice President: {{clubDetail.vice_president.name}} <br> 
-  </ion-card>
+  </ion-label>
 
   <ion-list>
     <ion-item *ngFor="let event of clubDetail.events" color="light" button="true" (click)="viewEvent()">
@@ -22,4 +26,5 @@
       </ion-label>
     </ion-item>
   </ion-list>
+  </div>
 </div>

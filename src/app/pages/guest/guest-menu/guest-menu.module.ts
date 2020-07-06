@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { GuestMenuPageRoutingModule } from './guest-menu-routing.module';
 import { ComponentsModule } from '../../../components/components.module'
 import { GuestMenuPage } from './guest-menu.page';
-
+import {ComponentsGuestModule} from 'src/app/pages/guest/components-guest/components-guest.module';
 @NgModule({
   imports: [
     CommonModule,
@@ -15,6 +15,7 @@ import { GuestMenuPage } from './guest-menu.page';
     IonicModule,
     GuestMenuPageRoutingModule,
     ComponentsModule,
+    ComponentsGuestModule
   ],
   declarations: [GuestMenuPage]
 })

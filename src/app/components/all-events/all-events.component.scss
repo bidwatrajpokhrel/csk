@@ -1,0 +1,38 @@
+span{
+    display:none
+  }
+  
+  td:hover > span{
+    display:block;
+  }
+  td:hover > p{
+    display:none;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {background-color: #f2f2f2;}
+  th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #416396;
+    color: white;
+  }
+  div{
+      margin-top: 60px;
+      margin-right: 60px;
+      margin-left: 60px;
+  }
+  table {
+      border-color: black;
+      
+  }

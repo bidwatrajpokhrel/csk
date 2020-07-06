@@ -57,6 +57,24 @@ const routes: Routes = [
         path: 'event-student',
         loadChildren: () => import('../event/event.module').then( m => m.EventPageModule)
       }
+      ,
+      {
+        path: 'unit-student',
+        loadChildren: () => import('../unit-student/unit-student.module').then( m => m.UnitStudentPageModule)
+      }
+      ,
+  {
+    path: 'nearby-restaurants',
+    loadChildren: () => import('../nearby-restaurants/nearby-restaurants.module').then( m => m.NearbyRestaurantsPageModule)
+  },
+  {
+    path: 'nearby-banks',
+    loadChildren: () => import('../nearby-banks/nearby-banks.module').then( m => m.NearbyBanksPageModule)
+  },
+  {
+    path: 'nearby-activity',
+    loadChildren: () => import('../nearby-activity/nearby-activity.module').then( m => m.NearbyActivityPageModule)
+  }
     ],
   },
 ];

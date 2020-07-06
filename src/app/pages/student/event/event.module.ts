@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
-import {ClubWithEventsComponent} from 'src/app/components/club-with-events/club-with-events.component';
+import {ComponentsModule} from 'src/app/components/components.module';
 import { EventPageRoutingModule } from './event-routing.module';
 import {MaterialModule} from 'src/app/material.module';
 import { EventPage } from './event.page';
@@ -14,8 +14,10 @@ import { EventPage } from './event.page';
     FormsModule,
     IonicModule,
     EventPageRoutingModule,
-    MaterialModule
+    MaterialModule,
+    ComponentsModule
   ],
-  declarations: [EventPage,ClubWithEventsComponent]
+  exports:[],
+  declarations: [EventPage]
 })
 export class EventPageModule {}

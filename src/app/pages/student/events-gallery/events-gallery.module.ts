@@ -15,7 +15,7 @@ import { EventsGalleryPage } from './events-gallery.page';
     FormsModule,
     IonicModule,
     EventsGalleryPageRoutingModule,
-    ComponentsModule,
+    ComponentsModule
   ],
   declarations: [EventsGalleryPage]
 })

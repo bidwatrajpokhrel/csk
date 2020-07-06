@@ -57,7 +57,7 @@ ion-menu ion-content {
   }
   
   ion-menu.md ion-item ion-icon {
-    color: #616e7e;
+    color: white;
   }
   
   ion-menu.md ion-item ion-label {
@@ -116,3 +116,44 @@ ion-menu ion-content {
   ion-item.selected {
     --color: var(--ion-color-primary);
   }
+
+  ion-menu {
+    --ion-background-color: #1d273d;
+    --ion-text-color: var(--ion-color-primary-contrast);
+  
+    ion-toolbar {
+      --background: #1d273d;
+    }
+  
+    ion-list {/* optional, but it needs when you use gradient as a background color.*/
+  --background: -webkit-linear-gradient(45deg, #416396 0%, white 100%);
+    }
+  }
+
+ .images .welcome{
+    display: inline;
+  }
+img{
+    border-radius: 80px;
+    width:60px;
+    height:60px;
+    left:0;
+  }
+  .welcome{
+    margin-left: 20px;
+    padding-top: 20px;
+  }
+  .parent {
+    width: 400px;
+   height:100%;
+    // border: 1px solid #AAA;
+    overflow: hidden;
+  }
+  
+  .child {
+    height: 100%;
+    margin-right: -50px; /* Maximum width of scrollbar */
+    padding-right: 50px; /* Maximum width of scrollbar */
+    overflow-y: scroll;
+  }
+  

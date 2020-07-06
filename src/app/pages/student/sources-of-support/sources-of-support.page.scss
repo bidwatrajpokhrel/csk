@@ -1,0 +1,51 @@
+.horizontal-cards {
+    margin-left: 40px;
+    margin-right: 40px;
+    ion-card {
+        display: inline-block;
+        width: 250px;
+    }
+}
+ion-card:hover{
+    animation: tapAnimation 0.25s cubic-bezier(0.31, 1, 0.34,1) forwards;
+    
+}
+@keyframes tapAnimation {
+    0% {
+        opacity: 1;
+        transform: scale(0.96); 
+    }
+    100% {
+        opacity: 1;
+        background: rgba(0,0,0,0.05);
+        transform: scale(1);
+    }
+}
+ion-card{
+    background-color:#ADEFD1FF;
+}
+.label ion-label{
+    font-size: 15px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: rgb(185, 177, 177);
+  }
+
+  .horizontal-cards ion-label{
+      font-size: 15px;
+      color: white;
+  }
+  .horizontal-cards ion-card-title{
+    color: rgb(185, 177, 177);
+  }
+  .horizontal-cards ion-card-subtitle{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  }
+
+  .label{
+      margin-left: 20px;
+  }

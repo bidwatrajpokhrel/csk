@@ -16,7 +16,7 @@ export class StudentMenuPage implements OnInit {
       icon: 'people'
     },
     {
-      title: 'Sources of Support',
+      title: 'Online Resources',
       url: '/student-menu/sources-of-support',
       icon: 'documents'
     },
@@ -24,6 +24,11 @@ export class StudentMenuPage implements OnInit {
       title: 'Lecture Schedule',
       url: '/student-menu/lecture-schedule',
       icon: 'book'
+    },
+    {
+      title: 'Units',
+      url: '/student-menu/unit-student',
+      icon: 'journal'
     },
     {
       title: 'Guest Lectures',

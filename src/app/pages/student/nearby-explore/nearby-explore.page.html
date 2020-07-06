@@ -1,9 +1,9 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
+  <ion-toolbar class="custom-toolbar">
+    <ion-buttons slot="start" style="color: white;">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Places to Explore Nearby</ion-title>
+    <ion-title style="color: white;text-align: center;">Places to Explore Nearby</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -18,7 +18,7 @@
 
 <div class="split centera" (click)="nearbyBank()">
   <div class="centered">
-    <img src="assets/images/nearbyBanks.png" alt="Bank">
+    <img src="assets/images/nearbybanks.png" alt="Bank">
     <h2>Explore Nearby</h2>
     <p>BANKS</p>
   </div>
@@ -34,7 +34,7 @@
 
 <div class="split right" (click)="eventGallery()">
   <div class="centered">
-    <video width="110" height="100" autoplay loop>
+    <video width="95" height="85" autoplay loop style="border-radius: 80px;">
       <source src="assets/images/videoArrow.mp4" type="video/mp4">
     </video>   
     <h2>Click to Explore</h2>
