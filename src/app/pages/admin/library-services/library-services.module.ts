@@ -8,6 +8,7 @@ import { LibraryServicesPageRoutingModule } from './library-services-routing.mod
 
 import { LibraryServicesPage } from './library-services.page';
 import {MaterialModule} from 'src/app/material.module';
+import { LibraryServicesCreateComponent } from 'src/app/admin-component/library-services-create/library-services-create.component';
 
 
 @NgModule({
@@ -18,6 +19,6 @@ import {MaterialModule} from 'src/app/material.module';
     LibraryServicesPageRoutingModule,
     MaterialModule
   ],
-  declarations: [LibraryServicesPage]
+  declarations: [LibraryServicesPage, LibraryServicesCreateComponent]
 })
 export class LibraryServicesPageModule {}

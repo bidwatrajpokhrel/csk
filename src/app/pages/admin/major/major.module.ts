@@ -8,6 +8,7 @@ import { MajorPageRoutingModule } from './major-routing.module';
 
 import { MajorPage } from './major.page';
 import {MaterialModule} from 'src/app/material.module';
+import { MajorCreateComponent } from 'src/app/admin-component/major-create/major-create.component';
 
 @NgModule({
   imports: [
@@ -17,6 +18,6 @@ import {MaterialModule} from 'src/app/material.module';
     MajorPageRoutingModule,
     MaterialModule
   ],
-  declarations: [MajorPage]
+  declarations: [MajorPage, MajorCreateComponent]
 })
 export class MajorPageModule {}

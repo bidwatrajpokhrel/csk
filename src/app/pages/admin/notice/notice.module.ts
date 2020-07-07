@@ -8,6 +8,7 @@ import { NoticePageRoutingModule } from './notice-routing.module';
 
 import { NoticePage } from './notice.page';
 import {MaterialModule} from 'src/app/material.module';
+import { NoticeCreateComponent } from 'src/app/admin-component/notice-create/notice-create.component';
 
 @NgModule({
   imports: [
@@ -17,6 +18,6 @@ import {MaterialModule} from 'src/app/material.module';
     NoticePageRoutingModule,
     MaterialModule
   ],
-  declarations: [NoticePage]
+  declarations: [NoticePage, NoticeCreateComponent]
 })
 export class NoticePageModule {}

@@ -21,16 +21,6 @@ export class AdminMenuPage implements OnInit {
       icon: 'reader'
     },
     {
-      title: 'Library Books',
-      url: '/admin-menu/books-in-library',
-      icon: 'library'
-    },
-    {
-      title: 'Student-Book Library',
-      url: '/admin-menu/student-library-books',
-      icon: 'calendar'
-    },
-    {
       title: 'Canteen Menu',
       url: '/admin-menu/canteen-menu',
       icon: 'fast-food'
@@ -41,7 +31,7 @@ export class AdminMenuPage implements OnInit {
       icon: 'people'
     },
     {
-      title: 'Club Membership',
+      title: 'Club Members',
       url: '/admin-menu/club-membership',
       icon: 'people-circle'
     }
@@ -55,29 +45,23 @@ export class AdminMenuPage implements OnInit {
     {
       title: 'Extra Curricular Activity',
       url: '/admin-menu/eca',
-      icon: 'walk'
-    }
-    ,
-    {
-      title: 'Employee',
-      url: '/admin-menu/employee-details',
-      icon: 'add'
+      icon: 'football'
     }
     ,
     {
       title: 'Events',
       url: '/admin-menu/events',
-      icon: 'bicycle'
+      icon: 'golf'
     }
     ,
     {
-      title: 'Events Booking',
+      title: 'Event Bookings',
       url: '/admin-menu/events-booking',
-      icon: 'bicycle-add'
+      icon: 'pencil'
     }
     ,
     {
-      title: 'Faculty',
+      title: 'Faculties',
       url: '/admin-menu/faculty',
       icon: 'podium'
     }
@@ -95,9 +79,9 @@ export class AdminMenuPage implements OnInit {
     }
     ,
     {
-      title: 'Course Major',
+      title: 'Majors',
       url: '/admin-menu/major',
-      icon: 'restaurant'
+      icon: 'earth'
     }
     ,
     {
@@ -139,10 +123,20 @@ export class AdminMenuPage implements OnInit {
     {
       title: 'Unit',
       url: '/admin-menu/unit',
-      icon: 'restaurant'
+      icon: 'book'
     }
-    
-
+    ,
+    {
+      title: 'Gallery',
+      url: '/admin-menu/gallery',
+      icon: 'images'
+    }
+    ,
+    {
+      title: 'Talking Head',
+      url: '/admin-menu/talking-head',
+      icon: 'images'
+    }
   ];
 
   selectedPath = '';

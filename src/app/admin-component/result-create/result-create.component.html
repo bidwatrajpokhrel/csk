@@ -9,31 +9,23 @@
 </ion-header>
 <br>
 <div class="container">
-  <mat-form-field align="start" hintLabel="Max 8 numbers" appearance="fill" >
-    <mat-label>Assessment ID</mat-label>
-    <input matInput  #inputa 
-    maxlength="8"  
-    placeholder="Ex. 3278" 
-    type="number"
-    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"  
-    (keypress)="numericOnly($event)">
-    <mat-hint align="end">{{inputa.value?.length || 0}}/8</mat-hint>
+  <mat-form-field appearance="fill">
+    <mat-label>Assessment</mat-label>
+    <mat-select [(ngModel)]="data.assessment_id">
+      <mat-option *ngFor="let assessment of assessments" [value]="assessment.id">{{assessment.name}}</mat-option>
+    </mat-select>
   </mat-form-field>
-  <mat-form-field align="start" hintLabel="Max 10 numbers" appearance="fill" >
-    <mat-label>Student ID</mat-label>
-    <input matInput  #inputb 
-    maxlength="10"  
-    placeholder="Ex. 1814310" 
-    type="number"
-    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"  
-    (keypress)="numericOnly($event)"> 
-    <mat-hint align="end">{{inputb.value?.length || 0}}/10</mat-hint>
+  <mat-form-field appearance="fill">
+    <mat-label>Student</mat-label>
+    <mat-select [(ngModel)]="data.student_id">
+      <mat-option *ngFor="let student of students" [value]="student.id">{{student.name}}</mat-option>
+    </mat-select>
   </mat-form-field>
   <br>
   <br>
   <mat-form-field align="start" hintLabel="Max 3 numbers" appearance="fill" >
     <mat-label>Marks Attained</mat-label>
-    <input matInput  #inputc 
+    <input [(ngModel)]="data.marks" matInput  #inputc 
     maxlength="3"  
     placeholder="Ex. 98" 
     type="number"
@@ -45,10 +37,11 @@
   <br>
   <mat-form-field appearance="fill">
     <mat-label>Comments</mat-label>
-    <textarea matInput></textarea>
+    <textarea matInput [(ngModel)]="data.comments"></textarea>
   </mat-form-field>
   </div>
   <br>
   <div class="a">
-    <button mat-raised-button color="primary">ADD</button>
+    <button mat-raised-button *ngIf="!editData" (click)="onCreate()" color="primary">ADD</button>
+    <button mat-raised-button *ngIf="editData" (click)="onEdit()" color="primary">EDIT</button>
 </div>

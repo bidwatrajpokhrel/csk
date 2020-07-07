@@ -8,6 +8,7 @@ import { ResultPageRoutingModule } from './result-routing.module';
 
 import { ResultPage } from './result.page';
 import {MaterialModule} from 'src/app/material.module';
+import { ResultCreateComponent } from 'src/app/admin-component/result-create/result-create.component';
 
 @NgModule({
   imports: [
@@ -17,6 +18,6 @@ import {MaterialModule} from 'src/app/material.module';
     ResultPageRoutingModule,
     MaterialModule
   ],
-  declarations: [ResultPage]
+  declarations: [ResultPage, ResultCreateComponent]
 })
 export class ResultPageModule {}

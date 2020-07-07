@@ -11,16 +11,17 @@
 <div class="container">
   <mat-form-field appearance="fill">
     <mat-label>Service Name</mat-label>
-    <input matInput placeholder="Ex. Nougat">
+    <input matInput placeholder="Ex. Nougat" [(ngModel)]="data.name">
   </mat-form-field>
   <br>
 
   <mat-form-field appearance="fill">
     <mat-label>Detailed Information</mat-label>
-    <textarea matInput></textarea>
+    <textarea matInput [(ngModel)]="data.description"></textarea>
   </mat-form-field>
   </div>
   <br>
 <div class="a">
-  <button mat-raised-button color="primary">ADD</button>
+  <button mat-raised-button color="primary" *ngIf="!editData" (click)="onCreate()">ADD</button>
+  <button mat-raised-button color="primary" *ngIf="editData" (click)="onEdit()">EDIT</button>
 </div>

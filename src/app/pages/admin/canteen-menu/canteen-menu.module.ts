@@ -8,6 +8,7 @@ import { CanteenMenuPageRoutingModule } from './canteen-menu-routing.module';
 
 import { CanteenMenuPage } from './canteen-menu.page';
 import {MaterialModule} from 'src/app/material.module';
+import { CanteenMenuCreateComponent } from 'src/app/admin-component/canteen-menu-create/canteen-menu-create.component';
 
 @NgModule({
   imports: [
@@ -17,6 +18,6 @@ import {MaterialModule} from 'src/app/material.module';
     CanteenMenuPageRoutingModule,
     MaterialModule
   ],
-  declarations: [CanteenMenuPage]
+  declarations: [CanteenMenuPage, CanteenMenuCreateComponent]
 })
 export class CanteenMenuPageModule {}

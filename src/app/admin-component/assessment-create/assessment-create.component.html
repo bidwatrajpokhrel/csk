@@ -11,7 +11,7 @@
 <div class="example-container">
   <mat-form-field appearance="fill">
     <mat-label> Assessment Title</mat-label>
-    <input matInput placeholder="Ex. Hello Title">
+    <input matInput placeholder="Ex. Hello Title" [(ngModel)]="data.title">
   </mat-form-field>
 
   <mat-form-field align="start" hintLabel="Max 3 characters" appearance="fill" >
@@ -21,25 +21,28 @@
     placeholder="Ex. 100" 
     type="number"
     oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"  
-    (keypress)="numericOnly($event)">
+    (keypress)="numericOnly($event)" [(ngModel)]="data.marks">
     <mat-hint align="end">{{input.value?.length || 0}}/3</mat-hint>
   </mat-form-field>
 <br>
 <br>
 <mat-form-field appearance="fill">
   <mat-label>Unit</mat-label>
-  <input matInput placeholder="Unit Name/Code">
+  <mat-select [(ngModel)]="data.unit">
+    <mat-option *ngFor="let unit of units" [value]="unit.id">{{unit.name}}</mat-option>
+  </mat-select>
 </mat-form-field>
 
 <mat-form-field appearance="fill">
-  <mat-label>Detailed Information</mat-label>
-  <textarea matInput></textarea>
+  <mat-label >Assessment Description (Brief)</mat-label>
+  <textarea matInput [(ngModel)]="data.description"></textarea>
 </mat-form-field>
 
 </div>
 <br>
 <div class="button-row">
-  <button mat-raised-button color="primary">ADD</button>
+  <button mat-raised-button color="primary" *ngIf="!editData" (click)="onCreate()">ADD</button>
+  <button mat-raised-button color="primary" *ngIf="editData" (click)="onEdit()">EDIT</button>
 </div>
 
 

@@ -102,6 +102,15 @@ const routes: Routes = [
           path: 'unit',
           loadChildren: () => import('../unit/unit.module').then( m => m.UnitPageModule)
         },
+        {
+          path: 'gallery',
+          loadChildren: () => import('../gallery/gallery.module').then( m => m.GalleryPageModule)
+        },
+        {
+          path: 'talking-head',
+          loadChildren: () => import('../talking-heads/talking-heads.module').then( m => m.TalkingHeadsPageModule)
+        },
+
     ]
   }
 ];

@@ -11,26 +11,26 @@
 <div class="container">
   <mat-form-field appearance="fill">
     <mat-label>Guest Name</mat-label>
-    <input matInput placeholder="Ex. Dr.Sushan Mal">
+    <input matInput placeholder="Ex. Dr.Sushan Mal" [(ngModel)]="data.name">
   </mat-form-field>
   <br>
   <mat-form-field appearance="fill">
     <mat-label>Lecture Title</mat-label>
-    <input matInput placeholder="Ex. Basics of Deep learning">
+    <input matInput placeholder="Ex. Basics of Deep learning" [(ngModel)]="data.title">
   </mat-form-field>
   <mat-form-field appearance="fill">
     <mat-label>Lecture Subject</mat-label>
-    <input matInput placeholder="Ex. Artificial Intelligence">
+    <input matInput placeholder="Ex. Artificial Intelligence" [(ngModel)]="data.subject">
   </mat-form-field>
   <br>
   <mat-form-field>
     
     <mat-label>Date</mat-label>
-    <input matInput [matDatepicker]="picker">
+    <input matInput [matDatepicker]="picker" [(ngModel)]="data.date_time_">
     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
   </mat-form-field>
-<br>
+<!-- <br>
   <mat-form-field appearance="fill">
     <mat-label>Time</mat-label>
     <mat-select>
@@ -56,27 +56,25 @@
       <mat-option value="option">PM</mat-option>
     </mat-select>
     <mat-hint align="end">Select^</mat-hint>
-  </mat-form-field>
+  </mat-form-field> -->
   <br>
   <br>
   <mat-form-field appearance="fill">
     <mat-label>Detailed Information</mat-label>
-    <textarea matInput></textarea>
+    <textarea matInput [(ngModel)]="data.description"></textarea>
   </mat-form-field>
   <br>
   <mat-form-field appearance="fill">
     <mat-label>Club Associated</mat-label>
-    <mat-select>
-      <mat-option value="option">Club1</mat-option>
-      <mat-option value="option">Club2</mat-option>
-      <mat-option value="option">Club3</mat-option>
+    <mat-select [(ngModel)]="data.club">
+      <mat-option *ngFor="let club of clubs" [value]="club.id">{{club.name}}</mat-option>
     </mat-select>
-    <mat-hint align="end">Select^</mat-hint>
   </mat-form-field>
   </div>
   <br>
   <div class="a">
-    <button mat-raised-button color="primary">ADD</button>
+    <button mat-raised-button *ngIf="!editData" color="primary" (click)="onCreate()">ADD</button>
+    <button mat-raised-button *ngIf="editData" color="primary" (click)="onEdit()">Edit</button>
 </div>
 
 

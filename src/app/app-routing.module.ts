@@ -106,13 +106,21 @@ const routes: Routes = [
   {
     path: 'all-guest-lectures-student',
     loadChildren: () => import('./pages/student/all-guest-lectures-student/all-guest-lectures-student.module').then( m => m.AllGuestLecturesStudentPageModule)
-  },  {
+  },
+  {
     path: 'canteen-menu-guest',
     loadChildren: () => import('./pages/guest/canteen-menu-guest/canteen-menu-guest.module').then( m => m.CanteenMenuGuestPageModule)
-  }
+  },
+   
+  // {
+  //   path: 'talking-heads',
+  //   loadChildren: () => import('./pages/admin/talking-heads/talking-heads.module').then( m => m.TalkingHeadsPageModule)
+  // },
 
-
-
+  // {
+  //   path: 'gallery',
+  //   loadChildren: () => import('./pages/admin/gallery/gallery.module').then( m => m.GalleryPageModule)
+  // }
 
   // {
   //   path: 'admission-info-table',

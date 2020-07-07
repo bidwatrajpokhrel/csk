@@ -20,32 +20,32 @@
 <!-- </div> -->
 <div class="mat-elevation-z8">
   <mat-table [dataSource]="listData"  matSort>
-    <ng-container matColumnDef="assessmentID">
-      <mat-header-cell *matHeaderCellDef  mat-sort-header>Assessment ID</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.assessmentID}}</mat-cell>
+    <ng-container matColumnDef="assessmentId">
+      <mat-header-cell *matHeaderCellDef  mat-sort-header>Assessment Id</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.id}}</mat-cell>
     </ng-container>
     <ng-container matColumnDef="assessmentTitle">
       <mat-header-cell *matHeaderCellDef  mat-sort-header>Assessment Title</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.assessmentTitle}}</mat-cell>
+      <mat-cell *matCellDef="let element">{{element.name}}</mat-cell>
     </ng-container>
     <ng-container matColumnDef="assessmentMarks">
       <mat-header-cell *matHeaderCellDef mat-sort-header>Assessment Marks</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.assessmentMarks}}</mat-cell>
+      <mat-cell *matCellDef="let element">{{element.marks}}</mat-cell>
     </ng-container>
     <ng-container matColumnDef="assessmentAbout">
       <mat-header-cell *matHeaderCellDef mat-sort-header>Assessment About</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.assessmentAbout}}</mat-cell>
+      <mat-cell *matCellDef="let element">{{element.description}}</mat-cell>
     </ng-container>
     <ng-container matColumnDef="assessmentUnit">
       <mat-header-cell *matHeaderCellDef mat-sort-header>Assessment Unit</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.assessmentUnit}}</mat-cell>
+      <mat-cell *matCellDef="let element">{{element.unit.name}}</mat-cell>
     </ng-container>
     
     <ng-container matColumnDef="actions">
-      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-header-cell *matHeaderCellDef>Actions</mat-header-cell>
       <mat-cell *matCellDef="let row">
         <button mat-icon-button (click)="onEdit(row)"><mat-icon>launch</mat-icon></button>
-        <button mat-icon-button color="warn" (click)="onDelete(row.$key)"><mat-icon>delete_outline</mat-icon></button>
+        <button mat-icon-button color="warn" (click)="onDelete(row)"><mat-icon>delete_outline</mat-icon></button>
       </mat-cell>
     </ng-container>
     <ng-container matColumnDef="loading">
@@ -61,7 +61,7 @@
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
     <mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide':listData!=null}"></mat-footer-row>
-    <mat-footer-row *matFooterRowDef="['noData']" [ngClass]="{'hide':!(listData!=null && listData.data.length==0)}"></mat-footer-row>
+    <mat-footer-row *matFooterRowDef="['noData']" [ngClass]="{'hide':!(listData!=null && listData.length==0)}"></mat-footer-row>
   </mat-table>
   <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [pageSize]="5" showFirstLastButtons></mat-paginator>
 </div>

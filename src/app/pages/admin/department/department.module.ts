@@ -8,6 +8,7 @@ import { DepartmentPageRoutingModule } from './department-routing.module';
 import {MaterialModule} from 'src/app/material.module';
 
 import { DepartmentPage } from './department.page';
+import { DepartmentCreateComponent } from 'src/app/admin-component/department-create/department-create.component';
 
 @NgModule({
   imports: [
@@ -17,6 +18,6 @@ import { DepartmentPage } from './department.page';
     DepartmentPageRoutingModule,
     MaterialModule
   ],
-  declarations: [DepartmentPage]
+  declarations: [DepartmentPage, DepartmentCreateComponent]
 })
 export class DepartmentPageModule {}

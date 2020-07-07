@@ -11,25 +11,26 @@
 <div class="container">
   <mat-form-field appearance="fill">
     <mat-label>Restaurant Name</mat-label>
-    <input matInput placeholder="Ex. Spicy Cafe">
+    <input matInput placeholder="Ex. Spicy Cafe" [(ngModel)]="data.name">
   </mat-form-field>
   <br>
   <mat-form-field appearance="fill">
     <mat-label>Offer</mat-label>
-    <textarea matInput></textarea>
+    <textarea matInput [(ngModel)]="data.offers"></textarea>
   </mat-form-field>
   <br>
   <mat-form-field appearance="fill">
     <mat-label>Other Details</mat-label>
-    <textarea matInput></textarea>
+    <textarea matInput [(ngModel)]="data.description"></textarea>
   </mat-form-field>
 <br>
 <mat-form-field appearance="fill">
-  <mat-label>Address</mat-label>
-  <input matInput placeholder="Ex. Koteshwor">
+  <mat-label ngmo>Address</mat-label>
+  <input matInput placeholder="Ex. Koteshwor" [(ngModel)]="data.address">
 </mat-form-field>
 </div>
 <br>
 <div class="a">
-  <button mat-raised-button color="primary">ADD</button>
+  <button mat-raised-button color="primary" *ngIf="!editData" (click)="onCreate()">ADD</button>
+  <button mat-raised-button color="primary" *ngIf="editData" (click)="onEdit()">EDIT</button>
 </div>

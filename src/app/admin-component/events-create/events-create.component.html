@@ -7,53 +7,47 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
-<br>
-<div class="container">
-  <mat-form-field appearance="fill">
-    <mat-label>Event Name</mat-label>
-    <input matInput placeholder="Ex. Art Competition">
-  </mat-form-field>
-  <mat-form-field appearance="fill">
-    <mat-label>Clubs Associated</mat-label>
-    <mat-select>
-      <mat-option value="option">Option</mat-option>
-    </mat-select>
-    <mat-hint align="end">Select^</mat-hint>
-  </mat-form-field>
-  <br>
-  <mat-form-field appearance="fill">
-    <mat-label>Detailed Information</mat-label>
-    <textarea matInput></textarea>
-  </mat-form-field>
-  <br>
-  <mat-form-field>
-    <mat-label>Start Date</mat-label>
-    <input matInput [matDatepicker]="picker">
-    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
-  </mat-form-field>
-  <mat-form-field>
-    <mat-label>End Date</mat-label>
-    <input matInput [matDatepicker]="picker">
-    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #pickere></mat-datepicker>
-  </mat-form-field>
-<br>
-<mat-label>Approval : </mat-label>
-    <mat-slide-toggle>Taken</mat-slide-toggle>
-<br>
-<br>
-<mat-form-field  appearance="fill" >
-  <mat-label>Total No of Seats</mat-label>
-  <input matInput  #input 
-  maxlength="6"  
-  placeholder="Ex. 150" 
-  type="number"
-  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"  
-  (keypress)="numericOnly($event)">
-</mat-form-field>
-  </div>
- <br>
- <div class="a">
-  <button mat-raised-button color="primary">ADD</button>
-</div> 
+
+<div>
+  <ion-item>
+    <ion-label position="stacked">Name</ion-label>
+    <ion-input placeholder="Name" [(ngModel)]="data.name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Description</ion-label>
+    <ion-textarea placeholder="Description of the event" [(ngModel)]="data.description"></ion-textarea>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Number of Seats</ion-label>
+    <ion-input type="number" placeholder="Enter a Number" [(ngModel)]="data.no_of_seats"></ion-input>
+  </ion-item>
+  <ion-row>
+    <ion-col>
+      <ion-item>
+        <ion-label position="stacked">Start Date</ion-label>
+        <ion-input placeholder="start-date" type="date" [(ngModel)]="data.event_from"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col>
+      <ion-item>
+        <ion-label position="stacked">End Date</ion-label>
+        <ion-input placeholder="end-date" type="date" [(ngModel)]="data.event_to"></ion-input>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+
+  <ion-item>
+    <label for="clubs">Club Associated: </label>
+    <select name="club" id="club" [(ngModel)]="data.club">
+      <option *ngFor="let club of clubs" [value]="club.id">{{club.name}}</option>
+    </select>
+  </ion-item>
+
+  <ion-button *ngIf="!editData" (click)="onCreate()">Add Event</ion-button>
+  <ion-button *ngIf="editData" (click)="onEdit()">Edit Event</ion-button>
+
+</div>
+
+
+
+

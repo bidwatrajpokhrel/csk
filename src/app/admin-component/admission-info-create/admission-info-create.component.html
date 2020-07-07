@@ -3,24 +3,23 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title> Add Admission Info 
+    <ion-title> Add Admission Information
     </ion-title>
   </ion-toolbar>
 </ion-header>
 <br>
-<div class="example-container">
-  <mat-form-field appearance="fill">
-    <mat-label>Enter Info Name</mat-label>
-    <input matInput #input placeholder="Ex. Hello Information">
-  </mat-form-field>
-<br>
-<mat-form-field appearance="fill">
-  <mat-label>Detailed Information</mat-label>
-  <textarea matInput></textarea>
-</mat-form-field>
+<div>
 
-</div>
+  <ion-item>
+    <ion-label position="stacked">Admission Info Title</ion-label>
+    <ion-input placeholder="Ex. Words from chiarman" [(ngModel)]="data.name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Description/Text</ion-label>
+    <ion-textarea placeholder="Description" [(ngModel)]="data.description"></ion-textarea>
+  </ion-item>
 
-<div class="example-button-row">
-  <button mat-raised-button color="primary">ADD</button>
+
+  <ion-button (click)="onCreate()" *ngIf="!editData">Add Admission Information</ion-button>
+  <ion-button (click)="onEdit()" *ngIf="editData">Edit Admission Information</ion-button>
 </div>

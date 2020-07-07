@@ -8,6 +8,7 @@ import { NearbyBanksPageRoutingModule } from './nearby-banks-routing.module';
 
 import { NearbyBanksPage } from './nearby-banks.page';
 import{MaterialModule} from 'src/app/material.module';
+import { NearbyBanksCreateComponent } from 'src/app/admin-component/nearby-banks-create/nearby-banks-create.component';
 
 @NgModule({
   imports: [
@@ -17,6 +18,6 @@ import{MaterialModule} from 'src/app/material.module';
     NearbyBanksPageRoutingModule,
     MaterialModule
   ],
-  declarations: [NearbyBanksPage]
+  declarations: [NearbyBanksPage, NearbyBanksCreateComponent]
 })
 export class NearbyBanksPageModule {}

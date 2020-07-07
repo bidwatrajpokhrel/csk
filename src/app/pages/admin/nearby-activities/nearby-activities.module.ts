@@ -8,6 +8,7 @@ import { NearbyActivitiesPageRoutingModule } from './nearby-activities-routing.m
 
 import { NearbyActivitiesPage } from './nearby-activities.page';
 import {MaterialModule} from 'src/app/material.module';
+import { NearbyActivitiesCreateComponent } from 'src/app/admin-component/nearby-activities-create/nearby-activities-create.component';
 
 @NgModule({
   imports: [
@@ -17,6 +18,6 @@ import {MaterialModule} from 'src/app/material.module';
     NearbyActivitiesPageRoutingModule,
     MaterialModule
   ],
-  declarations: [NearbyActivitiesPage]
+  declarations: [NearbyActivitiesPage, NearbyActivitiesCreateComponent]
 })
 export class NearbyActivitiesPageModule {}

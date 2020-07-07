@@ -1,4 +1,4 @@
-<div><ion-header class="ion-no-border">
+<ion-header class="ion-no-border">
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
@@ -7,6 +7,7 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
+<ion-content>
 <div class="search-div">
   <button slot= "start" mat-raised-button (click)="onCreate()">
     <mat-icon>add</mat-icon>Create
@@ -20,21 +21,21 @@
 <!-- </div> -->
 <div class="mat-elevation-z8">
   <mat-table [dataSource]="listData"  matSort>
-    <ng-container matColumnDef="resultID">
+    <ng-container matColumnDef="id">
       <mat-header-cell *matHeaderCellDef  mat-sort-header>Result ID</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.resultID}}</mat-cell>
+      <mat-cell *matCellDef="let element">{{element.id}}</mat-cell>
     </ng-container>
-    <ng-container matColumnDef="assessmentID">
-      <mat-header-cell *matHeaderCellDef  mat-sort-header>Assessment ID</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.assessmentID}}</mat-cell>
+    <ng-container matColumnDef="assessment">
+      <mat-header-cell *matHeaderCellDef  mat-sort-header>Assessment</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.assessment.name}}</mat-cell>
     </ng-container>
-    <ng-container matColumnDef="studentID">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>Student ID</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.studentID}}</mat-cell>
+    <ng-container matColumnDef="student">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Student</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.student.name}}</mat-cell>
     </ng-container>
-    <ng-container matColumnDef="marksAttained">
+    <ng-container matColumnDef="marks">
       <mat-header-cell *matHeaderCellDef mat-sort-header>Marks Attained</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.marksAttained}}</mat-cell>
+      <mat-cell *matCellDef="let element">{{element.marks}}</mat-cell>
     </ng-container>
     <ng-container matColumnDef="comments">
       <mat-header-cell *matHeaderCellDef mat-sort-header>Comments</mat-header-cell>
@@ -42,10 +43,10 @@
     </ng-container>
     
     <ng-container matColumnDef="actions">
-      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-header-cell *matHeaderCellDef>Actions</mat-header-cell>
       <mat-cell *matCellDef="let row">
         <button mat-icon-button (click)="onEdit(row)"><mat-icon>launch</mat-icon></button>
-        <button mat-icon-button color="warn" (click)="onDelete(row.$key)"><mat-icon>delete_outline</mat-icon></button>
+        <button mat-icon-button color="warn" (click)="onDelete(row)"><mat-icon>delete_outline</mat-icon></button>
       </mat-cell>
     </ng-container>
     <ng-container matColumnDef="loading">
@@ -61,11 +62,10 @@
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
     <mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide':listData!=null}"></mat-footer-row>
-    <mat-footer-row *matFooterRowDef="['noData']" [ngClass]="{'hide':!(listData!=null && listData.data.length==0)}"></mat-footer-row>
+    <mat-footer-row *matFooterRowDef="['noData']" [ngClass]="{'hide':!(listData!=null && listData.length==0)}"></mat-footer-row>
   </mat-table>
   <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [pageSize]="5" showFirstLastButtons></mat-paginator>
 </div>
 
 </div>
-
-</div>
+</ion-content>

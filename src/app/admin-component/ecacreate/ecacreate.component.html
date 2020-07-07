@@ -11,21 +11,24 @@
 <div class="container">
   <mat-form-field appearance="fill">
     <mat-label>ECA Name</mat-label>
-    <input matInput placeholder="Ex. Dance Class">
+    <input matInput placeholder="Ex. Dance Class" [(ngModel)]="data.name">
   </mat-form-field>
   <mat-form-field appearance="fill">
     <mat-label>Incharge</mat-label>
-    <input matInput placeholder="Ex. Mr.Tony">
+    <mat-select [(ngModel)]="data.incharge">
+      <mat-option *ngFor="let faculty of faculties" [value]="faculty.id">{{faculty.name}}</mat-option>
+    </mat-select>
   </mat-form-field>
   <br>
   <mat-form-field appearance="fill">
     <mat-label>Detailed Information</mat-label>
-    <textarea matInput></textarea>
+    <textarea matInput [(ngModel)]="data.description"></textarea>
   </mat-form-field>
   </div>
   <br>
   <div class="a">
-    <button mat-raised-button color="primary">ADD</button>
+    <button mat-raised-button color="primary" *ngIf="!editData" (click)="onCreate()">ADD</button>
+    <button mat-raised-button color="primary" *ngIf="editData" (click)="onEdit()">EDIT</button>
 </div>
 
   

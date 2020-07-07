@@ -7,24 +7,35 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
-<br>
-<div class="container">
-  <mat-form-field appearance="fill">
-    <mat-label>Name</mat-label>
-    <input matInput placeholder="Ex. Software System">
-  </mat-form-field>
-  <br>
-  <mat-form-field appearance="fill">
-    <mat-label>Entry Criteria</mat-label>
-    <textarea matInput></textarea>
-  </mat-form-field>
-  <br>
-  <mat-form-field appearance="fill">
-    <mat-label>Head</mat-label>
-    <input matInput placeholder="Ex. Mr. Rami Pal">
-  </mat-form-field>
-  </div>
-  <br>
-  <div class="a">
-    <button mat-raised-button color="primary">ADD</button>
+
+
+<div>
+  <ion-item>
+    <ion-label position="stacked">Name</ion-label>
+    <ion-input placeholder="Name" [(ngModel)]="data.name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Qualification</ion-label>
+    <ion-textarea placeholder="Criteria for Entry/Application" [(ngModel)]="data.qualification"></ion-textarea>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-list>
+      <ion-radio-group [(ngModel)]="data.head">
+        <ion-list-header>Major Head</ion-list-header>
+        <ion-item *ngFor="let faculty of faculties">
+          <ion-label>{{faculty.name}}</ion-label>
+          <ion-radio slot="start" [value]="faculty.id"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+
+  </ion-item>
+
+
+
+  <ion-button *ngIf="!editData" (click)="onCreate()">Add Major</ion-button>
+  <ion-button *ngIf="editData" (click)="onEdit()">Edit Major</ion-button>
+
 </div>

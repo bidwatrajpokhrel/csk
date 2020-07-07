@@ -1,0 +1,63 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title> Add Talking Heads
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<div>
+  <ion-item>
+    <ion-label position="stacked">Name</ion-label>
+    <ion-input placeholder="Name" [(ngModel)]="data.name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Titles</ion-label>
+    <ion-input placeholder="Ex. Chairman, Place" [(ngModel)]="data.titles"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Talk</ion-label>
+    <ion-textarea placeholder="What did they say?" [(ngModel)]="data.talk"></ion-textarea>
+  </ion-item>
+
+  <ion-item>
+    <ion-list>
+      <ion-radio-group [(ngModel)]="data.type_">
+        <ion-list-header>
+          <ion-label position="stacked">Type:</ion-label>
+        </ion-list-header>  
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label>Alumni</ion-label>
+              <ion-radio slot="start" value="Alumni"></ion-radio>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <ion-label>Administrative</ion-label>
+              <ion-radio slot="start" value="Administrative"></ion-radio>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label>Others</ion-label>
+              <ion-radio slot="start" value="Others"></ion-radio>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-radio-group>
+    </ion-list>
+  </ion-item>
+
+
+
+  <ion-button *ngIf="!editData" (click)="onCreate()">Add Faculty</ion-button>
+  <ion-button *ngIf="editData" (click)="onEdit()">Edit Faculty</ion-button>
+
+</div>
