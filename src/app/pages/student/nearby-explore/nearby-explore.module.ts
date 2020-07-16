@@ -15,6 +15,7 @@ import { NearbyExplorePage } from './nearby-explore.page';
     IonicModule,
     NearbyExplorePageRoutingModule
   ],
-  declarations: [NearbyExplorePage]
+  declarations: [NearbyExplorePage],
+  exports:[NearbyExplorePage]
 })
 export class NearbyExplorePageModule {}

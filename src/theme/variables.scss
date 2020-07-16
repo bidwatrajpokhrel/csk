@@ -82,6 +82,29 @@
   --background: linear-gradient(to bottom right, #1d273d, #8bade0);
 
 }
+.custom-label{
+  margin-left: 140px;
+  font-size: 20px;
+}
+.custom-button{
+  --background: linear-gradient(to bottom right, #1d273d, #8bade0);
+}
+.mainmain{
+  background-color: whitesmoke;
+}
+.content {
+  margin-left: 120px;
+margin-right: 120px;
+padding-top: 30px;
+padding-bottom: 30px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 5px 5px 5px 5px rgb(185, 181, 181);
+
+}
+.ion-content{
+  background-color: whitesmoke;
+}
 
 @media (prefers-color-scheme: dark) {
   /*
@@ -233,3 +256,9 @@
     --ion-tab-bar-background: #1f1f1f;
   }
 }
+ion-header {
+  &.header-md:after {
+    background: none;
+  }
+}
+

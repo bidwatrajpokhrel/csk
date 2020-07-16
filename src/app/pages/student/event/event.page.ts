@@ -11,10 +11,7 @@ export class EventPage implements OnInit {
   onClick(){
     this.dialog.open(ClubWithEventsComponent);
   }
-  clickAllEvents(){
-    this.route.navigate(['/all-event-student']);
-  }
-
+  
   constructor(private dialog: MatDialog, private route: Router) { }
 
   ngOnInit() {

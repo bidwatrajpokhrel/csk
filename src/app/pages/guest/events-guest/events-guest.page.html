@@ -1,3 +1,32 @@
-
-
-
+<ion-header>
+	<app-header-guest></app-header-guest>
+   </ion-header>
+ <ion-content> <div class="mainmain">
+	<div class="ion-content">
+	<br>
+	<app-guest-menu-details></app-guest-menu-details>
+	<br>
+  <br>
+  <ion-label class="custom-label"> Events </ion-label>
+  <br>
+  <br>
+<div class="content">
+    <div class="horizontal-cards">
+      <ion-card color="light" [routerLink]="['/events-details-guest']">    
+        <img src = "assets/images/aboutUS.jpg"> 
+        <ion-card-header>
+          <ion-card-title><h1>Freaking Lit Event</h1></ion-card-title>
+        </ion-card-header>
+        <ion-card-subtitle>
+          <ion-label>this course is this that.
+          </ion-label><br>
+        </ion-card-subtitle>
+      </ion-card>
+    </div>   
+</div>
+</div>
+<br>
+<div class="sticky" (click)="clickAllClubs()">
+  See all Clubs -->
+ </div></div>
+</ion-content>

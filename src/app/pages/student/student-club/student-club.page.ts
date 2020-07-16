@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-student-club',
@@ -6,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./student-club.page.scss'],
 })
 export class StudentClubPage implements OnInit {
-
-  constructor() { }
+  clickSeeAllEvents(){
+    this.router.navigate(['/all-event-student'])
+  }
+  constructor(    private router: Router,
+    ) { }
 
   ngOnInit() {
   }

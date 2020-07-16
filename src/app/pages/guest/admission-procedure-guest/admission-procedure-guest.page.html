@@ -1,18 +1,34 @@
 <ion-header>
-  <app-guest-menu-details></app-guest-menu-details>
-  <div style="width:100%; height:40px;background-image: linear-gradient(to right, black , white);text-align: center;">
-   <h2 style="color: white;">Admission Procedure</h2>
-  </div>
- </ion-header>
+ <app-header-guest></app-header-guest>
+</ion-header>
 <br>
-<ion-content>
-  <p><img src="assets/images/aboutUS.jpg" alt="University" style="width:370px;height:370px;margin-right:15px;margin-left:20px;">
-    <ion-label>The admission procedure involves completing the admission form with all necessary fields duly filled up and submission of the same to the Administrative office at the College. The admission form can alternatively be downloaded and online application submitted through the website www.patancollege.edu.np.<br><br>
-      The duly filled up and submitted admission form is scrutinized and registered by the administrative staff, following which the applicants will have to appear for a common entrance examination.The applicants shortlisted from the entrance examination will be finally selected for enrollment through an oral interview with a panel of examiners.<br><br>
-      
-      At the time of application, the students have to produce original certificates and credentials for verification.The documents required at the time of admission are: <br><br>
-      
-      > Attested photocopy of School leaving Certificate mark-sheet and Character certificate <br>
-      > Attested photocopy of Nationality certification if applicable.</ion-label>
-    </p>
+<ion-content><div class="mainmain">
+ <div class="ion-content">
+ <br>
+ <app-guest-menu-details></app-guest-menu-details>
+ <br>
+ <br>
+ <ion-label class="custom-label"> Admission Procedure </ion-label>
+ <br>
+ <br>
+<div class="content">
+ <ion-fab vertical="center" horizontal="start" slot="fixed" [routerLink]="['/courses-guest']">
+   <ion-fab-button>
+     <ion-icon name="arrow-back-circle"></ion-icon>
+   </ion-fab-button>
+ </ion-fab>
+ <img src="assets/images/aboutUS.jpg" alt="Paris" class="center">
+ <br>
+ <ion-label>
+   <div class="information">
+    The admission procedure involves completing the admission form with all necessary fields duly filled up and submission of the same to the Administrative office at the College. The admission form can alternatively be downloaded and online application submitted through the website www.patancollege.edu.np.<br><br>
+    The duly filled up and submitted admission form is scrutinized and registered by the administrative staff, following which the applicants will have to appear for a common entrance examination.The applicants shortlisted from the entrance examination will be finally selected for enrollment through an oral interview with a panel of examiners.<br><br>
+    
+    At the time of application, the students have to produce original certificates and credentials for verification.The documents required at the time of admission are: <br><br>
+    
+    > Attested photocopy of School leaving Certificate mark-sheet and Character certificate <br>
+    > Attested photocopy of Nationality certification if applicable. </div>
+ </ion-label>
+</div>
+</div><br></div>
 </ion-content>

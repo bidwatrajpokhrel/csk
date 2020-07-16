@@ -24,10 +24,7 @@ export class ClubTilesComponent implements OnInit {
   onClick(){
     this.dialog.open(ClubDetailsComponent);
   }
-  clickSeeAllEvents(){
-    this.router.navigate(['/all-event-student'])
-  }
-
+  
   clubs: any;
 
   ngOnInit() {

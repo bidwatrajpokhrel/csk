@@ -1,0 +1,23 @@
+<ion-header>
+  <app-header-guest></app-header-guest>
+</ion-header>
+
+ <ion-content><div class="mainmain">
+	<div class="ion-content">
+	<br>
+	<app-guest-menu-details></app-guest-menu-details>
+	<br>
+  <br>
+  <ion-label class="custom-label"> Clubs </ion-label>
+  <br>
+  <br>
+<div class="content">
+  <ion-fab vertical="center" horizontal="start" slot="fixed" [routerLink]="['/events-guest']">
+    <ion-fab-button>
+      <ion-icon name="arrow-back-circle"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+<app-club-tiles></app-club-tiles>
+</div></div>
+<br></div>
+</ion-content>

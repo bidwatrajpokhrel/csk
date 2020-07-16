@@ -1,48 +1,150 @@
-<ion-header>
-	
-    <img src="assets/images/footer.png"> 
-    <div class="dropback">
-      <div class="dropdown">
-      <button class="dropbtn" (click)="onClick()">Home</button>
-      </div>
-      <div class="dropdown">
-      <button class="dropbtn" (click)="clickAboutUs()">About Us</button>
-      <div class="dropdown-content">
-      <a (click)="clickAboutUniversity()">About University</a>
-      <a href="https://www.beds.ac.uk/">Explore University</a>
-      <a (click)="clickRecognitions()">Recognitions</a>      
-      <a (click)="clickMessages()">Messages</a>
-      <a (click)="clickInfrastructure()">Infrastructure</a>
-      <a (click)="clickFacilities()">Facilities</a>
-      <a (click)="clickOurTeam()">Our Team</a>
-      </div>
-      </div>
-      <div class="dropdown">
-      <button class="dropbtn">Student and Admission</button>
-      <div class="dropdown-content">
-      <a (click)="clickAlumniStories()">Alumni Stories</a>
-      <a (click)="clickHolidaysList()">List of Holidays</a>
-      <a (click)="clickIntakeCalender()">Intake Calendar</a>
-      <a (click)="clickAdmissionProcedure()">Admission Procedure</a>
-      <a (click)="clickFeeStructure()">Fee Structure and Refund Policy</a>
-      <a (click)="clickScholarship()">Scholarship</a>
-      <a (click)="clickStudentSupport()">Student Support</a>
-      </div>
-      </div>
-      <div class="dropdown">
-      <button class="dropbtn">Media</button>
-      <div class="dropdown-content">
-      <a (click)="clickEvents()">Events</a>
-      <a (click)="clickEventsGallery()">Events Gallery</a>
-      <a (click)="clickNews()">News</a>
-      <a (click)="clickCanteen()">Canteen</a>
-      </div>
-      </div>
-      <div class="dropdown">
-      <button class="dropbtn" (click)="clickCourses()">Courses</button>
-      </div>
-      </div>
-     <div class="differentpages">
-     </div>
+    <div class="parent">
+      <div class="child">
+    <div class="scrollmenu">
+      
+        <button>
+          <img src="assets/images/exploreBack.png"> <br><br>
+          <div class="menu">
+            <ion-toolbar>
+              <ion-buttons slot="start"> 
+                <ion-button>
+                <ion-icon name="business-outline"></ion-icon>
+                </ion-button>
+              </ion-buttons>
+              <ion-title  style="font-size: small;">Explore University</ion-title>
+            </ion-toolbar>
+        </div>
+      </button>
 
-  </ion-header>
+          <button (click)="clickAboutUs()">
+            <img src="assets/images/aboutUS.jpg"> 
+            <br><br>
+            <div class="menu">
+            <ion-toolbar>
+              <ion-buttons slot="start"> 
+                <ion-button>
+                  <ion-icon name="school-outline"></ion-icon>
+                </ion-button>
+              </ion-buttons>
+              <ion-title  style="font-size: small;">About Us</ion-title>
+            </ion-toolbar>
+          </div>
+          </button>
+
+            <button (click)="clickCourses()">
+              <img src="assets/images/BBA.jpg"> <br><br>
+              <div class="menu">
+                <ion-toolbar>
+                  <ion-buttons slot="start"> 
+                    <ion-button>
+                    <ion-icon name="pencil-outline"></ion-icon>
+                    </ion-button>
+                  </ion-buttons>
+                  <ion-title  style="font-size: small;">Courses</ion-title>
+                </ion-toolbar>
+            </div>
+            </button>
+
+              <button (click)="clickFeeStructure()">
+                <img src="assets/images/loginBack.png"> <br><br>
+                <div class="menu">
+                <ion-toolbar>
+                  <ion-buttons slot="start"> 
+                    <ion-button>
+                      <ion-icon name="cash-outline"></ion-icon>
+                    </ion-button>
+                  </ion-buttons>
+                  <ion-title  style="font-size: small;">Fee Structure</ion-title>
+                </ion-toolbar>
+              </div>
+              </button>
+
+                <button (click)="clickStudentSupport()">
+                  <img src="assets/images/aboutUs.png"> <br><br>
+                  <div class="menu">
+                    <ion-toolbar>
+                      <ion-buttons slot="start"> 
+                        <ion-button>
+                        <ion-icon name="headset-outline"></ion-icon>
+                        </ion-button>
+                      </ion-buttons>
+                      <ion-title  style="font-size: small;">Student Life</ion-title>
+                    </ion-toolbar>
+                </div>
+                 </button>
+
+                  <button href="#home">
+                    <img src="assets/images/nearbyRestaurants1.png"> 
+                    <br><br>
+                    <div class="menu">
+                    <ion-toolbar>
+                      <ion-buttons slot="start"> 
+                        <ion-button>
+                          <ion-icon name="home"></ion-icon>
+                        </ion-button>
+                      </ion-buttons>
+                      <ion-title  style="font-size: small;">About Us</ion-title>
+                    </ion-toolbar>
+                  </div>
+                  </button>
+
+                    <button (click)="clickEvents()">
+                      <img src="assets/images/nearbyActivity1.png"> <br><br>
+                      <div class="menu">
+                        <ion-toolbar>
+                          <ion-buttons slot="start"> 
+                            <ion-button>
+                            <ion-icon name="calendar-outline"></ion-icon>
+                            </ion-button>
+                          </ion-buttons>
+                          <ion-title  style="font-size: small;">Events</ion-title>
+                        </ion-toolbar>
+                    </div>
+                     </button>
+
+                      <button (click)="clickEventsGallery()">
+                        <img src="assets/images/eventshappening.jpg"> 
+                        <br><br>
+                        <div class="menu">
+                        <ion-toolbar>
+                          <ion-buttons slot="start"> 
+                            <ion-button>
+                              <ion-icon name="images-outline"></ion-icon>
+                            </ion-button>
+                          </ion-buttons>
+                          <ion-title  style="font-size: small;">Photo Gallery</ion-title>
+                        </ion-toolbar>
+                      </div>
+                      </button>
+
+                          <button (click)="clickNews()">
+                            <img src="assets/images/contact.jpg"> <br><br>
+                            <div class="menu">
+                              <ion-toolbar>
+                                <ion-buttons slot="start"> 
+                                  <ion-button>
+                                  <ion-icon name="newspaper-outline"></ion-icon>
+                                  </ion-button>
+                                </ion-buttons>
+                                <ion-title  style="font-size: small;">News</ion-title>
+                              </ion-toolbar>
+                          </div>
+                           </button>
+                           
+                            <button (click)="clickExploreNearby()">
+                              <img src="assets/images/contact.jpg"> 
+                              <br><br>
+                              <div class="menu">
+                              <ion-toolbar>
+                                <ion-buttons slot="start"> 
+                                  <ion-button>
+                                    <ion-icon name="walk-outline"></ion-icon>
+                                  </ion-button>
+                                </ion-buttons>
+                                <ion-title  style="font-size: small;">Explore Nearby</ion-title>
+                              </ion-toolbar>
+                              </div>
+                            </button>
+                
+    </div>
+      </div></div>

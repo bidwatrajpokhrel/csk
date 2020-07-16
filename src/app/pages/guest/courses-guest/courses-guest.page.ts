@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-courses-guest',
@@ -6,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./courses-guest.page.scss'],
 })
 export class CoursesGuestPage implements OnInit {
-
-  constructor() { }
+  clickAdmissionDetails(){
+    this.route.navigate(['/admission-procedure-guest']);
+  }
+  constructor(private route: Router) { }
 
   ngOnInit() {
   }

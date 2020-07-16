@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-student-support',
@@ -6,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./student-support.page.scss'],
 })
 export class StudentSupportPage implements OnInit {
-
-  constructor() { }
+  clickAlumniStories(){
+    this.route.navigate(['/alumni-stories-guest']);
+  }
+  constructor(private route: Router) { }
 
   ngOnInit() {
   }

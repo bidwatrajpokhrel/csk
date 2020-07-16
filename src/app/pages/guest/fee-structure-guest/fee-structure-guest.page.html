@@ -1,17 +1,27 @@
 <ion-header>
-  <app-guest-menu-details></app-guest-menu-details>
-  <div style="width:100%; height:40px;background-image: linear-gradient(to right, black , white);text-align: center;">
-   <h2 style="color: white;">Fee Structure</h2>
-  </div>
+ <app-header-guest></app-header-guest>
  </ion-header>
- <br>
-
-<ion-content>
-  <img src="assets/images/aboutUS.jpg" alt="Paris" class="center">
+ 
+ <ion-content><div class="mainmain">
+	<div class="ion-content">
+	<br>
+	<app-guest-menu-details></app-guest-menu-details>
+	<br>
+  <br>
+  <ion-label class="custom-label"> Fee Structure </ion-label>
+  <br>
+  <br>
+<div class="content"> 
+   <img src="assets/images/aboutUS.jpg" alt="Paris" class="center">
   <br>
   <ion-label>
     <div class="refund">
     (*Fees once paid will not be refunded under any circumstances. Security deposit made by students will not be liable to be returned if a student discontinues his/her academic pursuit before the course completion. For students successfully completing the course, the security deposit amount will be returned at the end of the course.)
   </div>
   </ion-label>
+</div>
+</div>
+<div class="sticky" (click)="clickScholarshipDetails()">
+  Scholarship Details -->
+ </div><br></div>
 </ion-content>

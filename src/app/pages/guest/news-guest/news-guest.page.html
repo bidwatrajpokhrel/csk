@@ -1,13 +1,16 @@
 <ion-header>
-  <app-guest-menu-details></app-guest-menu-details>
-  <div style="width:100%; height:40px;background-image: linear-gradient(to right, black , white);text-align: center;">
-   <h2 style="color: white;">News </h2>
-  </div>
- </ion-header>
- <br>
-
-<ion-content>
-  <ion-content>
+  <app-header-guest></app-header-guest>
+</ion-header>
+<ion-content><div class="mainmain">
+<div class="ion-content">
+<br>
+<app-guest-menu-details></app-guest-menu-details>
+<br>
+<br>
+<ion-label class="custom-label"> News </ion-label>
+<br>
+<br>
+<div class="content">
     <div class="horizontal-cards">
       <ion-card color="light" button="true" (click)="onClick()">    
         <img src = "assets/images/aboutUS.jpg"> 
@@ -20,5 +23,6 @@
         </ion-card-subtitle>
       </ion-card>
     </div>
+  </div>
+</div><br></div>
   </ion-content>
-</ion-content>

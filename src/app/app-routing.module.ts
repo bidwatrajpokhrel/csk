@@ -110,7 +110,31 @@ const routes: Routes = [
   {
     path: 'canteen-menu-guest',
     loadChildren: () => import('./pages/guest/canteen-menu-guest/canteen-menu-guest.module').then( m => m.CanteenMenuGuestPageModule)
+  },  {
+    path: 'events-details-guest',
+    loadChildren: () => import('./pages/guest/events-details-guest/events-details-guest.module').then( m => m.EventsDetailsGuestPageModule)
   },
+  {
+    path: 'club-guest',
+    loadChildren: () => import('./pages/guest/club-guest/club-guest.module').then( m => m.ClubGuestPageModule)
+  },
+  {
+    path: 'explore-nearby-guest',
+    loadChildren: () => import('./pages/guest/explore-nearby-guest/explore-nearby-guest.module').then( m => m.ExploreNearbyGuestPageModule)
+  },
+  {
+    path: 'nearby-activity-guest',
+    loadChildren: () => import('./pages/guest/nearby-activity-guest/nearby-activity-guest.module').then( m => m.NearbyActivityGuestPageModule)
+  },
+  {
+    path: 'nearby-restaurant-guest',
+    loadChildren: () => import('./pages/guest/nearby-restaurant-guest/nearby-restaurant-guest.module').then( m => m.NearbyRestaurantGuestPageModule)
+  },
+  {
+    path: 'nearby-banks-guest',
+    loadChildren: () => import('./pages/guest/nearby-banks-guest/nearby-banks-guest.module').then( m => m.NearbyBanksGuestPageModule)
+  },
+
    
   // {
   //   path: 'talking-heads',

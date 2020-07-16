@@ -1,19 +1,19 @@
+<ion-fab vertical="start" horizontal="start" slot="fixed" [routerLink]="['/guest-home']">
+  <ion-fab-button>
+    <ion-icon name="home"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
 
-<div class="split right">
-  <img src="assets/images/profileBack.png" alt="Avatar woman">
-
-  <div class="centered">
-<!--     
-    <ion-header [translucent]="true" >
-      <ion-toolbar color="dark">
-        <ion-title>
-          LOGIN
-        </ion-title> -->
-
-    
+<ion-content padding style="--background: url(/assets/images/exploreBack.png) 0 0/100% 100% no-repeat;">
+  <ion-header>
+    <ion-toolbar class="custom-toolbar">
+      <ion-title style="text-align: end; color: white;" [routerLink]="['/guest-menu']">
+        PCPS College
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+<div class="login">
        <ion-card>
-        
-
     <ion-card-content>
       <ion-item>
         <ion-label position="floating">Username</ion-label>
@@ -46,38 +46,14 @@
         </ion-radio-group>
       </ion-list>
     
-      <ion-button expand="block" color="primary" (click)="login()">Sign In</ion-button>
+      <ion-button expand="block" class="custom-button" (click)="login()">Sign In</ion-button>
     
-    
-      <ion-item>
-        <ion-label id="no-account">Don't have an account?</ion-label>
-      </ion-item>
-      <ion-button class="white" expand="full" fill="outline" color="light" [routerLink]="['/register']">
-        <ion-text color="primary">Create a new account</ion-text>
+      <ion-button class="white" expand="full" fill="outline" color="light" [routerLink]="['/guest-home']">
+        <ion-text color="primary"> Log in as a guest
+        </ion-text>
       </ion-button>
-    
-      <ion-button [routerLink]="['/guest-home']"> 
-        Log in as a guest
-      </ion-button>
-    
+
     </ion-card-content>
   </ion-card> 
-    
- 
-
-  </div>
-
 </div>
-
-
-<div class="split left">
-  <img src="assets/images/loginBack.png" alt="Avatar woman">
-
-  <div class="centered">
-    <!-- <img src="assets/images/profile-icon.jpg" alt="Avatar woman"> -->
-
-
-    <h2>.</h2>
-    <p>.</p>
-  </div>
-</div>
+</ion-content>

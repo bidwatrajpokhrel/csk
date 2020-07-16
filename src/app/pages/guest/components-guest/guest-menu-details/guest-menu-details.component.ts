@@ -86,6 +86,9 @@ export class GuestMenuDetailsComponent implements OnInit {
     this.router.navigate(['/courses-guest']);
 
   }
+  clickExploreNearby(){
+    this.router.navigate(['/explore-nearby-guest'])
+  }
   constructor(private router: Router) { }
 
   ngOnInit() {}
