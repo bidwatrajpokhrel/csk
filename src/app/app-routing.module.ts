@@ -110,7 +110,8 @@ const routes: Routes = [
   {
     path: 'canteen-menu-guest',
     loadChildren: () => import('./pages/guest/canteen-menu-guest/canteen-menu-guest.module').then( m => m.CanteenMenuGuestPageModule)
-  },  {
+  },
+  {
     path: 'events-details-guest',
     loadChildren: () => import('./pages/guest/events-details-guest/events-details-guest.module').then( m => m.EventsDetailsGuestPageModule)
   },
@@ -133,9 +134,7 @@ const routes: Routes = [
   {
     path: 'nearby-banks-guest',
     loadChildren: () => import('./pages/guest/nearby-banks-guest/nearby-banks-guest.module').then( m => m.NearbyBanksGuestPageModule)
-  },
-
-   
+  },   
   // {
   //   path: 'talking-heads',
   //   loadChildren: () => import('./pages/admin/talking-heads/talking-heads.module').then( m => m.TalkingHeadsPageModule)

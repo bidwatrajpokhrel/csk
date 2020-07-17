@@ -8,21 +8,27 @@
 </ion-header>
 
 <ion-content>
-  <ion-content>
-    <div class="horizontal-cards">
 
-      <ion-card color="light" button="true" (click)="onClick()">    
-        <img src = "assets/clubs.png"> 
+  <ion-button (click)="request()">Request an event</ion-button>
+    <div class="horizontal-cards" *ngFor="let event of events">
+
+      <ion-card color="light" button="true" (click)="onClick(event)">    
+        <img [src]='event.image'> 
         <ion-card-header>
-          <ion-card-title><h1>HAHA</h1></ion-card-title>
+          <ion-card-title>{{event.name}}</ion-card-title>
         </ion-card-header>
         <ion-card-subtitle>
-          <ion-label>It Works</ion-label><br>
-          <ion-label>Yipppeeee!!!!</ion-label>
+          Date: {{event.event_from | date:'longDate'}}
         </ion-card-subtitle>
+      <ion-card-content>Organized by: {{event.club.name}}</ion-card-content>
       </ion-card>
     
     </div>
-  </ion-content>
 
+<<<<<<< HEAD
+=======
+  <div class="sticky" (click)="clickAllEvents()">
+  See All Events -->
+  </div>
+>>>>>>> Merged-Student
 </ion-content>

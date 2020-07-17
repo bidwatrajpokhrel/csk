@@ -8,6 +8,7 @@ import {ComponentsModule} from 'src/app/components/components.module';
 import { GuestLecturesPageRoutingModule } from './guest-lectures-routing.module';
 import { GuestLecturesPage } from './guest-lectures.page';
 import {MaterialModule} from 'src/app/material.module';
+
 @NgModule({
   imports: [
     CommonModule,

@@ -1,16 +1,51 @@
-  <ion-header>
-    <ion-toolbar color="primary">
-      <ion-title>
-        Unit Details
-      </ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <ion-label><h1>Unit Name:</h1></ion-label><br>
-  <ion-label><p style="font-style: italic;" 
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title *ngIf="unit">
+      {{unit.name}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<div  style="overflow-y: scroll; height: 500px;">
+  <div *ngIf="unit" class="intro">
+    <img [src]="unit.image">
+    <div class="about"><p><strong>Credit:</strong> {{unit.credit}}<br>
+    <strong>Description: </strong>{{unit.description}}</p></div><br>
+  </div>
+  <br>
+  <ion-label><h3>Unit Leader:</h3></ion-label>
+  <ion-item *ngIf="unit">
+    <ion-row>
+      <ion-col>
+        <img [src]='unit.leader.image' height="50">
+      </ion-col>
+      <ion-col>
+        <ion-label>{{unit.leader.name}}, {{unit.leader.title}}</ion-label>
+      </ion-col>
+    </ion-row>
+  </ion-item>
+  <br>
+  <h3>Assessments:</h3>
+  <div *ngIf="unit" style="overflow-y: scroll; height: 200px;">
+  <ion-card *ngFor="let assessment of unit.assessments">
+    <ion-card-header>
+      <ion-card-title>
+        {{assessment.title}}
+      </ion-card-title>
+      <ion-card-subtitle>
+        <strong>Marks: </strong> {{ assessment.marks}}
+      </ion-card-subtitle>
+      <ion-card-content>
+        {{assessment.about}}
+      </ion-card-content>
+    </ion-card-header>
+  </ion-card>
+  </div>
+</div>
+  <!-- <ion-label><p style="font-style: italic;" 
     (click)="clickFaculty()" 
     (click)="closeDialog()">Unit Head:
   </p>
   </ion-label><br>
   <ion-label>Assignment Details</ion-label><br>
   <ion-label>Total Study Hours:</ion-label><br>
-  <ion-label>Unit Details</ion-label><br>
+  <ion-label>Unit Details</ion-label><br> -->

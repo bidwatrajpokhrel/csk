@@ -3,6 +3,8 @@ import { StorageService } from 'src/app/services/storage.service';
 import { PublicClubService } from 'src/app/services/public/public-club.service';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
+import { HttpService } from 'src/app/services/http.service';
+import { ToastService } from 'src/app/services/toast.service';
 
 @Component({
   selector: 'app-club-with-events',
@@ -15,39 +17,39 @@ export class ClubWithEventsComponent implements OnInit {
     private storageService: StorageService,
     private publiclubService: PublicClubService,
     private router: Router,
-    private authService: LoginService
+    private authService: LoginService,
+    private httpService: HttpService,
+    private toastService: ToastService
   ) { }
 
-  
-  clubId: any;
-  clubDetail: any = null;
-
+  data ={
+    event_id: '',
+    student_id: ''
+  }
+  event:any
   ngOnInit() {
-    this.storageService.get("clubId").then(club_id =>{
-      this.clubId = club_id;
-      this.fetchClub(club_id);          
+    this.storageService.get("view-event").then(res =>{
+      this.event = res;         
     });
   }
 
-  fetchClub(clubId: string){
-    this.publiclubService.getAClubWithEvents(clubId).subscribe(data => {
-      this.clubDetail = data.data[0];
-      console.log(this.clubDetail);
-    });  
-  }
-
   ngOnDestroy(){
-    this.storageService.removeItem("clubId");
+    this.storageService.removeItem("view-event");
   }
 
-  viewEvent(){
-    this.storageService.get("userData").then(res => {      
-      if (res.type == 'admin'){}
-      else if (res.type == 'student'){
-        this.router.navigate( ['/student-menu/events'] )
-      }
-      else{}
+  book(){
+    this.data.event_id=this.event.id;
+    this.storageService.get('userData').then(res=>{
+      this.data.student_id = res.id;
+      this.httpService.postWithToken('/student/event-book', this.data).subscribe((result: any)=>{
+        if (result.message=="success") {
+          this.toastService.presentToast('Successfully Booked Event. Cancel Booking from dashboard.')
+        }
+      }, error=>{
+        this.toastService.presentToast('Booking Unsuccessful. Check to see if you already booked a club from dashboard.')
+      })
     })
+    
   }
 
 }

@@ -1,13 +1,13 @@
 <div class="horizontal-cards">
 
-  <ion-card *ngFor="let club of clubs" color="light" button="true" (click)="viewClub(club)" (click)="onClick()">    
-    <img src = "assets/clubs.png"> 
+  <ion-card *ngFor="let club of clubs" color="light" button="true" (click)="onClick(club)">    
+    <img [src] = "club.image">
     <ion-card-header>
       <ion-card-title><h1>{{club.name}}</h1></ion-card-title>
     </ion-card-header>
     <ion-card-subtitle>
-      <ion-label>President: {{club.president.name}}</ion-label><br>
-      <ion-label>Vice President: {{club.vice_president.name}}</ion-label>
+      <ion-label><strong>President: </strong>{{club.president.name}}</ion-label><br>
+      <ion-label><strong>Vice President: </strong>{{club.vice_president.name}}</ion-label>
     </ion-card-subtitle>
   </ion-card>
 </div>

@@ -1,8 +1,15 @@
   <br>
-  <div class="box">
-  <div class="images">
-    <img src="assets/images/aboutUS.jpg" style="float: left;">
+  <div class="box" *ngFor="let activity of activities">
+    <div class="images">
+      <img [src]="activity.image" style="float: left;">
+    </div>
+      <div class="description">
+        <h1 style="font-style: italic;">{{activity.name}}</h1>
+        <ion-label><strong>Offers: </strong>{{activity.offers}}</ion-label>
+        <ion-label><strong>Description: </strong>{{activity.description}}</ion-label>
+    </div>
   </div>
+<<<<<<< HEAD
     <div class="description">
   <h1 style="font-style: italic;"> WELCOME</h1>
   <ion-label>o create a linear gradient you must define at least two color stops. Color stops are the colors you want to render smooth transitions among. You can also set a starting point and a direction (or an angle) along with the gradient effect.
@@ -20,3 +27,7 @@
     The following example shows a linear gradient that starts at the top. It starts red, transitioning to yellow:</ion-label>
   </div>
 </div>
+=======
+</ion-content>
+
+>>>>>>> Merged-Student

@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Result</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <div style="overflow-x:auto;">
+  <table>
+    <tr>
+      <th>Assessment</th>
+      <th>Full Marks</th>
+      <th>Marks Secured</th>
+      <th>Comments</th>
+    </tr>
+    <tr *ngFor="let result of results">
+      <td>{{result.assessment.title}}</td>
+      <td>{{result.assessment.marks}}</td>
+      <td>{{result.marks}}</td>
+     <td><p style="color:red; font-style: italic;"> Click to See Comments </p>
+      <span class="showOnHover">{{result.comments}} 
+      </span></td>
+    </tr>
+  </table>
+  </div>
+</ion-content>

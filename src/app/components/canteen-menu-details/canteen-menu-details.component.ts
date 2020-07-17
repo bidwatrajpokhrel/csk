@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StorageService } from 'src/app/services/storage.service';
 
 @Component({
   selector: 'app-canteen-menu-details',
@@ -7,8 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CanteenMenuDetailsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private storageService: StorageService) { }
 
-  ngOnInit() {}
+  food:any;
+  ngOnInit() {
+    this.storageService.get('view-canteen').then(food=>{
+      this.food=food;
+    });
+  }
+
+  ngOnDestroy(){
+    this.storageService.removeItem('view-canteen').then(res=>console.log('removed'));
+  }
 
 }

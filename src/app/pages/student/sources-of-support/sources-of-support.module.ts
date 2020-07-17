@@ -7,7 +7,6 @@ import { IonicModule } from '@ionic/angular';
 import { SourcesOfSupportPageRoutingModule } from './sources-of-support-routing.module';
 import {ComponentsModule} from 'src/app/components/components.module';
 import { SourcesOfSupportPage } from './sources-of-support.page';
-import { SuperTabsModule } from '@ionic-super-tabs/angular';
 
 @NgModule({
   imports: [
@@ -15,7 +14,6 @@ import { SuperTabsModule } from '@ionic-super-tabs/angular';
     FormsModule,
     IonicModule,
     SourcesOfSupportPageRoutingModule,
-    SuperTabsModule,
     ComponentsModule
   ],
   declarations: [SourcesOfSupportPage]

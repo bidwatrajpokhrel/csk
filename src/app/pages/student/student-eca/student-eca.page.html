@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>ECA</ion-title>
+    <ion-buttons slot="start" style="color: white;">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="horizontal-cards">
+    <ion-card *ngFor="let eca of ecas" color="light" button="true" (click)="onClick(eca)">    
+      <img [src]="eca.image"> 
+      <ion-card-header>
+        <ion-card-title>{{eca.name}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <strong>Department:</strong>{{eca.incharge.name}}
+      </ion-card-content>
+    </ion-card>
+    
+  </div>
+</ion-content>

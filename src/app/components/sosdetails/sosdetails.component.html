@@ -1,4 +1,6 @@
-<p>
-  plz add a simple line for activating the mentioned portal. for instance,
-if its breo, write go to breo.beds.ac.uk and do this and that.
-</p>
+<div *ngIf="service">
+  <img [src]="service.image">
+  <br>
+  <h1>{{service.name}}</h1>
+  <p>{{service.description}}</p>
+</div>

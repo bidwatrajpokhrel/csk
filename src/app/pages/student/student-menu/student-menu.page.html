@@ -3,16 +3,16 @@
 
 <div class="parent">
   <div class="child">
-    <ion-content>
+    <ion-content *ngIf="student">
       
       <ion-list id="inbox-list">
          <ion-list-header>
         <div class="images">
-          <img src="assets/images/profile.jpg" style="float: right;">
+          <img [src]="student.image" style="float: right;">
         </div>
           <div class="welcome">
-        <h1> WELCOME <br>
-          Aastha Pandey
+        <h1> Welcome, <br>
+          {{student.name}}
         </h1>
         
         </div>

@@ -1,17 +1,32 @@
 <ion-content>
-  <div class="horizontal-cards">
+<div class="horizontal-cards">
 
-    <ion-card color="light" button="true" (click)="clickUnitDetails()">    
-      <img src = "assets/clubs.png"> 
-      <ion-card-header>
-        <ion-card-title><h1>Unit Name</h1></ion-card-title>
-      </ion-card-header>
-      <ion-card-subtitle>
-        <ion-label>Unit Leader</ion-label><br>
-      </ion-card-subtitle>
-    </ion-card>
+  <ion-card color="light" button="true" (click)="clickUnitDetails(myunit)" *ngFor="let myunit of myunits">    
+    <img [src]="myunit.image"> 
+    <ion-card-header>
+      <ion-card-title>{{myunit.name}}</ion-card-title>
+    </ion-card-header>
+  </ion-card>
   
-  </div>
+</div>
+
+  <hr>
+
+<ion-label>All Units: </ion-label>
+<div class="horizontal-cards">
+
+  <ion-card color="light" button="true" (click)="clickUnitDetails(unit)" *ngFor="let unit of units">    
+    <img [src]="unit.image"> 
+    <ion-card-header>
+      <ion-card-title>{{unit.name}}</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+</div>
+
+  
+
+
   <div class="sticky" (click)="clickOurTeam()">
     See all Faculty ->
    </div>

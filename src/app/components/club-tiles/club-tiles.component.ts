@@ -21,30 +21,39 @@ export class ClubTilesComponent implements OnInit {
   ) {
     
   }
-  onClick(){
-    this.dialog.open(ClubDetailsComponent);
+  onClick(club){
+    this.storageService.store('view-club', club).then(res=>this.dialog.open(ClubDetailsComponent));
   }
+<<<<<<< HEAD
   
+=======
+  clickSeeAllEvents(){
+    this.router.navigate(['/student-menu/event-student'])
+  }
+
+>>>>>>> Merged-Student
   clubs: any;
 
   ngOnInit() {
-    this.publiclubService.getClubs().subscribe( result => {
+    this.publiclubService.getAllClubsWithEvents().subscribe( result => {
       this.clubs = result.data;
       console.log( this.clubs);
     } );
   }
+
   
-  viewClub(club){
-    this.storageService.get("userData").then(res => {      
-      console.log(club.id) //TODO DELETE THIS LINE
-      this.storageService.store( "clubId", club.id);
-      if (res.type == 'admin'){}
-      else if (res.type == 'student'){
-        this.router.navigate( ['/student-menu/clubs/detail'] )
-      }
-      else{}
-    })
+  
+  // viewClub(club){
+  //   this.storageService.get("userData").then(res => {      
+  //     console.log(club.id) //TODO DELETE THIS LINE
+  //     this.storageService.store( "clubId", club.id);
+  //     if (res.type == 'admin'){}
+  //     else if (res.type == 'student'){
+  //       this.router.navigate( ['/student-menu/clubs/detail'] )
+  //     }
+  //     else{}
+  //   })
     
-  }
+  // }
 
 }

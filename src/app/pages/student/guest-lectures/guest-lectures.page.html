@@ -12,19 +12,20 @@
   <ion-content>
     <div class="horizontal-cards">
 
-      <ion-card color="light" button="true" (click)="onClick()">    
-        <img src = "assets/clubs.png"> 
+      <ion-card color="light" button="true" (click)="onClick(guest)" *ngFor="let guest of guests">    
+        <img [src]="guest.image"> 
         <ion-card-header>
-          <ion-card-title><h1>HAHA</h1></ion-card-title>
+          <ion-card-title>{{guest.title}}</ion-card-title>
+          <ion-card-subtitle>Name: {{guest.guest_name}}</ion-card-subtitle>
         </ion-card-header>
-        <ion-card-subtitle>
-          <ion-label>It Works</ion-label><br>
-          <ion-label>Yipppeeee!!!!</ion-label>
-        </ion-card-subtitle>
+        <ion-card-content>
+          Date: {{guest.datetime | date:'longDate'}}
+        </ion-card-content>
       </ion-card>
     
     </div>
+
     <div class="sticky" (click)="clickAllGuestLectures()">
-      See all Guest lectures ->
+      See all Guest lectures <ion-icon> arrow</ion-icon>
      </div>
   </ion-content>

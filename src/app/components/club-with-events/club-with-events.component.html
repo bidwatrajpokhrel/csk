@@ -1,30 +1,28 @@
-<div *ngIf="clubDetail" class="box">
-  <div class="images">
-    <img src="assets/images/aboutUS.jpg" style="float: left;">
-  </div>
-  <div class="description">
-  <ion-label>
-    Name: {{clubDetail.name}} <br>
-    Desription: {{clubDetail.description}}<br>
-    President: {{clubDetail.president.name}}<br>
-    Vice President: {{clubDetail.vice_president.name}} <br> 
-  </ion-label>
-
-  <ion-list>
-    <ion-item *ngFor="let event of clubDetail.events" color="light" button="true" (click)="viewEvent()">
-      <ion-label>
-        {{event.name}}
-      </ion-label>
-      <ion-label>
-        {{event.event_from}}
-      </ion-label>
-      <ion-label>
-        {{event.event_to}}
-      </ion-label>
-      <ion-label>
-        {{event.event_no_of_seats}}
-      </ion-label>
-    </ion-item>
-  </ion-list>
-  </div>
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title *ngIf="event">
+     {{event.name}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<br>
+<div *ngIf="event" style="width:500px;">
+  <ion-button (click)="book()">Book Event</ion-button>
+  <ion-row>
+    <ion-col>
+      <img [src]="event.image" style="width:170px;margin-right:15px;">
+    </ion-col>
+    <ion-col>
+      <ion-label><h1><strong>{{event.name}}</strong></h1></ion-label>
+      <ion-label><strong>From: </strong>{{event.event_from | date:'longDate'}}</ion-label><br>
+      <ion-label><strong>To: </strong>{{event.event_to | date:'longDate'}}</ion-label><br>
+      <ion-label><strong>Number of Seats: </strong>{{event.event_no_of_seats}}</ion-label><br>
+      <p><strong>Description: </strong>{{event.description}}</p><br>
+    </ion-col>
+  </ion-row>
+<ion-card>
+  <ion-card-header>
+    <ion-card-title><strong>Organized by: </strong>{{event.club.name}}</ion-card-title>
+  </ion-card-header>
+</ion-card>
 </div>
