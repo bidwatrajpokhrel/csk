@@ -7,6 +7,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./guest-menu-details.component.scss'],
 })
 export class GuestMenuDetailsComponent implements OnInit {
+  
+  goToLink(data){
+    window.open(data, "_blank");
+  }
+
   onClick(){
     this.router.navigate(['/guest-home']);
   }

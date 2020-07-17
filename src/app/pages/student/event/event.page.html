@@ -10,9 +10,9 @@
 <ion-content>
 
   <ion-button (click)="request()">Request an event</ion-button>
-    <div class="horizontal-cards" *ngFor="let event of events">
+    <div class="horizontal-cards">
 
-      <ion-card color="light" button="true" (click)="onClick(event)">    
+      <ion-card color="light" button="true" (click)="onClick(event)" *ngFor="let event of events">    
         <img [src]='event.image'> 
         <ion-card-header>
           <ion-card-title>{{event.name}}</ion-card-title>

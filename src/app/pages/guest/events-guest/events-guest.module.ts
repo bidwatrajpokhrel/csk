@@ -7,6 +7,7 @@ import {ComponentsGuestModule} from 'src/app/pages/guest/components-guest/compon
 
 import { EventsGuestPageRoutingModule } from './events-guest-routing.module';
 import { EventsGuestPage } from './events-guest.page';
+import { MaterialModule } from 'src/app/material.module';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import { EventsGuestPage } from './events-guest.page';
     FormsModule,
     IonicModule,
     EventsGuestPageRoutingModule,
-    ComponentsGuestModule
+    ComponentsGuestModule,
+    MaterialModule
   ],
   declarations: [EventsGuestPage]
 })

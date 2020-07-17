@@ -12,18 +12,17 @@
   <br>
 <div class="content">
     <div class="horizontal-cards">
-      <ion-card color="light" [routerLink]="['/courses-details-guest']">    
-        <img src = "assets/images/aboutUS.jpg"> 
+      <ion-card color="light" *ngFor="let major of majors" (click)="detail(major)">    
+        <img [src]="major.image"> 
         <ion-card-header>
-          <ion-card-title><h1>BSc. Cs Se</h1></ion-card-title>
+          <ion-card-title><h1>{{major.name}}</h1></ion-card-title>
         </ion-card-header>
         <ion-card-subtitle>
-          <ion-label>this course is this that.
+          <ion-label><strong>Head: </strong> {{major.head.name}}
           </ion-label><br>
         </ion-card-subtitle>
       </ion-card>
     </div>   
- 
 </div>
 </div>
 <div class="sticky" (click)="clickAdmissionDetails()">

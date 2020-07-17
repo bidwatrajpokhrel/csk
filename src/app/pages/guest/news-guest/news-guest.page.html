@@ -7,22 +7,21 @@
 <app-guest-menu-details></app-guest-menu-details>
 <br>
 <br>
-<ion-label class="custom-label"> News </ion-label>
+<ion-label class="custom-label"> ECA </ion-label>
 <br>
 <br>
 <div class="content">
-    <div class="horizontal-cards">
-      <ion-card color="light" button="true" (click)="onClick()">    
-        <img src = "assets/images/aboutUS.jpg"> 
-        <ion-card-header>
-          <ion-card-title><h1>Name</h1></ion-card-title>
-        </ion-card-header>
-        <ion-card-subtitle>
-          <ion-label>News Headline
-          </ion-label><br>
-        </ion-card-subtitle>
-      </ion-card>
-    </div>
+  <div class="horizontal-cards">
+    <ion-card *ngFor="let eca of ecas" color="light" button="true" (click)="onClick(eca)">    
+      <img [src]="eca.image"> 
+      <ion-card-header>
+        <ion-card-title>{{eca.name}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <strong>Incharge: </strong>{{eca.incharge.name}}
+      </ion-card-content>
+    </ion-card>    
+  </div>
   </div>
 </div><br></div>
   </ion-content>

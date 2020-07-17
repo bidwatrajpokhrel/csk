@@ -8,7 +8,9 @@ import { constants } from 'buffer';
 })
 export class HttpService {
 
-  token = 'oDqTiWvXTcDVA7VE9UxS1g';
+  // token = 'v03Foc1s78KW6URhZzQ0LA';
+  // token = 'CmgxGbWLE38EcGIbzUBhug';
+  token = 'Hwzmse6qEWQpQRlA0s82Wg';
 
   constructor(private http: HttpClient) {}
 

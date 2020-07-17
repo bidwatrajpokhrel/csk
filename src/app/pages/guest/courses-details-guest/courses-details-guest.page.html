@@ -8,23 +8,18 @@
     <app-guest-menu-details></app-guest-menu-details>
     <br>
     <br>
-  <div class="content">
+  <div class="content" *ngIf="major">
     <ion-fab vertical="center" horizontal="start" slot="fixed" [routerLink]="['/courses-guest']">
       <ion-fab-button>
         <ion-icon name="arrow-back-circle"></ion-icon>
       </ion-fab-button>
     </ion-fab>
     <p>
-      <img src="assets/images/aboutUS.jpg" alt="University">
-      <ion-label style="font: Raleway;">Courses Details
-        The inception of Patan College (PCPS) began with a simple thought of social cause of providing 
-			an exposure to a globally accredited degree from a renowned United Kingdom (UK) 
-			based university to all Nepal and neighbourhood citizens. 
-			This initial thought was put into motion by launching an exhaustive research on UK 
-			based Universities and our sincere efforts led us on to the University of Bedfordshire (UoB), 
-			with over a hundred years of experience as a quality education provider in the UK. PCPS is, 
-			now, one of the among other educational institutions in Nepal who offer and deliver UK 
-			degrees for various undergraduate and graduate level courses.
+      <img [src]="major.image" alt="University">
+      <ion-label style="font: Raleway;">
+        <h1>{{major.name}}</h1>
+        <h2><strong>Major Head: </strong>{{major.head.name}}</h2>
+        <p>{{major.description}}</p>
       </ion-label>
       </p>
     </div>

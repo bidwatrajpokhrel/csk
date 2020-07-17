@@ -11,43 +11,14 @@
   <br>
   <br>
 <div class="content">
-    <div class="horizontal-cards">
-      <ion-card color="light">    
-        <img src = "assets/images/aboutUS.jpg"> 
+    <div class="horizontal-cards" *ngIf="datas">
+      <ion-card color="light" *ngFor="let data of datas">    
+        <img [src]="data.image"> 
         <ion-card-header>
-          <ion-card-title><h1>BREO</h1></ion-card-title>
+          <ion-card-title><h1>{{data.name}}</h1></ion-card-title>
         </ion-card-header>
         <ion-card-subtitle>
-          <ion-label>Canteen with tons of menu.
-          </ion-label><br>
-        </ion-card-subtitle>
-      </ion-card>
-      <ion-card color="light">    
-        <img src = "assets/images/aboutUS.jpg"> 
-        <ion-card-header>
-          <ion-card-title><h1>PCPS Portal</h1></ion-card-title>
-        </ion-card-header>
-        <ion-card-subtitle>
-          <ion-label>Canteen with tons of menu.
-          </ion-label><br>
-        </ion-card-subtitle>
-      </ion-card>
-      <ion-card color="light">    
-        <img src = "assets/images/aboutUS.jpg"> 
-        <ion-card-header>
-          <ion-card-title><h1>Proquest</h1></ion-card-title>
-        </ion-card-header>
-        <ion-card-subtitle>
-          <ion-label>Canteen with tons of menu.
-          </ion-label><br>
-        </ion-card-subtitle>
-      </ion-card><ion-card color="light">    
-        <img src = "assets/images/aboutUS.jpg"> 
-        <ion-card-header>
-          <ion-card-title><h1>University Materials</h1></ion-card-title>
-        </ion-card-header>
-        <ion-card-subtitle>
-          <ion-label>Canteen with tons of menu.
+          <ion-label>{{data.description}}
           </ion-label><br>
         </ion-card-subtitle>
       </ion-card>

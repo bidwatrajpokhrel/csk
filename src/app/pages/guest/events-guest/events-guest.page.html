@@ -11,18 +11,18 @@
   <br>
   <br>
 <div class="content">
-    <div class="horizontal-cards">
-      <ion-card color="light" [routerLink]="['/events-details-guest']">    
-        <img src = "assets/images/aboutUS.jpg"> 
-        <ion-card-header>
-          <ion-card-title><h1>Freaking Lit Event</h1></ion-card-title>
-        </ion-card-header>
-        <ion-card-subtitle>
-          <ion-label>this course is this that.
-          </ion-label><br>
-        </ion-card-subtitle>
-      </ion-card>
-    </div>   
+  <div class="horizontal-cards">
+    <ion-card color="light" button="true" (click)="onClick(event)" *ngFor="let event of events">    
+      <img [src]='event.image'> 
+      <ion-card-header>
+        <ion-card-title>{{event.name}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-subtitle>
+        Date: {{event.event_from | date:'longDate'}}
+      </ion-card-subtitle>
+    <ion-card-content>Organized by: {{event.club.name}}</ion-card-content>
+    </ion-card>  
+  </div>
 </div>
 </div>
 <br>

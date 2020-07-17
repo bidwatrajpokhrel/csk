@@ -11,23 +11,11 @@
 	<p>
 		<img src="assets/images/aboutUS.jpg" alt="University">
 		<ion-label style="font: Raleway;">
-			<h1 style="font-size: medium;color: black;font-weight: bold;"> I PATAN COLLEGE FOR PROFESSIONAL STUDIES</h1>
-			Patan College for Professional Studies (PCPS) is a constituent member of LBEF Group of Institutions (Lord Buddha Education Foundation). 
-			LBEF has a long standing history in the field of education and academics in Nepal, 
-			being established in 1998 as the first IT College in Nepal. 
-			More than 7000 students have over the years graduated from LBEF Group of Institutions and today, 
-			have established their career as bankers, IT experts, entrepreneurs, managers, 
-			leaders in their chosen area of work.
+			<h1 style="font-size: medium;color: black;font-weight: bold;" *ngIf="about">{{about.name}}</h1>
+			<p *ngIf="about">{{about.description}}</p>
 			<br><br>
-			<p>I ABOUT OUR JOURNEY</p>
-			The inception of Patan College (PCPS) began with a simple thought of social cause of providing 
-			an exposure to a globally accredited degree from a renowned United Kingdom (UK) 
-			based university to all Nepal and neighbourhood citizens. 
-			This initial thought was put into motion by launching an exhaustive research on UK 
-			based Universities and our sincere efforts led us on to the University of Bedfordshire (UoB), 
-			with over a hundred years of experience as a quality education provider in the UK. PCPS is, 
-			now, one of the among other educational institutions in Nepal who offer and deliver UK 
-			degrees for various undergraduate and graduate level courses.
+			<h1 style="font-size: medium;color: black;font-weight: bold;" *ngIf="journey">{{journey.name}}</h1>
+			<p *ngIf="journey">{{journey.description}}</p>
 		</ion-label>
 		</p>
 	</div>
@@ -41,96 +29,14 @@
 	<div class="child">
   <div class="scrollmenu">
 	
-	  <button>
-		<img src="assets/images/exploreBack.png"> <br><br>
+	  <button *ngFor="let faculty of faculties">
+		<img [src]="faculty.image"> <br><br>
 		<div class="menu">
 		  <ion-toolbar>
-			<ion-title  style="font-size: small;">Mr. Pankaj Jalan</ion-title>
+			<ion-title  style="font-size: small;">{{faculty.name}}</ion-title>
 		  </ion-toolbar>
 	  </div>
 	</button>
-
-		<button>
-		  <img src="assets/images/aboutUS.jpg"> 
-		  <br><br>
-		  <div class="menu">
-		  <ion-toolbar>
-			<ion-title  style="font-size: small;"> P. Kejriwal</ion-title>
-		  </ion-toolbar>
-		</div>
-		</button>
-
-		  <button>
-			<img src="assets/images/BBA.jpg"> <br><br>
-			<div class="menu">
-			  <ion-toolbar>
-				
-				<ion-title  style="font-size: small;">Richu Chitrakar</ion-title>
-			  </ion-toolbar>
-		  </div>
-		  </button>
-
-			<button>
-			  <img src="assets/images/loginBack.png"> <br><br>
-			  <div class="menu">
-			  <ion-toolbar>
-				
-				<ion-title  style="font-size: small;">Ajaya Sharma</ion-title>
-			  </ion-toolbar>
-			</div>
-			</button>
-
-			  <button>
-				<img src="assets/images/aboutUs.png"> <br><br>
-				<div class="menu">
-				  <ion-toolbar>
-					
-					<ion-title  style="font-size: small;">Bishwo K. Bhattarai </ion-title>
-				  </ion-toolbar>
-			  </div>
-			   </button>
-
-				<button href="#home">
-				  <img src="assets/images/nearbyRestaurants1.png"> 
-				  <br><br>
-				  <div class="menu">
-				  <ion-toolbar>
-					
-					<ion-title  style="font-size: small;">Ganesh K. Dixit</ion-title>
-				  </ion-toolbar>
-				</div>
-				</button>
-
-				  <button>
-					<img src="assets/images/nearbyActivity1.png"> <br><br>
-					<div class="menu">
-					  <ion-toolbar>
-						
-						<ion-title  style="font-size: small;">Saurabh Satyal</ion-title>
-					  </ion-toolbar>
-				  </div>
-				   </button>
-
-					<button>
-					  <img src="assets/images/eventshappening.jpg"> 
-					  <br><br>
-					  <div class="menu">
-					  <ion-toolbar>
-						
-						<ion-title  style="font-size: small;"> Neelu</ion-title>
-					  </ion-toolbar>
-					</div>
-					</button>
-
-						<button>
-						  <img src="assets/images/contact.jpg"> <br><br>
-						  <div class="menu">
-							<ion-toolbar>
-							 
-							  <ion-title  style="font-size: small;">Pratikshya Shrestha</ion-title>
-							</ion-toolbar>
-						</div>
-						 </button>
 						
   </div>
 	</div></div>

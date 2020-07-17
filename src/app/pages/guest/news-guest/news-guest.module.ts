@@ -8,6 +8,7 @@ import { NewsGuestPageRoutingModule } from './news-guest-routing.module';
 import {MaterialModule} from 'src/app/material.module';
 import { NewsGuestPage } from './news-guest.page';
 import {ComponentsGuestModule} from 'src/app/pages/guest/components-guest/components-guest.module';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import {ComponentsGuestModule} from 'src/app/pages/guest/components-guest/compon
     IonicModule,
     NewsGuestPageRoutingModule,
     MaterialModule,
-    ComponentsGuestModule
+    ComponentsGuestModule,
+    ComponentsModule
   ],
   declarations: [NewsGuestPage]
 })
