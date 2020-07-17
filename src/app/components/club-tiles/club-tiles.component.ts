@@ -24,14 +24,10 @@ export class ClubTilesComponent implements OnInit {
   onClick(club){
     this.storageService.store('view-club', club).then(res=>this.dialog.open(ClubDetailsComponent));
   }
-<<<<<<< HEAD
-  
-=======
   clickSeeAllEvents(){
     this.router.navigate(['/student-menu/event-student'])
   }
 
->>>>>>> Merged-Student
   clubs: any;
 
   ngOnInit() {

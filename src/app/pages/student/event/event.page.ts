@@ -14,10 +14,6 @@ export class EventPage implements OnInit {
   onClick(event){
     this.storageService.store('view-event', event).then(res=>this.dialog.open(ClubWithEventsComponent));
   }
-<<<<<<< HEAD
-  
-  constructor(private dialog: MatDialog, private route: Router) { }
-=======
   clickAllEvents(){
     this.route.navigate(['/all-event-student']);
   }
@@ -26,7 +22,6 @@ export class EventPage implements OnInit {
     private route: Router,
     private httpService: HttpService,
     private storageService: StorageService) { }
->>>>>>> Merged-Student
 
   events: any;
   ngOnInit() {
