@@ -1,0 +1,48 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title> Request Events
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<div>
+  <ion-item>
+    <ion-label position="stacked">Name</ion-label>
+    <ion-input placeholder="Name" [(ngModel)]="data.name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Description</ion-label>
+    <ion-textarea placeholder="Description of the event" [(ngModel)]="data.description"></ion-textarea>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Number of Seats</ion-label>
+    <ion-input type="number" placeholder="Enter a Number" [(ngModel)]="data.no_of_seats"></ion-input>
+  </ion-item>
+  <ion-row>
+    <ion-col>
+      <ion-item>
+        <ion-label position="stacked">Start Date</ion-label>
+        <ion-input placeholder="start-date" type="date" [(ngModel)]="data.event_from"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col>
+      <ion-item>
+        <ion-label position="stacked">End Date</ion-label>
+        <ion-input placeholder="end-date" type="date" [(ngModel)]="data.event_to"></ion-input>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+
+  <ion-item>
+    <label for="clubs">Club Associated: </label>
+    <select name="club" id="club" [(ngModel)]="data.club">
+      <option *ngFor="let club of clubs" [value]="club.id">{{club.name}}</option>
+    </select>
+  </ion-item>
+
+  <ion-button (click)="onCreate()">Request Event</ion-button>
+
+</div>

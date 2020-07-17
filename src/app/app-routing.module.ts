@@ -111,6 +111,21 @@ const routes: Routes = [
     path: 'canteen-menu-guest',
     loadChildren: () => import('./pages/guest/canteen-menu-guest/canteen-menu-guest.module').then( m => m.CanteenMenuGuestPageModule)
   },
+
+  
+  // {
+  //   path: 'student-eca',
+  //   loadChildren: () => import('./pages/student/student-eca/student-eca.module').then( m => m.StudentEcaPageModule)
+  // },
+  // {
+  //   path: 'student-result',
+  //   loadChildren: () => import('./pages/student/student-result/student-result.module').then( m => m.StudentResultPageModule)
+  // },
+  // {
+  //   path: 'student-faculty',
+  //   loadChildren: () => import('./pages/student/student-faculty/student-faculty.module').then( m => m.StudentFacultyPageModule)
+  // },
+
    
   // {
   //   path: 'talking-heads',

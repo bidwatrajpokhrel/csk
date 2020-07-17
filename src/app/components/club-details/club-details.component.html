@@ -1,14 +1,37 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title style="text-align: center;">
-      HAHA Club !!
+    <ion-title style="text-align: center;" *ngIf="club">
+      {{club.name}}
     </ion-title>
   </ion-toolbar>
 </ion-header>
 <br>
-<h1> <p style="font-style:italic">Club Motto</p></h1>
+<div *ngIf="club" style="overflow-y: scroll; height: 500px;">
 
-<p><img src="assets/images/aboutUS.jpg" alt="Pineapple" style="width:170px;height:170px;margin-right:15px;">
-<ion-label style="color: rgb(109, 104, 104);">HAHA CLub was formed in this this that that year. First president was this </ion-label>
+<p><img [src]="club.image" alt="Pineapple" style="width:170px;height:170px;margin-right:15px;">
+  <ion-label><strong>President: </strong>{{club.president.name}}</ion-label><br>
+  <ion-label><strong>Vice Presideent: </strong>{{club.president.name}}</ion-label>
 </p>
+<p><strong>Description: </strong>{{club.description}}</p>
+<br><br>
+<ion-button (click)="member(club)">Join Club - Become a member</ion-button>
 
+<h2>Events:</h2>
+<div *ngIf="club" style="overflow-y: scroll; height: 300px;">
+<ion-card *ngFor="let event of club.events">
+  <ion-card-header>
+    <ion-card-title>
+      {{event.name}}
+    </ion-card-title>
+    <ion-card-subtitle>
+      <strong>Event From: </strong> {{event.event_from | date: 'longDate'}}<br>
+      <strong>Event To: </strong> {{event.event_to | date: 'longDate'}}<br>
+    </ion-card-subtitle>
+    <ion-card-content>
+      <strong>Number of Seats: </strong> {{event.event_no_of_seats}}
+    </ion-card-content>
+  </ion-card-header>
+</ion-card>
+</div>
+
+</div>

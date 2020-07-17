@@ -1,17 +1,8 @@
 <ion-content>
   <div class ="collection" ion-padding>
     <div class="collection-item" text-center *ngFor="let img of imageList">
-        <ion-button>
-            <ion-icon name="bookmark" slot="start"></ion-icon>
-              Bookmark       
-         </ion-button>
-      <img [src]="img.download_url" />
-      {{img.author}}
+      <img [src]="img.image">
+      {{img.description}}
     </div>
   </div>
-
-  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadImages($event)">
-      <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading Images...">
-      </ion-infinite-scroll-content> 
-  </ion-infinite-scroll>
 </ion-content>

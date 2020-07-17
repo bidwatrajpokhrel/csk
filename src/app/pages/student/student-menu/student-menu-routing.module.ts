@@ -63,18 +63,30 @@ const routes: Routes = [
         loadChildren: () => import('../unit-student/unit-student.module').then( m => m.UnitStudentPageModule)
       }
       ,
-  {
-    path: 'nearby-restaurants',
-    loadChildren: () => import('../nearby-restaurants/nearby-restaurants.module').then( m => m.NearbyRestaurantsPageModule)
-  },
-  {
-    path: 'nearby-banks',
-    loadChildren: () => import('../nearby-banks/nearby-banks.module').then( m => m.NearbyBanksPageModule)
-  },
-  {
-    path: 'nearby-activity',
-    loadChildren: () => import('../nearby-activity/nearby-activity.module').then( m => m.NearbyActivityPageModule)
-  }
+      {
+        path: 'nearby-restaurants',
+        loadChildren: () => import('../nearby-restaurants/nearby-restaurants.module').then( m => m.NearbyRestaurantsPageModule)
+      },
+      {
+        path: 'nearby-banks',
+        loadChildren: () => import('../nearby-banks/nearby-banks.module').then( m => m.NearbyBanksPageModule)
+      },
+      {
+        path: 'nearby-activity',
+        loadChildren: () => import('../nearby-activity/nearby-activity.module').then( m => m.NearbyActivityPageModule)
+      },
+      {
+        path: 'eca',
+        loadChildren: () => import('../student-eca/student-eca.module').then( m => m.StudentEcaPageModule)
+      },
+      {
+        path: 'result',
+        loadChildren: () => import('../student-result/student-result.module').then( m => m.StudentResultPageModule)
+      },
+      {
+        path: 'faculty',
+        loadChildren: () => import('../student-faculty/student-faculty.module').then( m => m.StudentFacultyPageModule)
+      },
     ],
   },
 ];

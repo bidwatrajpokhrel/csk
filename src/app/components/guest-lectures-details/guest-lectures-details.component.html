@@ -6,15 +6,27 @@
   </ion-toolbar>
 </ion-header>
 
-<div class="w3-col l8 s12" >
-  <div class="w3-card-4 w3-margin w3-white">
-    <img src="assets/images/aboutUS.jpg" alt="Nature" style="width:100%">
-    <div class="w3-container">
-      <h3><b>Lecture HEADING</b></h3>
-      <h5>Venue<span class="w3-opacity">Date</span></h5>
-    </div>
-    <div class="w3-container">
-      <p>Lecture Details</p>
-    </div>
-  </div>
+<div *ngIf="guest" style="overflow-y: scroll; height: 500px;">
+
+  <img [src]="guest.image" style="width:70%">
+  <h1>{{guest.title}}</h1>
+  <h2><strong>Guest: </strong>{{guest.guest_name}}</h2>
+  <h3><strong>Subject: </strong>{{guest.subject}}</h3>
+  <h3><strong>Date: </strong>{{guest.datetime | date: 'longDate'}}</h3>
+  <h3><strong>Description: </strong>{{guest.description}}</h3>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-row>
+        <ion-col>
+          <img [src]="guest.club.image" width="100">
+        </ion-col>
+        <ion-col>
+          <strong>Organized by: </strong>{{guest.club.name}}
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+
+  
 </div>

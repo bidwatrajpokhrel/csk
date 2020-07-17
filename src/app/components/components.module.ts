@@ -21,6 +21,10 @@ import {NearbyBanksDetailsComponent} from './nearby-banks-details/nearby-banks-d
 import {NearbyActivityDetailsComponent} from './nearby-activity-details/nearby-activity-details.component';
 import {NearbyRestaurantsDetailsComponent} from './nearby-restaurants-details/nearby-restaurants-details.component';
 import {CanteenMenuComponent} from './canteen-menu/canteen-menu.component';
+import { EcaDetailsComponent } from './eca-details/eca-details.component';
+import { FacultyDetailsComponent } from './faculty-details/faculty-details.component';
+import { StudentRequestEventComponent } from './student-request-event/student-request-event.component';
+import { FeedbackComponent } from './feedback/feedback.component';
 
 @NgModule({
     imports:[
@@ -46,7 +50,11 @@ import {CanteenMenuComponent} from './canteen-menu/canteen-menu.component';
         UnitDetailsInfoComponent,
         SOSdetailsComponent,
         NearbyBanksDetailsComponent,
-        CanteenMenuComponent
+        CanteenMenuComponent,
+        EcaDetailsComponent,
+        FacultyDetailsComponent,
+        StudentRequestEventComponent,
+        FeedbackComponent
     ],
     exports: [
         ClubTilesComponent,
@@ -64,7 +72,11 @@ import {CanteenMenuComponent} from './canteen-menu/canteen-menu.component';
         UnitDetailsInfoComponent,
         SOSdetailsComponent,
         NearbyBanksDetailsComponent,
-        CanteenMenuComponent
+        CanteenMenuComponent,
+        EcaDetailsComponent,
+        FacultyDetailsComponent,
+        StudentRequestEventComponent,
+        FeedbackComponent
     ],
 })
 export class ComponentsModule {}

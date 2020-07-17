@@ -35,58 +35,16 @@
   <ion-content>
     <div class="horizontal-cards">
       <ion-label> <h1 style="color: #FF700A;font-style: italic;">Happy Learning!!</h1></ion-label>
-      <ion-card (click)="clicksosDetails()">    
+      <ion-card *ngFor="let service of services" (click)="clicksosDetails(service)" > 
+        <img [src]="service.image">   
         <ion-card-header>
-          <ion-card-title><h1>Proquest</h1></ion-card-title>
+          <ion-card-title>{{service.name}}</ion-card-title>
         </ion-card-header>
-        <ion-card-subtitle>
-          <ion-label>
-            Sept already apply.. meet requirement
-            Sept already apply.. meet requirement
-            Sept already apply.. meet requirement
-            Sept already apply.. meet requirement
-            Sept already apply.. meet requirement
-            Sept already apply.. meet requirement
-            Sept already apply.. meet requirement
-          </ion-label><br>
-        </ion-card-subtitle>
       </ion-card>
-      <ion-card (click)="clicksosDetails()">    
-        <ion-card-header>
-          <ion-card-title><h1>Extra Books</h1></ion-card-title>
-        </ion-card-header>
-        <ion-card-subtitle>
-          <ion-label>Sept already apply.. meet requirement
-            Sept already apply.. meet requirement
-            Sept already apply.. meet requirement
-            Sept already apply.. meet requirement
-            Sept already apply.. meet requirement
-            Sept already apply.. meet requirement
-            Sept already apply.. meet requirement
-            Sept already apply.. meet requirement
-          </ion-label><br>
-        </ion-card-subtitle>
-      </ion-card>
-      <ion-card (click)="clicksosDetails()">    
-        <ion-card-header>
-          <ion-card-title><h1>University Support</h1></ion-card-title>
-        </ion-card-header>
-        <ion-card-subtitle>
-          <ion-label>Sept already apply.. meet requirement
-            Sept already apply.. meet requirement
-            Sept already apply.. meet requirement
-            Sept already apply.. meet requirement
-            Sept already apply.. meet requirement
-            Sept already apply.. meet requirement
-            Sept already apply.. meet requirement
-            Sept already apply.. meet requirement
-            Sept already apply.. meet requirement
-          </ion-label><br>
-        </ion-card-subtitle>
-      </ion-card><br>
+      <br>
     </div>
     <div class="label">
-      <ion-label>* Please contact admin if any material portal is not working.</ion-label>
+      <ion-label>Note: Please contact admin if any material portal is not working.</ion-label>
     </div>
   </ion-content>
 </ion-content>

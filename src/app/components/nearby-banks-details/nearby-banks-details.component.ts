@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from 'src/app/services/http.service';
 
 @Component({
   selector: 'app-nearby-banks-details',
@@ -7,8 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NearbyBanksDetailsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private httpService: HttpService) { }
 
-  ngOnInit() {}
+  banks:any;
+  ngOnInit() {
+    this.httpService.get('/public/nearby_banks').subscribe((result: any)=>{
+      this.banks=result.data;
+      console.log(this.banks)
+    });
+  }
 
 }

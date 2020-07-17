@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+     Anonymous Feedback
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<br>
+<div>
+  <ion-item>
+    <ion-label position="stacked">Description</ion-label>
+    <ion-textarea placeholder="The feedback you leave here will not include any details about you." [(ngModel)]="data.description"></ion-textarea>
+  </ion-item>
+  <ion-button (click)="post()">Post Feedback</ion-button>
+</div>

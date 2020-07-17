@@ -8,14 +8,19 @@
   </ion-toolbar>
 </ion-header>
 <br>
-<ion-content>
+<ion-content *ngIf="datas">
   <ion-label>
     <div class="note1">
     Note: Lecture Schedule is subject to change without prior notice. Stay Updated!!
   </div>
-  </ion-label><br>
-  <img src="assets/images/aboutUS.jpg" alt="Lecture Schedule" class="center">
+  </ion-label>
+  <div *ngFor="let data of datas">
   <br>
+  <img [src]="data.image" alt="Lecture Schedule" class="center">
+  <ion-label>Lecture Schedule for level: {{data.level}}</ion-label>
+  <br>
+  </div>
+
   <ion-label>
     <div class="note">
     *Please contact Unit Leader for more details.

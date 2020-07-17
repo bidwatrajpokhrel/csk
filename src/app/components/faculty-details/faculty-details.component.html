@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title *ngIf="faculty">
+     {{faculty.name}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<br>
+<div *ngIf="faculty" style="width:500px;">
+  <ion-row>
+    <ion-col>
+      <img [src]="faculty.image" style="width:170px;margin-right:15px;">
+    </ion-col>
+    <ion-col>
+      <ion-label><h1><strong>{{faculty.name}}</strong></h1></ion-label>
+      <ion-label>{{faculty.title}}</ion-label><br>
+      <ion-label><strong>Type:</strong>{{faculty.type}}</ion-label><br>
+      <p>{{faculty.qualification}}</p><br>
+    </ion-col>
+  </ion-row>
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Department: {{faculty.departments.info.name}}</ion-card-title>
+  </ion-card-header>
+</ion-card>
+</div>

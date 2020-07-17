@@ -9,18 +9,13 @@
     </ion-toolbar>
   </ion-header>
 <ion-content fullscreen>
-<ion-item-divider color="white">
-  a a a 
-</ion-item-divider>
-<ion-item-divider color="white">
-  a a a 
-</ion-item-divider>
-<ion-item-divider color="white">
-  a a a 
-</ion-item-divider>
-<ion-item-divider color="white">
-  a a a 
-</ion-item-divider>
+  <ion-card color="light" *ngFor="let notice of notices">
+    <ion-card-header>      
+      <ion-card-title>{{notice.name}}</ion-card-title>
+      <ion-card-subtitle>Notice By: {{notice.author}}</ion-card-subtitle>
+    </ion-card-header>  
+    <ion-card-content>{{notice.content}}</ion-card-content>
+  </ion-card>
 </ion-content>
 
 </div> 
@@ -35,12 +30,12 @@
   <ion-title>Your Profile</ion-title>
 </ion-toolbar>
 </ion-header>
-<ion-content fullscreen>
+<ion-content *ngIf="student" fullscreen>
 <ion-grid>
   <ion-col style="display:flex; justify-content: center;">
     <ion-row>
       <ion-avatar class="prof">
-        <img src="assets/images/profile.jpg">
+        <img [src]='student.image'>
       </ion-avatar>
     </ion-row>
   </ion-col>
@@ -48,66 +43,94 @@
 <ion-item-divider color="primary">
   <ion-grid >
     <ion-row>
-      <ion-col size="5" class="namelbl">
+      <ion-col class="namelbl">
         <div>Name:</div>
       </ion-col>
-      <ion-col size="1" class="namefield">
+      <ion-col class="namefield">{{student.name}}
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col size="5" class="phonelbl">
-        <div>University ID:</div>
-      </ion-col>
-      <ion-col size="1" class="phonefield">
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="5" class="namelbl">
-        <div>College ID:</div>
-      </ion-col>
-      <ion-col size="1" class="namefield">
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="5" class="namelbl">
-        <div>Course:</div>
-      </ion-col>
-      <ion-col size="1" class="namefield">
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="5" class="namelbl">
+      <ion-col class="phonelbl">
         <div>Level:</div>
       </ion-col>
-      <ion-col size="1" class="namefield">
+      <ion-col class="phonefield"> {{student.level}}
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col  class="namelbl">
+        <div>Email:</div>
+      </ion-col>
+      <ion-col  class="namefield"> {{student.email}}
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col  class="namelbl">
+        <div>Description:</div>
+      </ion-col>
+      <ion-col class="namefield"> {{student.about}}
       </ion-col>
     </ion-row>
   </ion-grid>
-</ion-item-divider><br>
-<ion-label class="lblReview">Units:</ion-label>
+</ion-item-divider>
+<br>
+
+<h2>Major: </h2>
+<ion-card color="light">
+  <!-- <img [src]='student.major.info.image'> -->
+  <ion-card-header>
+    <ion-card-title>
+      {{student.major.info.name}}
+    </ion-card-title>
+  </ion-card-header>
+</ion-card>
+
+<h2>Units:</h2>
 <div scrollY="true" id="scrollable">
-  <ion-content>
-    <ion-card (click)="clickUnits()">
-      <img src="https://i.imgur.com/0pEZhHd.jpg">
-      <ion-card-content>
-        <ion-icon name="journal"></ion-icon><br>
-        <strong>No. of Units:</strong>&ensp;
-      </ion-card-content>
-    </ion-card>
-  </ion-content>
+  <ion-card *ngFor="let unit of units "(click)="clickUnits()">
+    <!-- <img [src]="unit.image"> -->
+    <ion-card-header>
+      <ion-card-title>
+        {{unit.name}}
+      </ion-card-title>
+    </ion-card-header>
+  </ion-card>
+  <ion-card *ngFor="let unit of units "(click)="clickUnits()">
+    <!-- <img [src]="unit.image"> -->
+    <ion-card-header>
+      <ion-card-title>
+        {{unit.name}}
+      </ion-card-title>
+    </ion-card-header>
+  </ion-card>
 </div>
-<div scrollY="true" id="scrollable">
-  <ion-content>
-    <ion-card (click)="clickResult()">
-      <img src="https://i.imgur.com/0pEZhHd.jpg">
-      <ion-card-content>
-        <ion-card-title>Result</ion-card-title>
-        <ion-icon name="pin"></ion-icon><br>
-        <!-- <strong>No. of Clubs:</strong>&ensp;4<br> -->
-      </ion-card-content>
-    </ion-card>
-  </ion-content>
+
+<h2>Events:</h2>
+<div scrollY="true" id="scrollable" *ngIf="student.events">
+  <ion-card *ngFor="let event of student.events ">
+    <!-- <img [src]="event.info.image"> -->
+    <ion-card-header>
+      <ion-card-title>
+        {{event.info.name}}<br><ion-button color="danger" (click)="unbook(event)">Cancel Booking</ion-button>
+      </ion-card-title>
+    </ion-card-header>
+  </ion-card>
 </div>
+
+<h2>Clubs:</h2>
+<div scrollY="true" id="scrollable" *ngIf="student.clubs">
+  <ion-card *ngFor="let club of student.clubs ">
+    <!-- <img [src]="event.info.image"> -->
+    <ion-card-header>
+      <ion-card-title>
+        {{club.info.name}}<br><ion-button color="danger" (click)='unmember(club)'>Cancel Membership</ion-button>
+      </ion-card-title>
+    </ion-card-header>
+  </ion-card>
+</div>
+<ion-item>
+  <ion-button (click)="openFeedback()">Post Anonymous Feedback</ion-button>
+</ion-item>
+<br><br><br><br><br><br>
 </ion-content>
 
 </div>
