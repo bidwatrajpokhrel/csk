@@ -4,6 +4,7 @@ import { LoginService } from 'src/app/services/login.service';
 import { StorageService } from 'src/app/services/storage.service';
 import { AlertService } from 'src/app/services/alert.service';
 import { ToastService } from 'src/app/services/toast.service';
+import { HttpService } from 'src/app/services/http.service';
 
 @Component({
   selector: 'app-login',
@@ -19,23 +20,35 @@ export class LoginPage implements OnInit {
 
   userType: String;
 
+  client_cred = {
+    client_id: '',
+    client_secret: ''
+  }
+
   constructor(
     private loginService: LoginService,
     private alertService: AlertService,
     private toastService: ToastService,
     private storageService: StorageService,
+    private httpService: HttpService,
     private router: Router
     ){}
 
-  ngOnInit() {}
+  ngOnInit(){
+  }
 
   adminLogin(){
     this.loginService.adminLogin(this.postData).subscribe((res: any)=>{
       console.log(res); //TODO: delete this line 
+      this.client_cred.client_id = res.client_id;
+      this.client_cred.client_secret = res.client_secret;
       if (res.message == "success"){
-        this.toastService.presentToast("Logged in as Admin");
-        this.storageService.store("userData", res);
-        this.router.navigate(["/admin-menu"]);
+        this.httpService.getToken(this.client_cred).subscribe((r:any)=>{
+          this.toastService.presentToast("Logged in as Admin");
+          this.storageService.store("userData", res);
+          localStorage.setItem('token', r.access_token);
+          this.router.navigate(["/admin-menu/admission-info-table"]);
+        }, error=>this.alertService.presentInvalidInputsAlert(error.error.message));
       }
     }, error =>{
       console.log(error.error); //TODO: delete this line 
@@ -46,11 +59,15 @@ export class LoginPage implements OnInit {
   studentLogin(){
     this.loginService.studentLogin(this.postData).subscribe((res: any)=>{
       console.log(res); //TODO: delete this line 
+      this.client_cred.client_id = res.client_id;
+      this.client_cred.client_secret = res.client_secret;
       if (res.message == "success"){
-        this.toastService.presentToast("Logged in as Student")
-        this.storageService.store("userData", res);
-        this.router.navigate(["/student-menu"]);
-
+        this.httpService.getToken(this.client_cred).subscribe((r:any)=>{
+          this.toastService.presentToast("Logged in as Student")
+          localStorage.setItem('token', r.access_token);
+          this.storageService.store("userData", res);
+          this.router.navigate(["/student-menu"]);
+        }, error=>this.alertService.presentInvalidInputsAlert(error.error.message));
       }
     }, error =>{
       console.log(error.error);      //TODO: delete this line

@@ -17,6 +17,6 @@ import { FeedbackComponent } from 'src/app/components/feedback/feedback.componen
     StudentDashboardPageRoutingModule,
     ComponentsModule
   ],
-  declarations: [StudentDashboardPage, ComponentsModule]
+  declarations: [StudentDashboardPage]
 })
 export class StudentDashboardPageModule {}

@@ -27,6 +27,7 @@ export class LoginService {
     //this.storageService.clear();
     this.storageService.removeItem('userData').then(res =>{
       this.router.navigate(['']);
+      localStorage.removeItem('token');
     });
   }
   
