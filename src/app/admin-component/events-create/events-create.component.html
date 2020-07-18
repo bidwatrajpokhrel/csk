@@ -3,7 +3,9 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title> Add Events
+    <ion-title *ngIf="!editData" > Add Events
+    </ion-title>
+    <ion-title *ngIf="editData" > Edit Events
     </ion-title>
   </ion-toolbar>
 </ion-header>

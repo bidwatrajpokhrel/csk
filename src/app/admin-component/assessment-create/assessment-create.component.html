@@ -3,7 +3,9 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title> Add Assessment Info 
+    <ion-title *ngIf="!editData"> Add Assessment Info 
+    </ion-title>
+    <ion-title *ngIf="editData"> Edit Assessment Info 
     </ion-title>
   </ion-toolbar>
 </ion-header>

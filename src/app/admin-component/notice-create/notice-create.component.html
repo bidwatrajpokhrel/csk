@@ -3,7 +3,9 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title> Publish Notice
+    <ion-title  *ngIf="!editData" > Publish Notice
+    </ion-title>
+    <ion-title  *ngIf="editData" > Edit Notice
     </ion-title>
   </ion-toolbar>
 </ion-header>

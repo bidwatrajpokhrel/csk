@@ -3,7 +3,9 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title> Add Guest Lectures
+    <ion-title *ngIf="!editData"> Add Guest Lectures
+    </ion-title>
+    <ion-title *ngIf="editData"> Edit Guest Lectures
     </ion-title>
   </ion-toolbar>
 </ion-header>

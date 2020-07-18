@@ -30,13 +30,15 @@ export class AdmissionInfoTablePage implements OnInit {
     ) { }
 
   ngOnInit() {
+    this.init()
+  }
+
+  init(){
     this.httpService.get('/public/admission-info').subscribe((result: any) => {
       this.listData = result.data;
       console.log(this.listData);
-      
     })
   }
-
   onEdit(editData){
     this.storageService.store('editAdmissionInfo', editData).then(res=>{
       this.dialog.open(AdmissionInfoCreateComponent);
@@ -46,7 +48,7 @@ export class AdmissionInfoTablePage implements OnInit {
   onDelete(id){
     this.httpService.postWithTokenEmpty(`/admin/admission-info-delete/${id.id}`).subscribe(res=>{
       this.toastService.presentToast('Content Deleted');
-      window.location.reload();
+      this.init();
     },error=>{
       this.toastService.presentToast('Something went wrong. Check that field has no dependencies')
     });

@@ -30,12 +30,12 @@ export class AdminMenuPage implements OnInit {
       url: '/admin-menu/clubs',
       icon: 'people'
     },
-    {
-      title: 'Club Members',
-      url: '/admin-menu/club-membership',
-      icon: 'people-circle'
-    }
-    ,
+    // {
+    //   title: 'Club Members',
+    //   url: '/admin-menu/club-membership',
+    //   icon: 'people-circle'
+    // }
+    // ,
     {
       title: 'Department',
       url: '/admin-menu/department',
@@ -53,12 +53,12 @@ export class AdminMenuPage implements OnInit {
       url: '/admin-menu/events',
       icon: 'golf'
     }
-    ,
-    {
-      title: 'Event Bookings',
-      url: '/admin-menu/events-booking',
-      icon: 'pencil'
-    }
+    // ,
+    // {
+    //   title: 'Event Bookings',
+    //   url: '/admin-menu/events-booking',
+    //   icon: 'pencil'
+    // }
     ,
     {
       title: 'Faculties',

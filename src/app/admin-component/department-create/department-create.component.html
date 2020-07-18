@@ -3,7 +3,9 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title> Add Department Details
+    <ion-title  *ngIf="!editData" > Add Department Details
+    </ion-title>
+    <ion-title  *ngIf="editData" > Edit Department Details
     </ion-title>
   </ion-toolbar>
 </ion-header>

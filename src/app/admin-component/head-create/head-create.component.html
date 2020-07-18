@@ -3,7 +3,9 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title> Add Talking Heads
+    <ion-title *ngIf="!editData"> Add Talking Heads
+    </ion-title>
+    <ion-title *ngIf="editData"> Edit Talking Heads
     </ion-title>
   </ion-toolbar>
 </ion-header>

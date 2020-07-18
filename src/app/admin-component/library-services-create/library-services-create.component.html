@@ -3,7 +3,9 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title> Add Library Services
+    <ion-title *ngIf="!editData"> Add Library Services
+    </ion-title>
+    <ion-title *ngIf="editData"> Edit Library Services
     </ion-title>
   </ion-toolbar>
 </ion-header>
