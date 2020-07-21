@@ -39,7 +39,6 @@ export class LoginPage implements OnInit {
 
   adminLogin(){
     this.loginService.adminLogin(this.postData).subscribe((res: any)=>{
-      console.log(res); //TODO: delete this line 
       this.client_cred.client_id = res.client_id;
       this.client_cred.client_secret = res.client_secret;
       if (res.message == "success"){
@@ -51,14 +50,12 @@ export class LoginPage implements OnInit {
         }, error=>this.alertService.presentInvalidInputsAlert(error.error.message));
       }
     }, error =>{
-      console.log(error.error); //TODO: delete this line 
       this.alertService.presentInvalidInputsAlert(error.error.message);
     });
   }
   
   studentLogin(){
     this.loginService.studentLogin(this.postData).subscribe((res: any)=>{
-      console.log(res); //TODO: delete this line 
       this.client_cred.client_id = res.client_id;
       this.client_cred.client_secret = res.client_secret;
       if (res.message == "success"){
@@ -70,7 +67,6 @@ export class LoginPage implements OnInit {
         }, error=>this.alertService.presentInvalidInputsAlert(error.error.message));
       }
     }, error =>{
-      console.log(error.error);      //TODO: delete this line
       this.alertService.presentInvalidInputsAlert(error.error.message);
    });
   }

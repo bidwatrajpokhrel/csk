@@ -1,13 +1,13 @@
-  <br>
-  <div class="box" *ngFor="let bank of banks">
-    <div class="images">
-      <img [src]="bank.image" style="float: left;">
-    </div>
-      <div class="description">
-        <h1 style="font-style: italic;">{{bank.name}}</h1>
-        <ion-label><strong>Branch: </strong>{{bank.branch}}</ion-label>
-        <ion-label><strong>Offers: </strong>{{bank.offer}}</ion-label>
-        <ion-label><strong>Address: </strong>{{bank.address}}</ion-label>
-        <ion-label><strong>Description: </strong>{{rest.description}}</ion-label>
-    </div>
+<br>
+<div class="box" *ngFor="let bank of banks">
+  <div class="images">
+    <img [src]="bank.image" style="float: left;">
   </div>
+  <div class="description">
+    <h1 style="font-style: italic;">{{bank.name}}</h1>
+    <ion-label><strong>Branch: </strong>{{bank.branch}}</ion-label>
+    <ion-label><strong>Offers: </strong>{{bank.offer}}</ion-label>
+    <ion-label><strong>Address: </strong>{{bank.address}}</ion-label>
+    <ion-label><strong>Description: </strong>{{bank.description}}</ion-label>
+  </div>
+</div>
